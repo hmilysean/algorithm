@@ -5,10 +5,7 @@
  - **题目概况**：每周一个标签进行练习，题目难度递增
  - 欢迎在群内讨论和提交作业~~
 
-<div style="display:flex; flex-wrap:wrap; justify-content:center; margin-bottom:20px;">
-    <img src="./images/qrcode.jpg" style="max-height:280px; margin:10px;"/>
-    <img src="./images/qqgroup.jpg" style="max-height:280px; margin:10px;"/>
-</div>
+![](./images/qrcode.jpg)
 
 码蜂社版权所有，如需转载，请附上版权声明
 
