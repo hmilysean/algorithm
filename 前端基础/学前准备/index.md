@@ -3,7 +3,7 @@
 
 ![](./images/logos.png)
 
-* 安装一款__文本编辑器__([Sublime Text3](http://www.sublimetext.com/3) & [WebStorm](https://www.jetbrains.com/webstorm/))，进行常用配置。
+* 安装一款__文本编辑器__([Sublime Text3](http://www.sublimetext.com/3) & [WebStorm](https://www.jetbrains.com/webstorm/) & [VSCode](https://code.visualstudio.com/))，进行常用配置。
 * 安装__chrome__浏览器，了解chrome基本的调试功能。
 * 安装__git__，了解__github__的使用，会使用github提交代码。
 * 认识__markdown__，学习markdown基本语法，以后统一使用markdown语法进行回答作业。
@@ -19,7 +19,7 @@
 #### 安装Package Control
 
 ```
-import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
 ```
 
 常用插件：
@@ -28,6 +28,8 @@ import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc5
   前端神器。一个可以极大提高web开发者HTML和CSS工作效率的工具箱组件。
 
 ### [WebStorm](https://www.jetbrains.com/webstorm/)
+
+### [VSCode](https://code.visualstudio.com/)
 
 ## Chrome 浏览器
 常用功能：
@@ -40,6 +42,7 @@ import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc5
 [关于 Chrome 浏览器的调试方法](https://vxhly.github.io/2016/08/05/debug-for-chrome-browser/)
 
 [前端 chrome 浏览器调试总结](https://gold.xitu.io/entry/58452127128fe1006c51e5b6)
+
 
 ## Git & github
 ### git是什么？
@@ -65,7 +68,6 @@ __版本控制系统__：记录内容的增删改，不同版本的同步、回�
 
 * 开源代码学习平台：900万开发者使用，知名开源项（jQuery,AngularJs,React Native等）,个人开源项目等。
 * 订阅、讨论组、文本渲染、在线文件编辑器、协作图谱（报表）、代码片段分享（Gist）等功能。
-* __[码蜂社公开课作业github仓库](https://github.com/mafengshe/open-class-homework)__
 
 ### 如何优雅使用git&github?
 * 从本地到远程
@@ -123,63 +125,70 @@ __版本控制系统__：记录内容的增删改，不同版本的同步、回�
 
 * 标题
 
-```
-     # 一级标题
-     ## 二级标题
-     ### 三级标题
-```
+    ```
+    # 一级标题
+    ## 二级标题
+    ### 三级标题
+    ```
 
 * 列表
 
-```
-    * - 无序列表
-    1. 2. 3. 有序列表
-```
+    ```
+    * 无序列表
+    * 无序列表
+
+    - 无序列表
+    - 无序列表
+
+    1. 有序列表 
+    2. 有序列表 
+    3. 有序列表
+    ```
 
 * 代码块
 
-```
-    ``` html/css/javascript/……语言类型，可省略
+    <pre>
+    ```html/css/javascript/……语言类型，可省略
     代码部分
-    \`\`\`
-```
+    ```
+    </pre>
 
 
 * 链接
 
-```
+    ```
     [链接文字](网址)
     [百度](baidu.com)
-```
+    ```
 
 * 图片
 
-```
+    ```
     ![图片描述](图片地址)
-```
+    ```
 
 * 表格
 
-```
+    ```
     | Item      |    Value | Qty  |
     | :-------- | --------:| :--: |
     | Computer  | 1600 USD |  5   |
     | Phone     |   12 USD |  12  |
     | Pipe      |    1 USD | 234  |
-```
+    ```
 
-*引用
+* 引用
 
-```
+    ```
     > 引用的文字
-``` 
+    ``` 
 
 * 强调
 
-```
- 斜体：_文字_,*文字*
- 黑体：__文字__,**文字**
-```
+    ```
+    斜体：_文字_,*文字*
+    黑体：__文字__,**文字**
+    ```
 
 > **注意**：不同的编辑器对markdown的语法支持可能不同；回车换行对解析非常重要。
 
@@ -189,8 +198,8 @@ __版本控制系统__：记录内容的增删改，不同版本的同步、回�
 
 ## 课后练习
 
-* 安装Sublime Text3 或WebStorm和基本插件、chrome浏览器、git。
+* 安装Sublime Text3 或 WebStorm 或 VSCode 和基本插件、chrome浏览器、git。
 * 选择一款知识管理平台。
 * 截图并标注chrome浏览器调试常用功能。
-* 注册github账号，在本地新建一个git仓库,push到github,再通过git随便添加一个文件。
-* 把github账号给Mark老师，拉取码蜂社作业仓库，使用markdown语法编写此次练习完成情况、心得或者链接，提交到作业仓库。
+* 注册github账号，在本地新建一个git仓库，使用markdown语法编写此次练习完成情况、心得，最后push到github。
+* 把github账号给Mark老师
