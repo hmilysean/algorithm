@@ -1,12 +1,12 @@
 # 码蜂社前端讲义
 
-> 基于 gitbook 构建的前端讲义
+> 基于 gitbook 构建的算法专题
 
 ## 本地部署方法
 
 ### 克隆此仓库
 ```
-git clone https://github.com/mafengshe-book/front-end.git
+git clone https://github.com/mafengshe-book/algorithm.git
 ```
 ### 安装依赖
 
@@ -17,13 +17,13 @@ npm install
 ### 运行
 
 ```
-npm start
+gitbook serve
 ```
 
 ### 构建
 
 ```
-npm run build
+gitbook build
 ```
 
 ### 部署
