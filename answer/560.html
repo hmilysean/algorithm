@@ -227,7 +227,55 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h1 id="560-subarray-sum-equals-k"><a href="https://leetcode.com/problems/subarray-sum-equals-k/description/" target="_blank">560. Subarray Sum Equals K</a></h1>
+<h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</h2>
+<p>Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input:nums = [1,1,1], k = 2
+Output: 2
+</code></pre><p><strong>Note:</strong></p>
+<ol>
+<li>The length of the array is in range [1, 20,000].</li>
+<li>The range of numbers in the array is [-1000, 1000] and the range of the integer k is [-1e7, 1e7].</li>
+</ol>
+<h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
+<p>&#x7ED9;&#x5B9A;&#x6574;&#x6570;&#x6570;&#x7EC4;&#x548C;&#x6574;&#x6570;k&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x627E;&#x5230;&#x603B;&#x548C;&#x7B49;&#x4E8E;k&#x7684;&#x8FDE;&#x7EED;&#x5B50;&#x5E8F;&#x5217;&#x7684;&#x603B;&#x6570;&#x3002;</p>
+<p><strong>&#x793A;&#x4F8B;1&#xFF1A;</strong></p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A; nums = [1,1,1]&#xFF0C;k = 2
+&#x8F93;&#x51FA;&#xFF1A; 2
+</code></pre><p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
+<ol>
+<li>&#x5E8F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#x5728;[1&#xFF0C;20,000]&#x8303;&#x56F4;&#x5185;&#x3002;</li>
+<li>&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6570;&#x5B57;&#x8303;&#x56F4;&#x662F;[-1000,1000]&#xFF0C;&#x6574;&#x6570;k&#x7684;&#x8303;&#x56F4;&#x662F;[-1e7,1e7]&#x3002;</li>
+</ol>
+<h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
+<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Array</p>
+<p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong>&#x89E3;&#x9898;&#x7684;&#x601D;&#x8DEF;&#x662F;&#x7528;&#x4E00;&#x4E2A;sum&#x8BB0;&#x5F55;&#x524D;i&#x4E2A;&#x6570;&#x7684;&#x548C;&#xFF0C;&#x82E5;sum[i]-sum2[j]=k&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x4E0B;&#x6807;&#x4ECE;j&#x5230;i-1&#x7684;&#x6570;&#x7684;&#x548C;&#x4E3A;k&#xFF0C;&#x7528;&#x4E24;&#x5C42;for&#x5FAA;&#x73AF;&#x7684;&#x601D;&#x8DEF;&#x6613;&#x6C42;&#x5F97;&#x672C;&#x9898;&#x7684;&#x7B54;&#x6848;&#x3002;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;o(n^2)&#x3002; 
+&#x4F46;&#x6709;&#x6CA1;&#x6709;&#x66F4;&#x597D;&#x7684;&#x601D;&#x8DEF;&#x5462;&#xFF1F;&#x5F53;&#x7136;&#x662F;&#x6709;&#xFF01;&#x6709;o(n)&#x7684;&#x601D;&#x8DEF;&#xFF01;&#x7528;hashmap&#xFF01;&#x600E;&#x4E48;&#x7528;&#xFF1F;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;&#x82E5;&#x5DF2;&#x77E5;nums=[1,2,-1,-1,1,5],k=1&#x3002;&#x82E5;&#x7528;sums&#x8868;&#x793A;&#x524D;i&#x4E2A;&#x6570;&#x7684;&#x548C;&#xFF0C;&#x90A3;&#x4E48;&#x6709;sums=[1,3,2,1,2,7]&#x3002;
+&#x5728;&#x6BCF;&#x6B21;&#x5F97;&#x5230;&#x65B0;&#x8BA1;&#x7B97;&#x51FA;&#x7684;sum&#x65F6;&#xFF0C;&#x5224;&#x65AD;hashmap&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;key&#x4E3A;sum-k&#x7684;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x5B58;&#x5728;&#x5373;&#x53D6;&#x51FA;&#x52A0;&#x5165;&#x7ED3;&#x679C;&#x3002;
+&#x518D;&#x5224;&#x65AD;hashmap&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;key&#x4E3A;sum&#x7684;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x5B58;&#x5728;&#x5219;&#x5C06;&#x5176;&#x503C;+1&#xFF0C;&#x5426;&#x5219;&#x521D;&#x59CB;&#x5316;&#x503C;&#x4E3A;1&#x3002;
+&#x5FAA;&#x73AF;&#x4E00;&#x5171;n&#x6B21;&#xFF0C;&#x5219;&#x5B9E;&#x73B0;&#x4E86;o(n)&#x7684;&#x601D;&#x8DEF;&#x3002;</p>
+<p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
+<pre><code>class Solution {
+    public int subarraySum(int[] nums, int k) {
+        Map&lt;Integer,Integer&gt; map=new HashMap&lt;&gt;();
+        int sum=0,count=0;
+        map.put(0,1);
+        for(int i=0;i&lt;nums.length;i++){
+            sum+=nums[i];
+            if(map.containsKey(sum-k))
+                count+=map.get(sum-k);
+            if(map.containsKey(sum))
+                map.put(sum,map.get(sum)+1);
+            else
+                map.put(sum,1);
+        } 
+        return count;
+    }
+}
+</code></pre><h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
+<p><a href="http://blog.csdn.net/marlonlyh/article/details/75675704" target="_blank">http://blog.csdn.net/marlonlyh/article/details/75675704</a></p>
+
                                 
                                 </section>
                             
@@ -270,7 +318,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"560.  Subarray Sum Equals K","level":"1.3.2","depth":2,"next":{"title":"128.  Longest Consecutive Sequence","level":"1.3.3","depth":2,"path":"answer/128.md","ref":"./answer/128.md","articles":[]},"previous":{"title":"566.  Reshape the Matrix","level":"1.3.1","depth":2,"path":"answer/566.md","ref":"./answer/566.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/560.md","mtime":"2017-09-21T09:53:23.517Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-22T03:47:08.427Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"560.  Subarray Sum Equals K","level":"1.3.2","depth":2,"next":{"title":"128.  Longest Consecutive Sequence","level":"1.3.3","depth":2,"path":"answer/128.md","ref":"./answer/128.md","articles":[]},"previous":{"title":"566.  Reshape the Matrix","level":"1.3.1","depth":2,"path":"answer/566.md","ref":"./answer/566.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/560.md","mtime":"2017-09-23T09:39:58.897Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-23T10:12:35.990Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

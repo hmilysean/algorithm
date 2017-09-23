@@ -225,59 +225,90 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x793A;&#x4F8B;"><a href="https://leetcode.com/problems/distribute-candies/description/" target="_blank">&#x793A;&#x4F8B;</a></h1>
+                                <h1 id="566-reshape-the-matrix"><a href="https://leetcode.com/problems/reshape-the-matrix/description/" target="_blank">566. Reshape the Matrix</a></h1>
 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</h2>
-<p>Given an integer array with even length, where different numbers in this array represent different kinds of candies. Each number means one candy of the corresponding kind. You need to distribute these candies equally in number to brother and sister. Return the maximum number of kinds of candies the sister could gain.</p>
+<p>In MATLAB, there is a very useful function called &apos;reshape&apos;, which can reshape a matrix into a new one with different size but keep its original data.</p>
+<p>You&apos;re given a matrix represented by a two-dimensional array, and two positive integers r and c representing the row number and column number of the wanted reshaped matrix, respectively.</p>
+<p>The reshaped matrix need to be filled with all the elements of the original matrix in the same row-traversing order as they were.</p>
+<p>If the &apos;reshape&apos; operation with given parameters is possible and legal, output the new reshaped matrix; Otherwise, output the original matrix.</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>Input: candies = [1,1,2,2,3,3]
-Output: 3
-Explanation:There are three different kinds of candies (1, 2 and 3), and two candies for each kind.
-Optimal distribution: The sister has candies [1,2,3] and the brother has candies [1,2,3], too. 
-The sister has three different kinds of candies.
+<pre><code>Input: 
+nums = 
+[[1,2],
+ [3,4]]
+r = 1, c = 4
+Output: 
+[[1,2,3,4]]
+Explanation:
+The row-traversing of nums is [1,2,3,4]. The new reshaped matrix is a 1 * 4 matrix, fill it row by row by using the previous list.
 </code></pre><p><strong>Example 2:</strong></p>
-<pre><code>Input: candies = [1,1,2,3]
-Output: 2
-Explanation: For example, the sister has candies [2,3] and the brother has candies [1,1]. 
-The sister has two different kinds of candies, the brother has only one kind of candies.
+<pre><code>Input: 
+nums = 
+[[1,2],
+ [3,4]]
+r = 2, c = 4
+Output: 
+[[1,2],
+ [3,4]]
+Explanation:
+There is no way to reshape a 2 * 2 matrix to a 2 * 4 matrix. So output the original matrix.
 </code></pre><p><strong>Note:</strong></p>
 <ol>
-<li>The length of the given array is in range [2, 10,000], and will be even.</li>
-<li>The number in given array is in range [-100,000, 100,000].</li>
+<li>The height and width of the given matrix is in range [1, 100].</li>
+<li>The given r and c are all positive.</li>
 </ol>
 <h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x5747;&#x5300;&#x957F;&#x5EA6;&#x7684;&#x6574;&#x6570;&#x6570;&#x7EC4;&#xFF0C;&#x8BE5;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x4E0D;&#x540C;&#x6570;&#x5B57;&#x8868;&#x793A;&#x4E0D;&#x540C;&#x79CD;&#x7C7B;&#x7684;&#x7CD6;&#x679C;&#x3002;&#x6BCF;&#x4E2A;&#x6570;&#x5B57;&#x662F;&#x6307;&#x76F8;&#x5E94;&#x7C7B;&#x578B;&#x7684;&#x4E00;&#x4E2A;&#x7CD6;&#x679C;&#x3002;&#x60A8;&#x9700;&#x8981;&#x5206;&#x53D1;&#x8FD9;&#x4E9B;&#x7CD6;&#x679C;&#x540C;&#x6837;&#x5728;&#x6570;&#x91CF;&#x4E0A;&#x5F1F;&#x5F1F;&#x548C;&#x59B9;&#x59B9;&#x3002;&#x8FD4;&#x56DE;&#x59D0;&#x59B9;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x7684;&#x6700;&#x591A;&#x79CD;&#x7C7B;&#x7684;&#x7CD6;&#x679C;&#x3002;</p>
+<p>&#x5728;MATLAB&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;&#x51FD;&#x6570;&#x53EB;&#x505A;&#x201C;reshape&#x201D;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5C06;&#x77E9;&#x9635;&#x91CD;&#x65B0;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x5927;&#x5C0F;&#x4F46;&#x4FDD;&#x6301;&#x5176;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7684;&#x65B0;&#x77E9;&#x9635;&#x3002;</p>
+<p>&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x7531;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x8868;&#x793A;&#x7684;&#x77E9;&#x9635;&#xFF0C;&#x4E24;&#x4E2A;&#x6B63;&#x6574;&#x6570;r&#x548C;c&#x5206;&#x522B;&#x8868;&#x793A;&#x6240;&#x9700;&#x91CD;&#x7EC4;&#x77E9;&#x9635;&#x7684;&#x884C;&#x53F7;&#x548C;&#x5217;&#x53F7;&#x3002;</p>
+<p>&#x91CD;&#x65B0;&#x7EC4;&#x5408;&#x7684;&#x77E9;&#x9635;&#x9700;&#x8981;&#x4EE5;&#x4E0E;&#x5B83;&#x4EEC;&#x76F8;&#x540C;&#x7684;&#x884C;&#x904D;&#x5386;&#x987A;&#x5E8F;&#x586B;&#x5145;&#x539F;&#x59CB;&#x77E9;&#x9635;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5177;&#x6709;&#x7ED9;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x201C;&#x91CD;&#x5851;&#x201D;&#x64CD;&#x4F5C;&#x662F;&#x53EF;&#x884C;&#x4E14;&#x5408;&#x6CD5;&#x7684;&#xFF0C;&#x5219;&#x8F93;&#x51FA;&#x65B0;&#x7684;&#x91CD;&#x6784;&#x77E9;&#x9635;; &#x5426;&#x5219;&#xFF0C;&#x8F93;&#x51FA;&#x539F;&#x59CB;&#x77E9;&#x9635;&#x3002;</p>
 <p><strong>&#x793A;&#x4F8B;1&#xFF1A;</strong></p>
-<pre><code>&#x8F93;&#x5165;&#xFF1A;&#x7CD6;&#x679C;= [1,1,2,2,3,3] 
-&#x8F93;&#x51FA;&#xFF1A; 3 
-&#x8BF4;&#x660E;&#xFF1A;&#x6709;&#x4E09;&#x79CD;&#x4E0D;&#x540C;&#x79CD;&#x7C7B;&#x7684;&#x7CD6;&#x679C;&#xFF08;1,2&#x548C;3&#xFF09;&#xFF0C;&#x6BCF;&#x79CD;&#x7CD6;&#x679C;&#x4E24;&#x79CD;&#x3002;&#x6700;&#x4F73;&#x5206;&#x914D;&#xFF1A;&#x59D0;&#x59D0;&#x6709;&#x7CD6;&#x679C;[1,2,3]&#xFF0C;&#x5144;&#x5F1F;&#x4E5F;&#x6709;&#x7CD6;&#x679C;[1,2,3]&#x3002; &#x59D0;&#x59D0;&#x6709;&#x4E09;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x7CD6;&#x679C;&#x3002;
+<pre><code>&#x8F93;&#x5165;&#xFF1A; 
+nums = 
+[[1,2]&#xFF0C; 
+[3,4] 
+r = 1&#xFF0C;c = 4 
+&#x8F93;&#x51FA;&#xFF1A; 
+[[1,2,3,4]] 
+&#x8BF4;&#x660E;&#xFF1A;num 
+&#x7684;&#x884C;&#x904D;&#x5386;&#x662F;[1,2,3,4]&#x3002;&#x65B0;&#x7684;&#x91CD;&#x6784;&#x77E9;&#x9635;&#x662F;&#x4E00;&#x4E2A;1 * 4&#x77E9;&#x9635;&#xFF0C;&#x4F7F;&#x7528;&#x4E0A;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x9010;&#x884C;&#x586B;&#x5145;&#x3002;
 </code></pre><p><strong>&#x793A;&#x4F8B;2&#xFF1A;</strong></p>
-<pre><code>&#x8F93;&#x5165;&#xFF1A;&#x7CD6;&#x679C;= [1,1,2,3] 
-&#x8F93;&#x51FA;&#xFF1A; 2 
-&#x8BF4;&#x660E;&#xFF1A;&#x4F8B;&#x5982;&#xFF0C;&#x59D0;&#x59D0;&#x6709;&#x7CD6;[2,3]&#xFF0C;&#x5144;&#x5F1F;&#x6709;&#x7CD6;[1,1]&#x3002;&#x59D0;&#x59D0;&#x6709;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x7CD6;&#x679C;&#xFF0C;&#x54E5;&#x54E5;&#x53EA;&#x6709;&#x4E00;&#x79CD;&#x7CD6;&#x679C;&#x3002;
+<pre><code>&#x8F93;&#x5165;&#xFF1A; 
+nums = 
+[[1,2]&#xFF0C; 
+[3,4] 
+r = 1&#xFF0C;c = 4 
+&#x8F93;&#x51FA;&#xFF1A; 
+[[1,2,3,4]] 
+&#x8BF4;&#x660E;&#xFF1A;num 
+&#x7684;&#x884C;&#x904D;&#x5386;&#x662F;[1,2,3,4]&#x3002;&#x65B0;&#x7684;&#x91CD;&#x6784;&#x77E9;&#x9635;&#x662F;&#x4E00;&#x4E2A;1 * 4&#x77E9;&#x9635;&#xFF0C;&#x4F7F;&#x7528;&#x4E0A;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x9010;&#x884C;&#x586B;&#x5145;&#x3002;
 </code></pre><p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
 <ol>
-<li>&#x7ED9;&#x5B9A;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#x5728;[2&#xFF0C;10,000]&#x7684;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x5C06;&#x662F;&#x5747;&#x5300;&#x7684;&#x3002; </li>
-<li>&#x7ED9;&#x5B9A;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6570;&#x5B57;&#x5728;[-100,000&#xFF0C;100,000]&#x7684;&#x8303;&#x56F4;&#x5185;&#x3002;</li>
+<li>&#x7ED9;&#x5B9A;&#x77E9;&#x9635;&#x7684;&#x9AD8;&#x5EA6;&#x548C;&#x5BBD;&#x5EA6;&#x5728;[1,100]&#x8303;&#x56F4;&#x5185;&#x3002; </li>
+<li>&#x7ED9;&#x5B9A;&#x7684;r&#x548C;c&#x90FD;&#x662F;&#x6B63;&#x7684;&#x3002;</li>
 </ol>
 <h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
-<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> hash table</p>
-<p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong>&#x6839;&#x636E;&#x6570;&#x5B57;&#x7684;&#x8303;&#x56F4;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6BD4;200000&#x7A0D;&#x5927;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x5229;&#x7528;&#x6570;&#x7EC4;&#x4E0B;&#x6807;&#x4EE3;&#x8868;&#x7CD6;&#x679C;&#x79CD;&#x7C7B;&#xFF0C;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x503C;&#x4F5C;&#x4E3A;&#x662F;&#x5426;&#x5305;&#x542B;&#x8BE5;&#x79CD;&#x7C7B;&#x7684;&#x6807;&#x8BB0;&#xFF0C;&#x56E0;&#x4E3A;&#x8981;&#x5E73;&#x5206;&#xFF0C;&#x6240;&#x4EE5;&#x6700;&#x540E;&#x53D6;&#x3010;&#x7CD6;&#x679C;&#x79CD;&#x7C7B;&#x6570;&#x3011;&#x548C;&#x3010;&#x7CD6;&#x679C;&#x603B;&#x6570;&#x4E00;&#x534A;&#x3011;&#x4E2D;&#x6700;&#x5C0F;&#x7684;&#x4E00;&#x4E2A;&#x3002;&#x5229;&#x7528;&#x7A7A;&#x95F4;&#x6362;&#x53D6;&#x65F6;&#x95F4;&#x3002;</p>
+<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Array</p>
+<p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong>&#x5C06;&#x77E9;&#x9635;&#x6A2A;&#x5411;&#x5C55;&#x5F00;&#x4E3A;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#xFF0C;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#x4E3A;n=origin_r * origin_c 
+&#x5728;&#x5143;&#x7D20;&#x5728;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x4F4D;&#x7F6E;i&#xFF1A; &#x539F;&#x77E9;&#x9635;&#x4F4D;&#x7F6E;[i/origin_c,i%origin_c]&#xFF0C; &#x65B0;&#x77E9;&#x9635;&#x4F4D;&#x7F6E;[i/c,i%c] </p>
 <p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
-<pre><code>public class Solution {
-    public int distributeCandies(int[] candies) {
-        int result=0;
-        boolean []val=new boolean[200002];
-        for(int i=0;i&lt;candies.length;i++){
-            if(!val[candies[i]+100000]){
-                val[candies[i]+100000] = true;
-                result++;
+<pre><code>class Solution {
+    public int[][] matrixReshape(int[][] nums, int r, int c) {
+        int original_r = nums.length;
+        int original_c = nums[0].length;
+        if (original_r * original_c == r * c) {
+            int[][] result = new int[r][c];
+            for (int i = 0; i &lt; r * c; i++) {
+                result[i / c][i % c] = nums[i / original_c][i % original_c];
             }
+            return result;
+        } else {
+            return nums;
         }
-        return result&gt;candies.length/2 ? candies.length/2 : result;
     }
 }
 </code></pre><h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
-<p><a href="http://blog.csdn.net/grape875499765/article/details/73496929" target="_blank">http://blog.csdn.net/grape875499765/article/details/73496929</a></p>
+<p><a href="http://blog.csdn.net/kangbin825/article/details/71075651" target="_blank">http://blog.csdn.net/kangbin825/article/details/71075651</a></p>
 
                                 
                                 </section>
@@ -317,7 +348,7 @@ The sister has two different kinds of candies, the brother has only one kind of 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"566.  Reshape the Matrix","level":"1.3.1","depth":2,"next":{"title":"560.  Subarray Sum Equals K","level":"1.3.2","depth":2,"path":"answer/560.md","ref":"./answer/560.md","articles":[]},"previous":{"title":"2. 题目解析","level":"1.3","depth":1,"ref":"","articles":[{"title":"566.  Reshape the Matrix","level":"1.3.1","depth":2,"path":"answer/566.md","ref":"./answer/566.md","articles":[]},{"title":"560.  Subarray Sum Equals K","level":"1.3.2","depth":2,"path":"answer/560.md","ref":"./answer/560.md","articles":[]},{"title":"128.  Longest Consecutive Sequence","level":"1.3.3","depth":2,"path":"answer/128.md","ref":"./answer/128.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/566.md","mtime":"2017-09-21T10:09:43.665Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-22T03:47:08.427Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"566.  Reshape the Matrix","level":"1.3.1","depth":2,"next":{"title":"560.  Subarray Sum Equals K","level":"1.3.2","depth":2,"path":"answer/560.md","ref":"./answer/560.md","articles":[]},"previous":{"title":"2. 题目解析","level":"1.3","depth":1,"ref":"","articles":[{"title":"566.  Reshape the Matrix","level":"1.3.1","depth":2,"path":"answer/566.md","ref":"./answer/566.md","articles":[]},{"title":"560.  Subarray Sum Equals K","level":"1.3.2","depth":2,"path":"answer/560.md","ref":"./answer/560.md","articles":[]},{"title":"128.  Longest Consecutive Sequence","level":"1.3.3","depth":2,"path":"answer/128.md","ref":"./answer/128.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/566.md","mtime":"2017-09-23T08:56:39.925Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-23T10:12:35.990Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
