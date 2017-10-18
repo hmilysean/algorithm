@@ -47,7 +47,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="202.md" />
+    <link rel="next" href="202.html" />
     
     
     <link rel="prev" href="128.html" />
@@ -411,9 +411,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.21" data-path="202.md">
+        <li class="chapter " data-level="1.3.21" data-path="202.html">
             
-                <span>
+                <a href="202.html">
             
                     
                     202.   Happy Number
@@ -549,28 +549,29 @@
 </ul>
 <pre><code>&#xFF08; a + b + c ) * 2 - ( a + a + b + b + c ) = c
 </code></pre><p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
-<pre><code>//&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;Hash Table&#xFF08;HashMap&#xFF09;
-class Solution {
-    public int singleNumber(int[] nums) {
-        if(nums.length==0||nums==null){
-            return 0;
+<pre><code class="lang-java"><span class="hljs-comment">//&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;Hash Table&#xFF08;HashMap&#xFF09;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">singleNumber</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
+        <span class="hljs-keyword">if</span>(nums.length==<span class="hljs-number">0</span>||nums==<span class="hljs-keyword">null</span>){
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
         }
-        HashMap&lt;Integer , Integer&gt; map = new HashMap&lt;Integer , Integer&gt;();
-        for(int i=0;i&lt;nums.length;i++){
-            if(!map.containsKey(nums[i])){
-                map.put(nums[i],1);
+        HashMap&lt;Integer , Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;Integer , Integer&gt;();
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;nums.length;i++){
+            <span class="hljs-keyword">if</span>(!map.containsKey(nums[i])){
+                map.put(nums[i],<span class="hljs-number">1</span>);
             }
-            else{
+            <span class="hljs-keyword">else</span>{
                 map.remove(nums[i]);
             }
         }
-        for(Map.Entry&lt;Integer, Integer&gt; m : map.entrySet()){
-            return m.getKey();
+        <span class="hljs-keyword">for</span>(Map.Entry&lt;Integer, Integer&gt; m : map.entrySet()){
+            <span class="hljs-keyword">return</span> m.getKey();
         }
-        return 0;
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
     }
 }
-</code></pre><pre><code>//&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;Bit Manipulation
+</code></pre>
+<pre><code>//&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;Bit Manipulation
 class Solution {
     public int singleNumber(int[] nums) {
         int res = 0;
@@ -636,7 +637,7 @@ class Solution {
                 </a>
                 
                 
-                <a href="202.md" class="navigation navigation-next " aria-label="Next page: 202.   Happy Number">
+                <a href="202.html" class="navigation navigation-next " aria-label="Next page: 202.   Happy Number">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -647,7 +648,7 @@ class Solution {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"136.  Single Number","level":"1.3.20","depth":2,"next":{"title":"202.   Happy Number","level":"1.3.21","depth":2,"path":"answer/202.md","ref":"./answer/202.md","articles":[]},"previous":{"title":"128.  Longest Consecutive Sequence","level":"1.3.19","depth":2,"path":"answer/128.md","ref":"./answer/128.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/136.md","mtime":"2017-10-18T04:09:04.975Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-18T08:22:06.719Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"136.  Single Number","level":"1.3.20","depth":2,"next":{"title":"202.   Happy Number","level":"1.3.21","depth":2,"path":"answer/202.md","ref":"./answer/202.md","articles":[]},"previous":{"title":"128.  Longest Consecutive Sequence","level":"1.3.19","depth":2,"path":"answer/128.md","ref":"./answer/128.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/136.md","mtime":"2017-10-18T11:57:59.870Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-18T11:58:08.587Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
