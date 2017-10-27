@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>19.   Remove Nth Node From End of List · GitBook</title>
+        <title>23.   Merge k Sorted Lists · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -47,10 +47,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="20.html" />
+    <link rel="next" href="26.html" />
     
     
-    <link rel="prev" href="18.html" />
+    <link rel="prev" href="21.html" />
     
 
     </head>
@@ -320,7 +320,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.14" data-path="19.html">
+        <li class="chapter " data-level="1.3.14" data-path="19.html">
             
                 <a href="19.html">
             
@@ -359,7 +359,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.17" data-path="23.html">
+        <li class="chapter active" data-level="1.3.17" data-path="23.html">
             
                 <a href="23.html">
             
@@ -550,7 +550,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >19.   Remove Nth Node From End of List</a>
+        <a href=".." >23.   Merge k Sorted Lists</a>
     </h1>
 </div>
 
@@ -565,64 +565,73 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="19-remove-nth-node-from-end-of-list"><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/" target="_blank">19. Remove Nth Node From End of List</a></h1>
+                                <p>&#xFEFF;# <a href="https://leetcode.com/problems/merge-k-sorted-lists/description/" target="_blank">23. Merge k Sorted Lists </a></p>
 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</h2>
-<p>Given a linked list, remove the nth node from the end of list and return its head.</p>
-<p><strong>Example 1:</strong></p>
-<pre><code>Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.
-After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.
-</code></pre><p><strong>Note:</strong></p>
-<ol>
-<li>Given n will always be valid.</li>
-<li>Try to do this in one pass.</li>
-</ol>
+<p>Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.</p>
 <h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x94FE;&#x8868;&#xFF0C;&#x5220;&#x9664;&#x4ECE;&#x540E;&#x5F80;&#x524D;&#x6570;&#x7684;&#x7B2C;n&#x4E2A;&#x8282;&#x70B9;&#x5E76;&#x4E14;&#x8FD4;&#x56DE;&#x5220;&#x9664;&#x540E;&#x7684;&#x94FE;&#x8868;&#x5934;&#x6307;&#x9488;&#x3002;</p>
-<p><strong>&#x793A;&#x4F8B;1&#xFF1A;</strong></p>
-<pre><code>&#x7ED9;&#x5B9A;&#x7684;&#x94FE;&#x8868;&#xFF1A;1-&gt;2-&gt;3-&gt;4-&gt;5&#xFF0C;n = 2
-&#x5220;&#x9664;&#x5012;&#x6570;&#x7B2C;2&#x4E2A;&#x8282;&#x70B9;&#x540E;&#x7684;&#x94FE;&#x8868;&#xFF1A;1-&gt;2-&gt;3-&gt;5
-</code></pre><p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
-<ol>
-<li>&#x7ED9;&#x5B9A;&#x7684;&#x94FE;&#x8868;&#x603B;&#x662F;&#x6B63;&#x786E;&#x7684;</li>
-<li>&#x5728;&#x4E00;&#x6B21;&#x904D;&#x5386;&#x4E2D;&#x5B8C;&#x6210;&#x64CD;&#x4F5C;</li>
-</ol>
+<p>&#x7ED9;&#x5B9A;k&#x4E2A;&#x6709;&#x5E8F;&#x94FE;&#x8868;,&#x5C06;&#x5176;&#x5408;&#x5E76;&#x4E3A;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x94FE;&#x8868;&#xFF0C;&#x5E76;&#x5206;&#x6790;&#x590D;&#x6742;&#x5EA6;&#x3002;</p>
 <h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
-<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Linked List</p>
+<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> linked list</p>
 <p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
 <ul>
-<li>&#x672C;&#x9898;&#x9700;&#x8981;&#x7EF4;&#x62A4;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#xFF0C;pre&#x548C;end&#x3002;&#x4E00;&#x5F00;&#x59CB;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4F7F;&#x5F97;pre&#x6307;&#x9488;&#x6307;&#x5411;&#x94FE;&#x8868;&#x5934;&#x8282;&#x70B9;&#xFF0C;end&#x6307;&#x9488;&#x6307;&#x5411;pre+n&#x7684;&#x8282;&#x70B9;&#x4F4D;&#x7F6E;&#x3002;&#x7136;&#x540E;&#x540C;&#x65F6;&#x5F80;&#x540E;&#x79FB;&#x52A8;pre&#x548C;end&#x6307;&#x9488;&#x4F4D;&#x7F6E;&#xFF0C;&#x4F7F;&#x5F97;end&#x6307;&#x9488;&#x6307;&#x5411;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x90A3;&#x4E48;pre&#x6307;&#x9488;&#x6307;&#x5411;&#x7684;&#x5219;&#x662F;end-n&#x7684;&#x8282;&#x70B9;&#x4F4D;&#x7F6E;&#xFF08;&#x5373;&#x5012;&#x6570;&#x7B2C;n&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x524D;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF09;&#xFF0C;&#x5219;&#x5C06;&#x5176;&#x5220;&#x9664;&#x3002;</li>
-<li>&#x94FE;&#x8868;&#x957F;&#x5EA6;&#x4E3A;n&#x65F6;&#xFF0C;&#x7B97;&#x6CD5;&#x590D;&#x6742;&#x5EA6;O(n)&#x3002;</li>
+<li>&#x5229;&#x7528;&#x5206;&#x6CBB;&#x7684;&#x601D;&#x60F3;&#x628A;&#x5408;&#x5E76;k&#x4E2A;&#x94FE;&#x8868;&#x5206;&#x6210;&#x4E24;&#x4E2A;&#x5408;&#x5E76;k/2&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x4E00;&#x76F4;&#x5212;&#x5206;&#xFF0C;&#x76F4;&#x5230;&#x4EFB;&#x52A1;&#x4E2D;&#x53EA;&#x5269;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x6216;&#x8005;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x3002;</li>
+<li>&#x5047;&#x8BBE;&#x6BCF;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5E73;&#x5747;&#x957F;&#x5EA6;&#x4E3A;n&#xFF0C;&#x5219;T(k,n) = 2T(k/2,n) + O(nk),&#x5F88;&#x7B80;&#x5355;&#x53EF;&#x4EE5;&#x63A8;&#x5BFC;&#x5F97;&#x5230;&#x7B97;&#x6CD5;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O&#xFF08;nklogk&#xFF09;&#x3002;</li>
 </ul>
 <p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
-<pre><code># Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+<pre><code>/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ * int val;
+ * ListNode *next;
+ * ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
 
+class Solution {
+public:
+    ListNode *mergeKLists(vector&lt;ListNode *&gt; &amp;lists) {
+        int n = lists.size();
+        if(n == 0)return NULL;
+        while(n &gt;1)
+        {
+            int k = (n+1)/2;
+            for(int i = 0; i &lt; n/2; i++)
+                lists[i] = merge2list(lists[i], lists[i + k]);
+            n = k;
+        }
+        return lists[0];
+    }
 
-class Solution(object):
-    def removeNthFromEnd(self, head, n):
-        &quot;&quot;&quot;
-        :type head: ListNode
-        :type n: int
-        :rtype: ListNode
-        &quot;&quot;&quot;
-        pre = head
-        end = head
-        for _ in range(n):
-            end = end.next
-        if end is None:  # &#x9700;&#x8981;&#x5220;&#x9664;&#x7684;&#x8282;&#x70B9;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x5373;&#x8FD4;&#x56DE;&#x7B2C;&#x4E8C;&#x4E2A;&#x8282;&#x70B9;&#x4E3A;&#x5934;&#x8282;&#x70B9;&#x7684;&#x94FE;&#x8868;
-            return head.next
-        while end.next is not None:
-            pre = pre.next
-            end = end.next
-        pre.next = pre.next.next 
-        return head
+    ListNode *merge2list(ListNode *head1, ListNode*head2)
+    {
+        ListNode node(0), *res = &amp;node;
+        while(head1 &amp;&amp; head2)
+        {
+            if(head1-&gt;val &lt;= head2-&gt;val)
+            {
+                res-&gt;next = head1;
+                head1 = head1-&gt;next;
+            }
+            else
+            {
+                res-&gt;next = head2;
+                head2 = head2-&gt;next;
+            }
+            res = res-&gt;next;
+        }
+        if(head1)
+            res-&gt;next = head1;
+        else if(head2)
+            res-&gt;next = head2;
+        return node.next;
+    }
+};
 </code></pre><h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
 <ul>
-<li><a href="http://blog.csdn.net/dongrongyu/article/details/78346583" target="_blank">http://blog.csdn.net/dongrongyu/article/details/78346583</a></li>
-<li>&#x4F5C;&#x8005;&#xFF1A;&#x8463;&#x8363;&#x5809;</li>
+<li><p><a href="http://www.cnblogs.com/TenosDoIt/p/3673188.html" target="_blank">http://www.cnblogs.com/TenosDoIt/p/3673188.html</a></p>
+</li>
+<li><p>&#x4F5C;&#x8005;&#xFF1A;&#x5F20;&#x6D69;&#x5929;</p>
+</li>
 </ul>
 
                                 
@@ -651,12 +660,12 @@ class Solution(object):
 
             
                 
-                <a href="18.html" class="navigation navigation-prev " aria-label="Previous page: 18.  4Sum">
+                <a href="21.html" class="navigation navigation-prev " aria-label="Previous page: 21.   Merge Two Sorted Lists">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="20.html" class="navigation navigation-next " aria-label="Next page: 20.  Valid Parentheses">
+                <a href="26.html" class="navigation navigation-next " aria-label="Next page: 26.  Remove Duplicates from Sorted Array">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -667,7 +676,7 @@ class Solution(object):
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"19.   Remove Nth Node From End of List","level":"1.3.14","depth":2,"next":{"title":"20.  Valid Parentheses","level":"1.3.15","depth":2,"path":"answer/20.md","ref":"./answer/20.md","articles":[]},"previous":{"title":"18.  4Sum","level":"1.3.13","depth":2,"path":"answer/18.md","ref":"./answer/18.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/19.md","mtime":"2017-10-26T04:21:43.078Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-27T09:04:47.359Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"23.   Merge k Sorted Lists","level":"1.3.17","depth":2,"next":{"title":"26.  Remove Duplicates from Sorted Array","level":"1.3.18","depth":2,"path":"answer/26.md","ref":"./answer/26.md","articles":[]},"previous":{"title":"21.   Merge Two Sorted Lists","level":"1.3.16","depth":2,"path":"answer/21.md","ref":"./answer/21.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/23.md","mtime":"2017-10-27T09:03:57.361Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-27T09:04:47.359Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
