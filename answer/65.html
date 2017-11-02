@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>136.  Single Number · GitBook</title>
+        <title>65.  Valid Number · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -47,10 +47,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="202.html" />
+    <link rel="next" href="83.html" />
     
     
-    <link rel="prev" href="128.html" />
+    <link rel="prev" href="38.html" />
     
 
     </head>
@@ -502,7 +502,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.27" data-path="65.html">
+        <li class="chapter active" data-level="1.3.27" data-path="65.html">
             
                 <a href="65.html">
             
@@ -541,7 +541,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.30" data-path="136.html">
+        <li class="chapter " data-level="1.3.30" data-path="136.html">
             
                 <a href="136.html">
             
@@ -628,7 +628,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >136.  Single Number</a>
+        <a href=".." >65.  Valid Number</a>
     </h1>
 </div>
 
@@ -643,111 +643,95 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="136-single-number"><a href="https://leetcode.com/problems/single-number/description/" target="_blank">136. Single Number</a></h1>
+                                <h1 id="65-valid-number-"><a href="https://leetcode.com/problems/valid-number/description/" target="_blank">65. Valid Number </a></h1>
 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</h2>
-<p>Given an array of integers, every element appears <em>twice</em> except for one. Find that single one.</p>
-<p><strong>Note:</strong>
-    Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?</p>
+<p>Validate if a given string is numeric.</p>
+<p>Some examples:</p>
+<font color="Crimson">&quot;0&quot;</font> =&gt; <font color="Crimson">true</font>
+<font color="Crimson">&quot; 0.1 &quot;</font> =&gt; <font color="Crimson">true</font>
+<font color="Crimson">&quot;abc&quot;</font> =&gt; <font color="Crimson">false</font>
+<font color="Crimson">&quot;1 a&quot;</font> =&gt; <font color="Crimson">false</font>
+<font color="Crimson">&quot;2e10&quot;</font> =&gt; <font color="Crimson">true</font>
+
+<p>Note: It is intended for the problem statement to be ambiguous. You should gather all requirements up front before implementing one. </p>
 <h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
-<p>&#x7ED9;&#x51FA;&#x4E00;&#x7EC4;&#x6574;&#x6570;&#x6570;&#x7EC4;&#xFF0C;&#x9664;&#x4E86;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x5916;&#xFF0C;&#x5176;&#x4F59;&#x90FD;&#x51FA;&#x73B0;&#x4E86;&#x4E24;&#x6B21;&#x3002;&#x627E;&#x51FA;&#x90A3;&#x4E2A;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x7684;&#x3002;</p>
-<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong>
-&#x4F60;&#x7684;&#x7B97;&#x6CD5;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x5E94;&#x8BE5;&#x662F;&#x7EBF;&#x6027;&#x7684;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4E0D;&#x4F7F;&#x7528;&#x989D;&#x5916;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x6765;&#x5B8C;&#x6210;&#x5B83;&#x5417;&#xFF1F;</p>
+<p>&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x7ED9;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x4E3A;&#x6570;&#x5B57;&#x3002;</p>
+<p><strong>&#x793A;&#x4F8B;&#xFF1A;</strong></p>
+<pre><code>&quot;0&quot; =&gt; true
+&quot; 0.1 &quot; =&gt; true
+&quot;abc&quot; =&gt; false
+&quot;1 a&quot; =&gt; false
+&quot;2e10&quot; =&gt; true
+</code></pre><p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong>
+&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x53EF;&#x80FD;&#x63CF;&#x8FF0;&#x5F97;&#x4E0D;&#x662F;&#x5F88;&#x6E05;&#x695A;&#x3002;&#x5728;&#x89E3;&#x9898;&#x4E4B;&#x524D;&#x4F60;&#x6700;&#x597D;&#x5148;&#x641C;&#x96C6;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x8981;&#x6C42;&#x3002;</p>
 <h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
-<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Hash Table&#x3001;Bit Manipulation</p>
+<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Math</p>
 <p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
-<p>&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;Hash Table&#xFF08;HashMap-Java&#xFF09;</p>
 <ul>
-<li>&#x904D;&#x5386;&#x6570;&#x7EC4;&#xFF0C;&#x5C06;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x653E;&#x5165;HashMap&#xFF0C;&#x65E0;&#x8BE5;&#x503C;&#x5219;&#x653E;&#x5165;&#xFF0C;&#x6709;&#x8BE5;&#x503C;&#x5219;&#x5220;&#x9664;</li>
-<li>&#x5982;&#x6B64;&#xFF0C;&#x6700;&#x540E;&#x53EA;&#x5269;&#x4E0B;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x5176;&#x4E2D;&#x7684;key&#x503C;&#x5C31;&#x662F;&#x6240;&#x6C42;</li>
-</ul>
-<p>&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;Bit Manipulation &#xFF1A;</p>
-<ul>
-<li>&#x5C06;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x548C;0&#x5F02;&#x6216;&#xFF0C;&#x4F1A;&#x5F97;&#x5230;&#x8BE5;&#x6570;&#x5B57;&#x672C;&#x8EAB;</li>
-</ul>
-<pre><code>a &#x2295; 0 = a
-</code></pre><ul>
-<li>&#x4E24;&#x4E2A;&#x76F8;&#x540C;&#x7684;&#x6570;&#x5B57;&#x5F02;&#x6216;&#xFF0C;&#x4F1A;&#x5F97;&#x5230;0</li>
-</ul>
-<pre><code>a &#x2295; a = 0
-</code></pre><ul>
-<li>&#x5E76;&#x4E14;&#x6709;</li>
-</ul>
-<pre><code>a &#x2295; b &#x2295; a = ( a &#x2295; a ) &#x2295; b = 0 &#x2295; b = b
-</code></pre><ul>
-<li>&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x6240;&#x6709;&#x5143;&#x7D20;&#x5F02;&#x6216;&#x6765;&#x83B7;&#x5F97;&#x7279;&#x522B;&#x7684;&#x90A3;&#x4E00;&#x4E2A;<ul>
-<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A; O(n)</li>
-<li>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A; O(1)</li>
-</ul>
+<li>&#x8FD9;&#x9053;&#x9A8C;&#x8BC1;&#x6570;&#x5B57;&#x7684;&#x9898;&#x6BD4;&#x60F3;&#x8C61;&#x4E2D;&#x7684;&#x8981;&#x590D;&#x6742;&#x7684;&#x591A;&#xFF0C;&#x6709;&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x9700;&#x8981;&#x8003;&#x8651;&#x3002;&#x7F51;&#x4E0A;&#x6709;&#x5F88;&#x591A;&#x89E3;&#x6CD5;&#xFF0C;&#x6709;&#x5229;&#x7528;&#x6709;&#x9650;&#x81EA;&#x52A8;&#x673A;<a href="http://blog.csdn.net/kenden23/article/details/18696083" target="_blank">Finite Automata Machine</a>&#x7684;&#x7A0B;&#x5E8F;&#x5199;&#x7684;&#x7B80;&#x6D01;&#x4F18;&#x96C5;,&#x8FD8;&#x6709;&#x5229;&#x7528;<a href="http://blog.csdn.net/fightforyourdream/article/details/12900751" target="_blank">&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</a>&#x3002;&#xFF0C;&#x66F4;&#x662F;&#x5199;&#x7684;&#x4E27;&#x5FC3;&#x75C5;&#x72C2;&#x7684;&#x7B80;&#x6D01;&#x3002;</li>
+<li><p>&#x4F7F;&#x7528;&#x786E;&#x5B9A;&#x6709;&#x7A77;&#x72B6;&#x6001;&#x81EA;&#x52A8;&#x673A;(DFA)&#x6765;&#x89E3;&#x7B54;&#x6B64;&#x9898;&#x5FC5;&#x7136;&#x662F;&#x6700;&#x4F18;&#x96C5;&#x7684;&#xFF0C;&#x65E0;&#x8BBA;&#x7A7A;&#x95F4;&#x8FD8;&#x662F;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x90FD;&#x6709;&#x4E0D;&#x9519;&#x7684;&#x8868;&#x73B0;&#x3002;&#x6240;&#x8C13;&#x201C;&#x786E;&#x5B9A;&#x6709;&#x7A77;&#x72B6;&#x6001;&#x201D;&#xFF0C;&#x5FC5;&#x7136;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x52A8;&#x624B;&#x6784;&#x9020;&#x51FA;&#x6240;&#x6709;&#x72B6;&#x6001;&#x6765;&#xFF0C;&#x8FD9;&#x662F;&#x5EFA;&#x7ACB;DFA <strong>&#x6700;&#x96BE;</strong> &#x7684;&#x90E8;&#x5206;&#xFF0C;&#x56E0;&#x4E3A;&#x4F60;&#x9700;&#x8981;&#x628A;&#x6BCF;&#x79CD;&#x72B6;&#x51B5;&#x90FD;&#x8003;&#x8651;&#x5230;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code> 0 &#x521D;&#x59CB;&#x65E0;&#x8F93;&#x5165;&#x6216;&#x8005;&#x53EA;&#x6709;space&#x7684;&#x72B6;&#x6001;
+ 1 &#x8F93;&#x5165;&#x4E86;&#x6570;&#x5B57;&#x4E4B;&#x540E;&#x7684;&#x72B6;&#x6001;
+ 2 &#x524D;&#x9762;&#x65E0;&#x6570;&#x5B57;&#xFF0C;&#x53EA;&#x8F93;&#x5165;&#x4E86;dot&#x7684;&#x72B6;&#x6001;
+ 3 &#x8F93;&#x5165;&#x4E86;+/-&#x72B6;&#x6001;
+ 4 &#x524D;&#x9762;&#x6709;&#x6570;&#x5B57;&#x548C;&#x6709;dot&#x7684;&#x72B6;&#x6001;
+ 5 &apos;e&apos; or &apos;E&apos;&#x8F93;&#x5165;&#x540E;&#x7684;&#x72B6;&#x6001;
+ 6 &#x8F93;&#x5165;e&#x4E4B;&#x540E;&#x8F93;&#x5165;+/-&#x7684;&#x72B6;&#x6001;
+ 7 &#x8F93;&#x5165;e&#x540E;&#x8F93;&#x5165;&#x6570;&#x5B57;&#x7684;&#x72B6;&#x6001;
+ 8 &#x524D;&#x9762;&#x6709;&#x6709;&#x6548;&#x6570;&#x8F93;&#x5165;&#x4E4B;&#x540E;&#xFF0C;&#x8F93;&#x5165;space&#x7684;&#x72B6;&#x6001;
+</code></pre><p><img src="https://pic2.zhimg.com/e407d666017e1d3415b2ac8ddfd026d1_b.jpg" alt="DFA"></p>
 </li>
-</ul>
-<p>&#x65B9;&#x6CD5;&#x4E09;&#xFF1A;Math &#xFF1A; </p>
-<ul>
-<li>&#x4F7F;&#x7528;&#x6570;&#x5B66;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x9E21;&#x5154;&#x540C;&#x7B3C;&#x95EE;&#x9898;&#x7684;&#x89E3;&#x6CD5;&#x3002;</li>
-<li>&#x56E0;&#x4E3A;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6570;&#x51FA;&#x73B0;&#x4E86;&#x4E00;&#x6B21;&#xFF0C;&#x6240;&#x4EE5;&#x7528;HashSet&#x83B7;&#x53D6;&#x201C;&#x5934;&#x201D;&#x7684;&#x6570;&#x76EE;&#xFF0C;&#x51FA;&#x73B0;&#x4E86;&#x4E24;&#x6B21;&#x6240;&#x4EE5;&#x4E58;&#x4EE5;2</li>
-<li>&#x7136;&#x540E;&#x51CF;&#x53BB;&#x904D;&#x5386;&#x6570;&#x7EC4;&#x83B7;&#x53D6;&#x7684;&#x201C;&#x811A;&#x201D;&#x7684;&#x6570;&#x76EE;&#xFF0C;&#x5373;&#x5F97;&#x5230;&#x53EA;&#x51FA;&#x73B0;&#x4E86;&#x4E00;&#x6B21;&#x7684;&#x5143;&#x7D20;&#x3002;<ul>
-<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;: O(n+n)=O(n)</li>
-<li>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;: O(n+n)=O(n)</li>
-</ul>
+<li><p>&#x5728;9&#x79CD;&#x72B6;&#x6001;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x53EA;&#x6709;<strong>1&#x3001;4&#x3001;7&#x3001;8</strong>&#x56DB;&#x79CD;&#x72B6;&#x6001;&#x662F;&#x5408;&#x6CD5;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x9898;&#x76EE;&#x8FCE;&#x5203;&#x800C;&#x89E3;&#xFF0C;&#x53EA;&#x8981;&#x6328;&#x4E2A;&#x904D;&#x5386;&#x5B57;&#x7B26;&#xFF0C;&#x901A;&#x8FC7;&#x5224;&#x65AD;&#x904D;&#x5386;&#x5230;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x65F6;&#x7684;&#x72B6;&#x6001;&#x5373;&#x53EF;&#x786E;&#x5B9A;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x5408;&#x6CD5;&#x3002;</p>
 </li>
+<li>&#x5728;&#x7F16;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5730;&#x7528;&#x4E00;&#x4E2A;&#x90BB;&#x63A5;&#x77E9;&#x9635;&#x6765;&#x5B58;&#x50A8;&#x4E0A;&#x56FE;&#x8F6C;&#x79FB;&#x5173;&#x7CFB;&#x3002;</li>
+<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(n)</li>
 </ul>
-<pre><code>&#xFF08; a + b + c ) * 2 - ( a + a + b + b + c ) = c
-</code></pre><p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
-<pre><code class="lang-java"><span class="hljs-comment">//&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;Hash Table&#xFF08;HashMap&#xFF09;</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">singleNumber</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
-        <span class="hljs-keyword">if</span>(nums.length==<span class="hljs-number">0</span>||nums==<span class="hljs-keyword">null</span>){
-            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-        }
-        HashMap&lt;Integer , Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;Integer , Integer&gt;();
-        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;nums.length;i++){
-            <span class="hljs-keyword">if</span>(!map.containsKey(nums[i])){
-                map.put(nums[i],<span class="hljs-number">1</span>);
-            }
-            <span class="hljs-keyword">else</span>{
-                map.remove(nums[i]);
-            }
-        }
-        <span class="hljs-keyword">for</span>(Map.Entry&lt;Integer, Integer&gt; m : map.entrySet()){
-            <span class="hljs-keyword">return</span> m.getKey();
-        }
-        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+<p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
+<pre><code>class Solution {
+public:
+    bool isNumber(string s) { 
+        int INVALID=0;        // 0 Include: Alphas, &apos;(&apos;, &apos;&amp;&apos; ans so on  
+        int SPACE=1;      // 1  
+        int SIGN=2;      // 2 &apos;+&apos;,&apos;-&apos;  
+        int DIGIT=3;      // 3 numbers  
+        int DOT=4;          // 4 &apos;.&apos;  
+        int EXPONENT=5;      // 5 &apos;e&apos; &apos;E&apos;  
+
+        int transTable[][6] = {  
+        //0INVA,1SPA,2SIG,3DI,4DO,5E  
+            -1,  0,  3,  1,  2, -1,//0&#x521D;&#x59CB;&#x65E0;&#x8F93;&#x5165;&#x6216;&#x8005;&#x53EA;&#x6709;space&#x7684;&#x72B6;&#x6001;  
+            -1,  8, -1,  1,  4,  5,//1&#x8F93;&#x5165;&#x4E86;&#x6570;&#x5B57;&#x4E4B;&#x540E;&#x7684;&#x72B6;&#x6001;  
+            -1, -1, -1,  4, -1, -1,//2&#x524D;&#x9762;&#x65E0;&#x6570;&#x5B57;&#xFF0C;&#x53EA;&#x8F93;&#x5165;&#x4E86;Dot&#x7684;&#x72B6;&#x6001;  
+            -1, -1, -1,  1,  2, -1,//3&#x8F93;&#x5165;&#x4E86;&#x7B26;&#x53F7;&#x72B6;&#x6001;  
+            -1,  8, -1,  4, -1,  5,//4&#x524D;&#x9762;&#x6709;&#x6570;&#x5B57;&#x548C;&#x6709;dot&#x7684;&#x72B6;&#x6001;  
+            -1, -1,  6,  7, -1, -1,//5&apos;e&apos; or &apos;E&apos;&#x8F93;&#x5165;&#x540E;&#x7684;&#x72B6;&#x6001;  
+            -1, -1, -1,  7, -1, -1,//6&#x8F93;&#x5165;e&#x4E4B;&#x540E;&#x8F93;&#x5165;Sign&#x7684;&#x72B6;&#x6001;  
+            -1,  8, -1,  7, -1, -1,//7&#x8F93;&#x5165;e&#x540E;&#x8F93;&#x5165;&#x6570;&#x5B57;&#x7684;&#x72B6;&#x6001;  
+            -1,  8, -1, -1, -1, -1,//8&#x524D;&#x9762;&#x6709;&#x6709;&#x6548;&#x6570;&#x8F93;&#x5165;&#x4E4B;&#x540E;&#xFF0C;&#x8F93;&#x5165;space&#x7684;&#x72B6;&#x6001;  
+        };  
+        int state = 0;  
+        for (int i=0;i&lt;s.size();i++)
+        {  
+            int input = INVALID;  
+            if (s[i] == &apos; &apos;) input = SPACE;  
+            else if (s[i] == &apos;+&apos; || s[i] == &apos;-&apos;) input = SIGN;  
+            else if (isdigit(s[i])) input = DIGIT;  
+            else if (s[i] == &apos;.&apos;) input = DOT;  
+            else if (s[i] == &apos;e&apos; || s[i] == &apos;E&apos;) input = EXPONENT;  
+            state = transTable[state][input];  
+            if (state == -1) return false;  
+        }  
+        if(state == 1 || state == 4 || state == 7 || state == 8) return true; 
+        else return false;
+
     }
-}
-</code></pre>
-<pre><code>//&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;Bit Manipulation
-class Solution {
-    public int singleNumber(int[] nums) {
-        int res = 0;
-        for(int i = 0; i &lt; nums.length; i++){
-            res = res ^ nums[i];
-        }
-        return res;
-    }
-}
-</code></pre><pre><code>//&#x65B9;&#x6CD5;&#x4E09;&#xFF1A;Math
-class Solution {
-    public int singleNumber(int[] nums) {
-        if(nums.length==0||nums==null){
-            return 0;
-        }
-        int sum=0;
-        Set&lt;Integer&gt; set= (Set&lt;Integer&gt;) new HashSet();
-        for(int i=0;i&lt;nums.length;i++){
-            set.add(nums[i]);
-            sum+=nums[i];
-        }
-        int sum2=0;
-        Iterator&lt;Integer&gt; ite=set.iterator();
-        while(ite.hasNext()){
-            sum2+=ite.next();
-        }
-        int result=2*sum2-sum;
-        return result;
-    }
-}
+};
 </code></pre><h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
-<p>LeetCode- Bit Manipulation LeetCode&#x603B;&#x7ED3;&#xFF08;1&#xFF09; &#x2014;&#x2014; &#x4F4D;&#x8FD0;&#x7B97;&#xFF1A;<a href="http://blog.csdn.net/xsloop/article/details/47006241" target="_blank">http://blog.csdn.net/xsloop/article/details/47006241</a></p>
-<p><a href="http://blog.csdn.net/zhning12L/article/details/78271157" target="_blank">http://blog.csdn.net/zhning12L/article/details/78271157</a></p>
+<ul>
+<li><a href="http://blog.csdn.net/kenden23/article/details/18696083" target="_blank">http://blog.csdn.net/kenden23/article/details/18696083</a></li>
+<li><a href="https://zhuanlan.zhihu.com/simons/20042325" target="_blank">https://zhuanlan.zhihu.com/simons/20042325</a></li>
+<li>&#x4F5C;&#x8005;&#xFF1A;&#x8FDE;&#x660E;</li>
+</ul>
 
                                 
                                 </section>
@@ -775,12 +759,12 @@ class Solution {
 
             
                 
-                <a href="128.html" class="navigation navigation-prev " aria-label="Previous page: 128.  Longest Consecutive Sequence">
+                <a href="38.html" class="navigation navigation-prev " aria-label="Previous page: 38.  Count and Say">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="202.html" class="navigation navigation-next " aria-label="Next page: 202.   Happy Number">
+                <a href="83.html" class="navigation navigation-next " aria-label="Next page: 83.   Remove Duplicates from Sorted List">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -791,7 +775,7 @@ class Solution {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"136.  Single Number","level":"1.3.30","depth":2,"next":{"title":"202.   Happy Number","level":"1.3.31","depth":2,"path":"answer/202.md","ref":"./answer/202.md","articles":[]},"previous":{"title":"128.  Longest Consecutive Sequence","level":"1.3.29","depth":2,"path":"answer/128.md","ref":"./answer/128.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/136.md","mtime":"2017-10-18T11:57:59.870Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-02T09:26:53.907Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"65.  Valid Number","level":"1.3.27","depth":2,"next":{"title":"83.   Remove Duplicates from Sorted List","level":"1.3.28","depth":2,"path":"answer/83.md","ref":"./answer/83.md","articles":[]},"previous":{"title":"38.  Count and Say","level":"1.3.26","depth":2,"path":"answer/38.md","ref":"./answer/38.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/65.md","mtime":"2017-11-02T09:25:29.568Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-02T09:26:53.907Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
