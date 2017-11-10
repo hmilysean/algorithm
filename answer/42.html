@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.   Add Two Numbers · GitBook</title>
+        <title>42.   Trapping Rain Water · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -47,10 +47,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="3.html" />
+    <link rel="next" href="61.html" />
     
     
-    <link rel="prev" href="1.html" />
+    <link rel="prev" href="38.html" />
     
 
     </head>
@@ -177,7 +177,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="2.html">
+        <li class="chapter " data-level="1.3.2" data-path="2.html">
             
                 <a href="2.html">
             
@@ -528,7 +528,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.29" data-path="42.html">
+        <li class="chapter active" data-level="1.3.29" data-path="42.html">
             
                 <a href="42.html">
             
@@ -693,7 +693,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >2.   Add Two Numbers</a>
+        <a href=".." >42.   Trapping Rain Water</a>
     </h1>
 </div>
 
@@ -708,89 +708,50 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="2-add-two-numbers"><a href="https://leetcode.com/problems/add-two-numbers/description/" target="_blank">2 Add Two Numbers</a></h1>
+                                <h1 id="42-trapping-rain-water"><a href="https://leetcode.com/problems/trapping-rain-water/description/" target="_blank">42. Trapping Rain Water</a></h1>
 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</h2>
-<p>You are given two <strong>non-empty</strong> linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
+<p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</p>
 <p><strong>Example 1:</strong></p>
-<pre><code>Input:(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
-Output: 7 -&gt; 0 -&gt; 8
+<pre><code>Input:[0,1,0,2,1,0,1,3,2,1,2,1]
+Output: 6
+![Image text](http://www.leetcode.com/static/images/problemset/rainwatertrap.png)
+The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped. Thanks Marcos for contributing this image!
 </code></pre><p><strong>Note:</strong></p>
 <ol>
-<li>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</li>
+<li>Suppose negative integers is not palindrome</li>
 </ol>
 <h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
-<p>&#x7ED9;&#x5B9A;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#xFF0C;&#x975E;&#x8D1F;&#x5143;&#x7D20;&#x4ECE;&#x4F4E;&#x4F4D;&#x5411;&#x9AD8;&#x4F4D;&#x6392;&#x5217;&#xFF0C;&#x5982;(2 -&gt; 4 -&gt; 3)&#x8868;&#x793A;342&#x3002;&#x6C42;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x4E4B;&#x548C;&#x5E76;&#x4ECE;&#x4F4E;&#x4F4D;&#x5230;&#x9AD8;&#x4F4D;&#x8F93;&#x51FA;&#x3002;</p>
+<p>&#x7ED9;&#x5B9A;n&#x4E2A;&#x975E;&#x8D1F;&#x6574;&#x6570;&#xFF0C;&#x5B83;&#x4EEC;&#x7528;&#x6765;&#x8868;&#x793A;&#x6BCF;&#x680F;&#x5BBD;&#x5EA6;&#x4E3A;&#x4E00;&#x7684;&#x5730;&#x56FE;&#x7684;&#x6D77;&#x62D4;&#xFF0C;&#x8BA1;&#x7B97;&#x4E0B;&#x96E8;&#x540E;&#x80FD;&#x591F;&#x5B58;&#x50A8;&#x591A;&#x5C11;&#x6C34;</p>
 <p><strong>&#x793A;&#x4F8B;1&#xFF1A;</strong></p>
-<pre><code>&#x8F93;&#x5165;&#xFF1A; (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
-&#x8F93;&#x51FA;&#xFF1A; 7 -&gt; 0 -&gt; 8
-</code></pre><p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
-<ol>
-<li>&#x9664;&#x94FE;&#x8868;&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x4E3A;&#x96F6;&#x5916;&#xFF0C;&#x6570;&#x636E;&#x9996;&#x4F4D;&#x5143;&#x7D20;&#x4E0D;&#x4E3A;&#x96F6;</li>
-</ol>
+<pre><code>&#x8F93;&#x5165;&#xFF1A; [0,1,0,2,1,0,1,3,2,1,2,1]
+&#x8F93;&#x51FA;: 6
+![Image text](http://www.leetcode.com/static/images/problemset/rainwatertrap.png)
+&#x4E0A;&#x9762;&#x7684;&#x5730;&#x56FE;&#x662F;&#x7531;array[0 1 0&#x3001;2&#x3001;1,0,1,3,2,1,2,1]&#x7EC4;&#x6210;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;,&#x4E0B;&#x96E8;&#x540E;&#x6211;&#x4EEC;&#x80FD;&#x5B58;&#x50A8;6&#x5355;&#x4F4D;&#x7684;&#x6C34;&#xFF08;&#x84DD;&#x8272;&#x90E8;&#x5206;&#xFF09;&#x3002;&#x611F;&#x8C22;&#x9A6C;&#x79D1;&#x65AF;&#x8D21;&#x732E;&#x8FD9;&#x5F20;&#x7167;&#x7247;!
+</code></pre><p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong>
+NULL</p>
 <h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
-<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Array</p>
+<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Two Pointers</p>
 <p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
 <ul>
-<li>&#x6A21;&#x62DF;&#x5341;&#x8FDB;&#x5236;&#x52A0;&#x6CD5;&#x8FD0;&#x7B97;&#xFF0C;&#x4ECE;&#x4F4E;&#x4F4D;&#x5230;&#x9AD8;&#x4F4D;&#x4E24;&#x4E2A;&#x94FE;&#x8868;l1,l2&#x516C;&#x5171;&#x90E8;&#x5206;&#x4F9D;&#x6B21;&#x76F8;&#x52A0;&#x6C42;&#x548C;&#xFF0C;&#x94FE;&#x8868;l3&#x4E3A;&#x5BF9;&#x5E94;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x548C;&#xFF0C;&#x7B49;&#x4E8E;&#x672C;&#x4F4D;&#x76F8;&#x52A0;&#x518D;&#x52A0;&#x4E0A;&#x8FDB;&#x4F4D;&#x3002;</li>
-<li>&#x5F53;&#x672C;&#x4F4D;&#x4E4B;&#x548C;&#x52A0;&#x8FDB;&#x4F4D;&#x5927;&#x4E8E;10&#x65F6;&#xFF0C;&#x8FDB;&#x4F4D;&#x4E3A;1&#xFF0C;&#x4FDD;&#x7559;&#x672C;&#x4F4D;&#x4E4B;&#x548C;&#x52A0;&#x8FDB;&#x4F4D;&#x51CF;&#x53BB;10&#x4F5C;&#x4E3A;l3&#x672C;&#x4F4D;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x8FDB;&#x4F4D;&#x4E3A;&#x96F6;&#xFF0C;&#x672C;&#x4F4D;&#x4E4B;&#x548C;&#x52A0;&#x8FDB;&#x4F4D;&#x4F5C;&#x4E3A;l3&#x7684;&#x672C;&#x4F4D;</li>
-<li>&#x6700;&#x540E;&#x5BF9;&#x4E8E;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x4E2D;&#x957F;&#x7684;&#x90A3;&#x4E00;&#x4E2A;&#xFF0C;&#x5C06;&#x6700;&#x4F4E;&#x4F4D;&#x52A0;&#x4E0A;&#x8FDB;&#x4F4D;&#x7EE7;&#x7EED;&#x6C42;&#x548C;&#x540E;&#x94FE;&#x63A5;&#x5230;l3&#x540E;&#x9762;&#x4F5C;&#x4E3A;&#x8F93;&#x51FA;&#x5373;&#x53EF;&#x3002;</li>
+<li>&#x57FA;&#x672C;&#x601D;&#x8DEF;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF0C;&#x7528;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#x4ECE;&#x4E24;&#x7AEF;&#x5F80;&#x4E2D;&#x95F4;&#x626B;&#xFF0C;&#x5728;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x54EA;&#x4E00;&#x4FA7;&#x7684;&#x9AD8;&#x5EA6;&#x662F;&#x5C0F;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x4ECE;&#x8FD9;&#x91CC;&#x5F00;&#x59CB;&#x7EE7;&#x7EED;&#x626B;&#xFF0C;&#x5982;&#x679C;&#x6BD4;&#x5B83;&#x8FD8;&#x5C0F;&#x7684;&#xFF0C;&#x80AF;&#x5B9A;&#x88C5;&#x6C34;&#x7684;&#x74F6;&#x9888;&#x5C31;&#x662F;&#x5B83;&#x4E86;&#xFF0C;</li>
+<li>&#x53EF;&#x4EE5;&#x628A;&#x88C5;&#x6C34;&#x91CF;&#x52A0;&#x5165;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#x679C;&#x9047;&#x5230;&#x6BD4;&#x5B83;&#x5927;&#x7684;&#xFF0C;&#x7ACB;&#x5373;&#x505C;&#x6B62;&#xFF0C;&#x91CD;&#x65B0;&#x5224;&#x65AD;&#x5DE6;&#x53F3;&#x7A97;&#x53E3;&#x7684;&#x5927;&#x5C0F;&#x60C5;&#x51B5;&#xFF0C;&#x91CD;&#x590D;&#x4E0A;&#x9762;&#x7684;&#x6B65;&#x9AA4;&#x3002;</li>
+<li>&#x8FD9;&#x91CC;&#x80FD;&#x4F5C;&#x4E3A;&#x505C;&#x4E0B;&#x6765;&#x5224;&#x65AD;&#x7684;&#x7A97;&#x53E3;&#xFF0C;&#x8BF4;&#x660E;&#x80AF;&#x5B9A;&#x6BD4;&#x524D;&#x9762;&#x7684;&#x5927;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x76EE;&#x524D;&#x80AF;&#x5B9A;&#x88C5;&#x4E0D;&#x4E86;&#x6C34;&#xFF08;&#x4E0D;&#x7136;&#x524D;&#x9762;&#x4F1A;&#x76F4;&#x63A5;&#x626B;&#x8FC7;&#x53BB;&#xFF09;&#x3002;</li>
+<li>&#x8FD9;&#x6837;&#x5F53;&#x5DE6;&#x53F3;&#x7A97;&#x53E3;&#x76F8;&#x9047;&#x65F6;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7ED3;&#x675F;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x88C5;&#x6C34;&#x91CF;&#x90FD;&#x5DF2;&#x7ECF;&#x8BB0;&#x5F55;&#x8FC7;&#x4E86;&#x3002;</li>
 </ul>
 <p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
-<pre><code># Definition for singly-linked list.  
-# class ListNode(object):  
-#     def __init__(self, x):  
-#         self.val = x  
-#         self.next = None  
-
-class Solution(object):  
-    def addTwoNumbers(self, l1, l2):  
-        &quot;&quot;&quot; 
-        :type l1: ListNode 
-        :type l2: ListNode 
-        :rtype: ListNode 
-        &quot;&quot;&quot;  
-        l3, p1, p2= ListNode(0), l1, l2   #l3&#x4E3A;&#x65B0;&#x94FE;&#x8868;&#x5934;&#x7ED3;&#x70B9;
-        temp = l3 #&#x5F53;&#x524D;&#x548C;&#x524D;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6307;&#x9488;(&#x4E0D;&#x8BBE;temp=l3.next&#xFF0C;&#x9632;&#x6B62;&#x8D4B;&#x7A7A;&#x503C;&#x51FA;&#x73B0;&#x9519;&#x8BEF;)  
-        carry = 0  #&#x8FDB;&#x4F4D;  
-        while p1 and p2:    #&#x904D;&#x5386;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x516C;&#x5171;&#x90E8;&#x5206;  
-            num = p1.val + p2.val + carry  
-            if num &gt; 9:  
-                num -= 10  
-                carry = 1 #&#x548C;&#x5927;&#x4E8E;10&#xFF0C;&#x8FDB;&#x4F4D;&#x4E3A;1 
-            else:  
-                carry = 0  #&#x548C;&#x5C0F;&#x4E8E;10&#xFF0C;&#x8FDB;&#x4F4D;&#x4E3A;0
-            # &#x5C3E;&#x63D2;&#x6CD5;&#x6DFB;&#x52A0;&#x7ED3;&#x70B9;  
-            temp.next = ListNode(num)  
-            temp = temp.next  
-            # &#x5411;&#x540E;&#x79FB;&#x52A8;l1,l2&#x5DE5;&#x4F5C;&#x6307;&#x9488;  
-            p1 = p1.next  
-            p2 = p2.next
-        #END WHILE
-        # &#x53D6;&#x4E24;&#x6761;&#x94FE;&#x957F;&#x7684;&#x90A3;&#x6761;&#x5269;&#x4E0B;&#x7684;&#x90E8;&#x5206;  
-        if p2: p1 = p2  
-        #&#x5BF9;&#x957F;&#x7684;&#x94FE;&#x8868;&#x7EE7;&#x7EED;&#x6C42;&#x548C;
-        while p1:  
-            num = p1.val + carry  #&#x52A0;&#x4E0A;&#x8FDB;&#x4F4D;
-            if (num &gt; 9):  
-                num -= 10  
-                carry = 1  
-            else:  
-                carry = 0 
-           #&#x5C3E;&#x63D2;&#x6CD5;&#x6DFB;&#x52A0;&#x65B0;&#x8282;&#x70B9;   
-            temp.next = ListNode(num)  
-            temp = temp.next  
-           #&#x5411;&#x540E;&#x79FB;&#x52A8;&#x5DE5;&#x4F5C;&#x6307;&#x9488; 
-            p1 = p1.next  
-        # &#x5982;&#x679C;&#x6700;&#x540E;&#x8FD8;&#x6709;&#x8FDB;&#x4F4D;&#xFF0C;&#x518D;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x503C;&#x4E3A;1  
-        if carry:  
-            temp.next = ListNode(1)  
-            temp = temp.next  
-        temp.next = None    # &#x5C06;&#x94FE;&#x8868;&#x6536;&#x5C3E;  
-        return l3.next    #&#x53BB;&#x6389;&#x7A7A;&#x7684;&#x5934;&#x7ED3;&#x70B9;
+<pre><code>int trap(int* height, int heightSize) {
+    int *L = height, *R = L+heightSize-1, level = 0, water = 0;
+    while (L &lt; R) {
+        int lower = *L &lt; *R ? *L++ : *R--;
+        if (lower &gt; level) level = lower;
+        water += level - lower;
+    }
+    return water;
+}
 </code></pre><h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
 <ul>
-<li><a href="http://blog.csdn.net/yingzinanfei/article/details/53090067" target="_blank">http://blog.csdn.net/yingzinanfei/article/details/53090067</a></li>
-<li>&#x4F5C;&#x8005;&#xFF1A;&#x9648;&#x6B62;&#x98CE;</li>
+<li><a href="http://blog.csdn.net/linhuanmars/article/details/20888505" target="_blank">http://blog.csdn.net/linhuanmars/article/details/20888505</a></li>
+<li>&#x4F5C;&#x8005;&#xFF1A;&#x6BB5;&#x9759;</li>
 </ul>
 
                                 
@@ -819,12 +780,12 @@ class Solution(object):
 
             
                 
-                <a href="1.html" class="navigation navigation-prev " aria-label="Previous page: 1.  Two Sum">
+                <a href="38.html" class="navigation navigation-prev " aria-label="Previous page: 38.  Count and Say">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="3.html" class="navigation navigation-next " aria-label="Next page: 3.  Longest Substring Without Repeating Characters">
+                <a href="61.html" class="navigation navigation-next " aria-label="Next page: 61.   Rotate List">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -835,7 +796,7 @@ class Solution(object):
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.   Add Two Numbers","level":"1.3.2","depth":2,"next":{"title":"3.  Longest Substring Without Repeating Characters","level":"1.3.3","depth":2,"path":"answer/3.md","ref":"./answer/3.md","articles":[]},"previous":{"title":"1.  Two Sum","level":"1.3.1","depth":2,"path":"answer/1.md","ref":"./answer/1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/2.md","mtime":"2017-10-25T05:57:49.879Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-10T09:50:06.474Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"42.   Trapping Rain Water","level":"1.3.29","depth":2,"next":{"title":"61.   Rotate List","level":"1.3.30","depth":2,"path":"answer/61.md","ref":"./answer/61.md","articles":[]},"previous":{"title":"38.  Count and Say","level":"1.3.28","depth":2,"path":"answer/38.md","ref":"./answer/38.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/42.md","mtime":"2017-11-10T09:49:10.941Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-10T09:50:06.474Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

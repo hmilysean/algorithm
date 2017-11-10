@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.   Add Two Numbers · GitBook</title>
+        <title>75.   Sort Colors · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -47,10 +47,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="3.html" />
+    <link rel="next" href="83.html" />
     
     
-    <link rel="prev" href="1.html" />
+    <link rel="prev" href="65.html" />
     
 
     </head>
@@ -177,7 +177,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="2.html">
+        <li class="chapter " data-level="1.3.2" data-path="2.html">
             
                 <a href="2.html">
             
@@ -567,7 +567,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.32" data-path="75.html">
+        <li class="chapter active" data-level="1.3.32" data-path="75.html">
             
                 <a href="75.html">
             
@@ -693,7 +693,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >2.   Add Two Numbers</a>
+        <a href=".." >75.   Sort Colors</a>
     </h1>
 </div>
 
@@ -708,90 +708,48 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="2-add-two-numbers"><a href="https://leetcode.com/problems/add-two-numbers/description/" target="_blank">2 Add Two Numbers</a></h1>
+                                <h1 id="75-sort-colors"><a href="https://leetcode.com/problems/sort-colors/description/" target="_blank">75 Sort Colors.</a></h1>
 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</h2>
-<p>You are given two <strong>non-empty</strong> linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<p><strong>Example 1:</strong></p>
-<pre><code>Input:(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
-Output: 7 -&gt; 0 -&gt; 8
-</code></pre><p><strong>Note:</strong></p>
-<ol>
-<li>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</li>
-</ol>
+<p>Given an array with n objects colored red, white or blue, sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.</p>
+<p>Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.</p>
+<p><strong>Example :</strong></p>
+<pre><code>Example: 0,2,1,0,2,2,1,0
+</code></pre><p><strong>Note:</strong>
+You are not suppose to use the library&apos;s sort function for this problem.</p>
 <h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
-<p>&#x7ED9;&#x5B9A;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#xFF0C;&#x975E;&#x8D1F;&#x5143;&#x7D20;&#x4ECE;&#x4F4E;&#x4F4D;&#x5411;&#x9AD8;&#x4F4D;&#x6392;&#x5217;&#xFF0C;&#x5982;(2 -&gt; 4 -&gt; 3)&#x8868;&#x793A;342&#x3002;&#x6C42;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x4E4B;&#x548C;&#x5E76;&#x4ECE;&#x4F4E;&#x4F4D;&#x5230;&#x9AD8;&#x4F4D;&#x8F93;&#x51FA;&#x3002;</p>
-<p><strong>&#x793A;&#x4F8B;1&#xFF1A;</strong></p>
-<pre><code>&#x8F93;&#x5165;&#xFF1A; (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
-&#x8F93;&#x51FA;&#xFF1A; 7 -&gt; 0 -&gt; 8
-</code></pre><p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
-<ol>
-<li>&#x9664;&#x94FE;&#x8868;&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x4E3A;&#x96F6;&#x5916;&#xFF0C;&#x6570;&#x636E;&#x9996;&#x4F4D;&#x5143;&#x7D20;&#x4E0D;&#x4E3A;&#x96F6;</li>
-</ol>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x7EA2;&#x8272;&#xFF0C;&#x767D;&#x8272;&#x6216;&#x84DD;&#x8272;&#x7684;n&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x5BF9;&#x5B83;&#x4EEC;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x4F7F;&#x76F8;&#x540C;&#x989C;&#x8272;&#x7684;&#x5BF9;&#x8C61;&#x76F8;&#x90BB;&#xFF0C;&#x989C;&#x8272;&#x987A;&#x5E8F;&#x4E3A;&#x7EA2;&#x8272;&#xFF0C;&#x767D;&#x8272;&#x548C;&#x84DD;&#x8272;&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x6574;&#x6570;0,1&#x548C;2&#x5206;&#x522B;&#x8868;&#x793A;&#x7EA2;&#x8272;&#xFF0C;&#x767D;&#x8272;&#x548C;&#x84DD;&#x8272;&#x3002;</p>
+<p><strong>&#x793A;&#x4F8B;&#xFF1A;</strong></p>
+<pre><code>&#x793A;&#x4F8B;: 0,2,1,0,2,2,1,0
+</code></pre><p><em>*&#x6CE8;&#x610F;&#xFF1A;</em>
+&#x5BF9;&#x4E8E;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x5DF2;&#x6709;&#x7684;&#x6392;&#x5E8F;&#x5E93;</p>
 <h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
-<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Array</p>
-<p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
-<ul>
-<li>&#x6A21;&#x62DF;&#x5341;&#x8FDB;&#x5236;&#x52A0;&#x6CD5;&#x8FD0;&#x7B97;&#xFF0C;&#x4ECE;&#x4F4E;&#x4F4D;&#x5230;&#x9AD8;&#x4F4D;&#x4E24;&#x4E2A;&#x94FE;&#x8868;l1,l2&#x516C;&#x5171;&#x90E8;&#x5206;&#x4F9D;&#x6B21;&#x76F8;&#x52A0;&#x6C42;&#x548C;&#xFF0C;&#x94FE;&#x8868;l3&#x4E3A;&#x5BF9;&#x5E94;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x548C;&#xFF0C;&#x7B49;&#x4E8E;&#x672C;&#x4F4D;&#x76F8;&#x52A0;&#x518D;&#x52A0;&#x4E0A;&#x8FDB;&#x4F4D;&#x3002;</li>
-<li>&#x5F53;&#x672C;&#x4F4D;&#x4E4B;&#x548C;&#x52A0;&#x8FDB;&#x4F4D;&#x5927;&#x4E8E;10&#x65F6;&#xFF0C;&#x8FDB;&#x4F4D;&#x4E3A;1&#xFF0C;&#x4FDD;&#x7559;&#x672C;&#x4F4D;&#x4E4B;&#x548C;&#x52A0;&#x8FDB;&#x4F4D;&#x51CF;&#x53BB;10&#x4F5C;&#x4E3A;l3&#x672C;&#x4F4D;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x8FDB;&#x4F4D;&#x4E3A;&#x96F6;&#xFF0C;&#x672C;&#x4F4D;&#x4E4B;&#x548C;&#x52A0;&#x8FDB;&#x4F4D;&#x4F5C;&#x4E3A;l3&#x7684;&#x672C;&#x4F4D;</li>
-<li>&#x6700;&#x540E;&#x5BF9;&#x4E8E;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x4E2D;&#x957F;&#x7684;&#x90A3;&#x4E00;&#x4E2A;&#xFF0C;&#x5C06;&#x6700;&#x4F4E;&#x4F4D;&#x52A0;&#x4E0A;&#x8FDB;&#x4F4D;&#x7EE7;&#x7EED;&#x6C42;&#x548C;&#x540E;&#x94FE;&#x63A5;&#x5230;l3&#x540E;&#x9762;&#x4F5C;&#x4E3A;&#x8F93;&#x51FA;&#x5373;&#x53EF;&#x3002;</li>
-</ul>
+<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Sort</p>
 <p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
-<pre><code># Definition for singly-linked list.  
-# class ListNode(object):  
-#     def __init__(self, x):  
-#         self.val = x  
-#         self.next = None  
+<pre><code>public class Solution {
+    public void swap(int[] A,int a,int b){
+        int temp = A[a];
+        A[a] = A[b];
+        A[b] = temp;
+    }
 
-class Solution(object):  
-    def addTwoNumbers(self, l1, l2):  
-        &quot;&quot;&quot; 
-        :type l1: ListNode 
-        :type l2: ListNode 
-        :rtype: ListNode 
-        &quot;&quot;&quot;  
-        l3, p1, p2= ListNode(0), l1, l2   #l3&#x4E3A;&#x65B0;&#x94FE;&#x8868;&#x5934;&#x7ED3;&#x70B9;
-        temp = l3 #&#x5F53;&#x524D;&#x548C;&#x524D;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6307;&#x9488;(&#x4E0D;&#x8BBE;temp=l3.next&#xFF0C;&#x9632;&#x6B62;&#x8D4B;&#x7A7A;&#x503C;&#x51FA;&#x73B0;&#x9519;&#x8BEF;)  
-        carry = 0  #&#x8FDB;&#x4F4D;  
-        while p1 and p2:    #&#x904D;&#x5386;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x516C;&#x5171;&#x90E8;&#x5206;  
-            num = p1.val + p2.val + carry  
-            if num &gt; 9:  
-                num -= 10  
-                carry = 1 #&#x548C;&#x5927;&#x4E8E;10&#xFF0C;&#x8FDB;&#x4F4D;&#x4E3A;1 
-            else:  
-                carry = 0  #&#x548C;&#x5C0F;&#x4E8E;10&#xFF0C;&#x8FDB;&#x4F4D;&#x4E3A;0
-            # &#x5C3E;&#x63D2;&#x6CD5;&#x6DFB;&#x52A0;&#x7ED3;&#x70B9;  
-            temp.next = ListNode(num)  
-            temp = temp.next  
-            # &#x5411;&#x540E;&#x79FB;&#x52A8;l1,l2&#x5DE5;&#x4F5C;&#x6307;&#x9488;  
-            p1 = p1.next  
-            p2 = p2.next
-        #END WHILE
-        # &#x53D6;&#x4E24;&#x6761;&#x94FE;&#x957F;&#x7684;&#x90A3;&#x6761;&#x5269;&#x4E0B;&#x7684;&#x90E8;&#x5206;  
-        if p2: p1 = p2  
-        #&#x5BF9;&#x957F;&#x7684;&#x94FE;&#x8868;&#x7EE7;&#x7EED;&#x6C42;&#x548C;
-        while p1:  
-            num = p1.val + carry  #&#x52A0;&#x4E0A;&#x8FDB;&#x4F4D;
-            if (num &gt; 9):  
-                num -= 10  
-                carry = 1  
-            else:  
-                carry = 0 
-           #&#x5C3E;&#x63D2;&#x6CD5;&#x6DFB;&#x52A0;&#x65B0;&#x8282;&#x70B9;   
-            temp.next = ListNode(num)  
-            temp = temp.next  
-           #&#x5411;&#x540E;&#x79FB;&#x52A8;&#x5DE5;&#x4F5C;&#x6307;&#x9488; 
-            p1 = p1.next  
-        # &#x5982;&#x679C;&#x6700;&#x540E;&#x8FD8;&#x6709;&#x8FDB;&#x4F4D;&#xFF0C;&#x518D;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x503C;&#x4E3A;1  
-        if carry:  
-            temp.next = ListNode(1)  
-            temp = temp.next  
-        temp.next = None    # &#x5C06;&#x94FE;&#x8868;&#x6536;&#x5C3E;  
-        return l3.next    #&#x53BB;&#x6389;&#x7A7A;&#x7684;&#x5934;&#x7ED3;&#x70B9;
-</code></pre><h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
-<ul>
-<li><a href="http://blog.csdn.net/yingzinanfei/article/details/53090067" target="_blank">http://blog.csdn.net/yingzinanfei/article/details/53090067</a></li>
-<li>&#x4F5C;&#x8005;&#xFF1A;&#x9648;&#x6B62;&#x98CE;</li>
-</ul>
+    public void sortColors(int [] nums){
+        int length = nums.length;
+        int i=0,r=0,b=0;
+        for (i=0;i&lt;length-b;i++){
+            if (nums[i] == 0) {
+                swap(nums, i, r);
+                r++;
+            } else if (nums[i] == 2) {
+                swap(nums, i, length-1-b);
+                b++;
+                i--; 
+            }
+        }
+
+    }
+}
+</code></pre><h6 id="author&#x5F20;&#x6D69;">Author:&#x5F20;&#x6D69;</h6>
 
                                 
                                 </section>
@@ -819,12 +777,12 @@ class Solution(object):
 
             
                 
-                <a href="1.html" class="navigation navigation-prev " aria-label="Previous page: 1.  Two Sum">
+                <a href="65.html" class="navigation navigation-prev " aria-label="Previous page: 65.  Valid Number">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="3.html" class="navigation navigation-next " aria-label="Next page: 3.  Longest Substring Without Repeating Characters">
+                <a href="83.html" class="navigation navigation-next " aria-label="Next page: 83.   Remove Duplicates from Sorted List">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -835,7 +793,7 @@ class Solution(object):
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.   Add Two Numbers","level":"1.3.2","depth":2,"next":{"title":"3.  Longest Substring Without Repeating Characters","level":"1.3.3","depth":2,"path":"answer/3.md","ref":"./answer/3.md","articles":[]},"previous":{"title":"1.  Two Sum","level":"1.3.1","depth":2,"path":"answer/1.md","ref":"./answer/1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/2.md","mtime":"2017-10-25T05:57:49.879Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-10T09:50:06.474Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"75.   Sort Colors","level":"1.3.32","depth":2,"next":{"title":"83.   Remove Duplicates from Sorted List","level":"1.3.33","depth":2,"path":"answer/83.md","ref":"./answer/83.md","articles":[]},"previous":{"title":"65.  Valid Number","level":"1.3.31","depth":2,"path":"answer/65.md","ref":"./answer/65.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/75.md","mtime":"2017-11-10T09:49:07.016Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-10T09:50:06.474Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
