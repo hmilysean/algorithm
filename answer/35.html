@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>13.  Roman to Integer · GitBook</title>
+        <title>35.  Search Insert Position · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -47,10 +47,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="14.html" />
+    <link rel="next" href="36.html" />
     
     
-    <link rel="prev" href="12.html" />
+    <link rel="prev" href="34.md" />
     
 
     </head>
@@ -307,7 +307,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.12" data-path="13.html">
+        <li class="chapter " data-level="1.3.12" data-path="13.html">
             
                 <a href="13.html">
             
@@ -515,7 +515,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.28" data-path="35.html">
+        <li class="chapter active" data-level="1.3.28" data-path="35.html">
             
                 <a href="35.html">
             
@@ -758,7 +758,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >13.  Roman to Integer</a>
+        <a href=".." >35.  Search Insert Position</a>
     </h1>
 </div>
 
@@ -773,60 +773,62 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="13-roman-to-integer"><a href="https://leetcode.com/problems/roman-to-integer/description/" target="_blank">13. Roman to Integer</a></h1>
+                                <h1 id="35-search-insert-position"><a href="https://leetcode.com/problems/search-insert-position/description/" target="_blank">35. Search Insert Position</a></h1>
 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</h2>
-<p>Given a roman numeral, convert it to an integer.</p>
+<p>Given an integer, convert it to a roman numeral.</p>
 <p>Input is guaranteed to be within the range from 1 to 3999.</p>
-<h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
-<p>&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x7F57;&#x9A6C;&#x6570;&#x5B57;&#xFF0C;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A;&#x6574;&#x6570;</p>
-<p>&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x5728; 1 &#x5230; 3999 &#x4E4B;&#x95F4;</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: [1,3,5,6], 5
+Output: 2
+</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: [1,3,5,6], 2
+Output: 1
+</code></pre><p><strong>Example 3:</strong></p>
+<pre><code>Input: [1,3,5,6], 7
+Output: 4
+</code></pre><p><strong>Example 4:</strong></p>
+<pre><code>Input: [1,3,5,6], 0
+Output: 0
+</code></pre><h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;target&#xFF0C;&#x548C;&#x6709;&#x5E8F;&#x5E8F;&#x5217;&#xFF0C;&#x5982;&#x679C;target&#x5728;&#x5E8F;&#x5217;&#x4E2D;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x5176;&#x7D22;&#x5F15;&#xFF0C;&#x5426;&#x5219;&#x7ED9;&#x51FA;&#x5F53;&#x63D2;&#x5165;target&#x4E14;&#x4E0D;&#x6539;&#x53D8;&#x5E8F;&#x5217;&#x6027;&#x8D28;&#x65F6;&#x63D2;&#x5165;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x7D22;&#x5F15;&#xFF09;&#x3002;</p>
 <h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
-<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> String</p>
-<p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
-<ul>
-<li>&#x9996;&#x5148;&#x8981;&#x6E05;&#x695A;&#x7F57;&#x9A6C;&#x6570;&#x5B57;&#x7684;&#x7EC4;&#x6210;&#x89C4;&#x5219;&#x3002;&#x5B83;&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x7531;&#x6709;&#x9650;&#x7684;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x7EC4;&#x6210;&#x3002;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x4F4D;&#x4EE5;&#x53CA;&#x91CD;&#x590D;&#x6B21;&#x6570;&#x9650;&#x5236;&#x6765;&#x7EC4;&#x6210;&#x522B;&#x7684;&#x6570;&#x5B57;&#x3002;&#x5B83;&#x4EEC;&#x57FA;&#x672C;&#x7684;&#x5B57;&#x7B26;&#x5C31;&#x662F;&#x5982;&#x4E0B;&#x51E0;&#x4E2A;&#xFF1A;<pre><code>I: 1    V: 5    X: 10    L: 50
-C: 100    D: 500    M: 1000
-</code></pre></li>
-<li><p>&#x6240;&#x4EE5;&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x7F57;&#x9A6C;&#x6570;&#x5B57;&#xFF0C;&#x65E0;&#x975E;&#x5C31;&#x662F;&#x8981;&#x5C06;&#x4E00;&#x4E32;&#x7F57;&#x9A6C;&#x6570;&#x5B57;&#x7ED9;&#x89E3;&#x6790;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x963F;&#x62C9;&#x4F2F;&#x6570;&#x5B57;&#x5E76;&#x5C06;&#x7ED3;&#x679C;&#x52A0;&#x8D77;&#x6765;&#x3002;&#x8FD9;&#x91CC;&#x8BE5;&#x5982;&#x4F55;&#x5BF9;&#x7ED9;&#x5B9A;&#x7684;&#x7F57;&#x9A6C;&#x6570;&#x5B57;&#x4E32;&#x89E3;&#x6790;&#x5C31;&#x662F;&#x95EE;&#x9898;&#x7684;&#x6838;&#x5FC3;&#x3002;</p>
-<ul>
-<li>&#x76F8;&#x540C;&#x7684;&#x6570;&#x5B57;&#x8FDE;&#x5199;&#xFF0C;&#x6240;&#x8868;&#x793A;&#x7684;&#x6570;&#x7B49;&#x4E8E;&#x8FD9;&#x4E9B;&#x6570;&#x5B57;&#x76F8;&#x52A0;&#x5F97;&#x5230;&#x7684;&#x6570;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;III = 3</li>
-<li>&#x5C0F;&#x7684;&#x6570;&#x5B57;&#x5728;&#x5927;&#x7684;&#x6570;&#x5B57;&#x53F3;&#x8FB9;&#xFF0C;&#x6240;&#x8868;&#x793A;&#x7684;&#x6570;&#x7B49;&#x4E8E;&#x8FD9;&#x4E9B;&#x6570;&#x5B57;&#x76F8;&#x52A0;&#x5F97;&#x5230;&#x7684;&#x6570;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;VIII = 8</li>
-<li>&#x5C0F;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x9650;&#x4E8E;&#xFF08;I&#x3001;X&#x548C;C&#xFF09;&#x5728;&#x5927;&#x7684;&#x6570;&#x5B57;&#x5DE6;&#x8FB9;&#xFF0C;&#x6240;&#x8868;&#x793A;&#x7684;&#x6570;&#x7B49;&#x4E8E;&#x5927;&#x6570;&#x51CF;&#x53BB;&#x5C0F;&#x6570;&#x6240;&#x5F97;&#x7684;&#x6570;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;IV = 4</li>
-<li>&#x5DE6;&#x51CF;&#x6570;&#x5B57;&#x5FC5;&#x987B;&#x4E3A;&#x4E00;&#x4F4D;&#xFF0C;&#x6BD4;&#x5982;8&#x5199;&#x6210;VIII&#xFF0C;&#x800C;&#x975E;IIX</li>
-<li>&#x53F3;&#x52A0;&#x6570;&#x5B57;&#x4E0D;&#x53EF;&#x8FDE;&#x7EED;&#x8D85;&#x8FC7;&#x4E09;&#x4F4D;&#xFF0C;&#x6BD4;&#x5982;14&#x5199;&#x6210;XIV&#xFF0C;&#x800C;&#x975E;XIIII</li>
-<li>&#x5728;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x4E0A;&#x9762;&#x753B;&#x6A2A;&#x7EBF;&#xFF0C;&#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x6570;&#x6269;&#x5927;1000&#x500D;&#xFF08;&#x672C;&#x9898;&#x53EA;&#x8003;&#x8651;3999&#x4EE5;&#x5185;&#x7684;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x7528;&#x4E0D;&#x5230;&#x8FD9;&#x6761;&#x89C4;&#x5219;&#xFF09;</li>
-</ul>
-</li>
-<li><p>&#x6839;&#x636E;&#x4E0A;&#x8FF0;&#x89C4;&#x5F8B;&#x53EF;&#x77E5;&#xFF0C;&#x901A;&#x8FC7;&#x5BF9;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x904D;&#x5386;&#xFF0C;&#x5BF9;&#x4E8E;&#x51FA;&#x73B0;&#x524D;&#x9762;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x4E0D;&#x5C0F;&#x4E8E;&#x540E;&#x9762;&#x7684;&#x5C31;&#x76F4;&#x63A5;&#x76F8;&#x52A0;&#xFF0C;&#x800C;&#x5426;&#x5219;&#x7684;&#x60C5;&#x51B5;&#x5219;&#x8981;&#x51CF;&#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x3002;&#x800C;&#x4E3A;&#x4E86;&#x63CF;&#x8FF0;&#x8FD9;&#x4E2A;&#x8BA1;&#x7B97;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x5355;&#x4E2A;&#x7684;&#x7F57;&#x9A6C;&#x6570;&#x5B57;&#x7B26;&#x548C;&#x5BF9;&#x5E94;&#x7684;&#x963F;&#x62C9;&#x4F2F;&#x6570;&#x5B57;&#x6620;&#x5C04;&#x8D77;&#x6765;&#x3002;&#x5728;&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#x91CC;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E2A;map&#x6765;&#x4FDD;&#x5B58;&#x3002;</p>
-</li>
-<li>&#x56E0;&#x4E3A;&#x904D;&#x5386;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F1A;&#x51FA;&#x73B0;&#x91CD;&#x590D;&#x7D2F;&#x52A0;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x6240;&#x4EE5;&#x505A;&#x51CF;&#x6CD5;&#x65F6;&#x8981; * 2</li>
-</ul>
+<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> &#x4E8C;&#x5206;&#x67E5;&#x627E;</p>
+<p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong>
+&#x601D;&#x8DEF;&#x662F;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#xFF0C;&#x627E;&#x5230;&#x5C31;&#x5F88;&#x7B80;&#x5355;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#xFF0C;&#x6CA1;&#x627E;&#x5230;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5224;&#x65AD;nums[low]&#x548C;target&#x7684;&#x5173;&#x7CFB;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#x4E00;&#x70B9;&#xFF0C;&#x6BD4;&#x5982;&#x8BF4;&#x73B0;&#x5728;&#x5E8F;&#x5217;&#x4E3A;  0 1 2 3 4 5 6
+&#x73B0;&#x5728;&#x52A0;&#x5165;target&#x662F;2&#xFF0C;&#x4E14;low&#x4E3A;1&#xFF08;nums[low]\==1&#xFF09;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x7D22;&#x5F15;&#x4E3A;low+1 =2
+&#x5982;&#x679C;target&#x662F;0&#xFF0C;&#x4E14;low&#x4E3A;1&#xFF08;nums[low]\==1&#xFF09;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x7D22;&#x5F15;&#x5C31;&#x662F;low&#x800C;&#x4E0D;&#x662F;low-1&#x4E86;&#x3002;&#x5177;&#x4F53;&#x539F;&#x56E0;&#x753B;&#x4E00;&#x4E0B;&#x5C31;&#x6E05;&#x695A;&#x4E86;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x9898;&#x7684;&#x5173;&#x952E;&#x8FD8;&#x662F;&#x8003;&#x5BDF;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x5B8C;&#x6210;&#x65F6;&#x7D22;&#x5F15;low&#x548C;&#x7D22;&#x5F15;high&#x7684;&#x72B6;&#x6001;&#x3002;</p>
 <p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
-<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">romanToInt</span><span class="hljs-params">(String s)</span> </span>{
-        HashMap&lt;Character,Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;Character,Integer&gt;();
-        map.put(<span class="hljs-string">&apos;I&apos;</span>,<span class="hljs-number">1</span>);
-        map.put(<span class="hljs-string">&apos;V&apos;</span>,<span class="hljs-number">5</span>);
-        map.put(<span class="hljs-string">&apos;X&apos;</span>,<span class="hljs-number">10</span>);
-        map.put(<span class="hljs-string">&apos;L&apos;</span>,<span class="hljs-number">50</span>);
-        map.put(<span class="hljs-string">&apos;C&apos;</span>,<span class="hljs-number">100</span>);
-        map.put(<span class="hljs-string">&apos;D&apos;</span>,<span class="hljs-number">500</span>);
-        map.put(<span class="hljs-string">&apos;M&apos;</span>,<span class="hljs-number">1000</span>);
-        <span class="hljs-keyword">int</span> value = map.get(s.charAt(<span class="hljs-number">0</span>));
-        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;s.length();i++){
-            <span class="hljs-keyword">if</span>(map.get(s.charAt(i))&gt;map.get(s.charAt(i-<span class="hljs-number">1</span>))){
-                value = value + map.get(s.charAt(i))-<span class="hljs-number">2</span>*map.get(s.charAt(i-<span class="hljs-number">1</span>));
-            }
-            <span class="hljs-keyword">else</span>{
-                value = value + map.get(s.charAt(i));
-            }
-        }
-        <span class="hljs-keyword">return</span> value;
-    }
-}
-</code></pre>
-<h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
-<p><a href="http://blog.csdn.net/lilibaobao89/article/details/72953358" target="_blank">http://blog.csdn.net/lilibaobao89/article/details/72953358</a></p>
+<pre><code>class Solution {  
+public:  
+    int searchInsert(vector&lt;int&gt;&amp; nums, int target) {  
+        int len = nums.size() - 1;  
+        int low = 0;  
+        int high = len - 1;  
+        int mid;  
+        while (low &lt;= high)//&#x6807;&#x51C6;&#x4E8C;&#x5206;&#x67E5;&#x627E;  
+        {  
+            mid = low + (high - low) / 2;  
+            if (nums[mid] == target)  
+                return mid;//&#x627E;&#x5230;&#x5143;&#x7D20;  
+            else if (nums[mid] &gt; target)  
+                high = mid - 1;  
+            else  
+                low = mid + 1;  
+        }  
+        //&#x6CA1;&#x627E;&#x5230;&#x65F6;&#x5224;&#x65AD;&#x4E0E;nums[low]&#x7684;&#x5173;&#x7CFB;  
+        if (target &gt; nums[low])  
+            return low + 1;  
+        else  
+            return low;  
+    }  
+};
+</code></pre><h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
+<ul>
+<li><a href="http://blog.csdn.net/zhangxiao93/article/details/49159313" target="_blank">http://blog.csdn.net/zhangxiao93/article/details/49159313</a></li>
+<li>&#x4F5C;&#x8005;&#xFF1A;NearXDU</li>
+</ul>
 
                                 
                                 </section>
@@ -854,12 +856,12 @@ C: 100    D: 500    M: 1000
 
             
                 
-                <a href="12.html" class="navigation navigation-prev " aria-label="Previous page: 12.  Integer to Roman">
+                <a href="34.md" class="navigation navigation-prev " aria-label="Previous page: 34.  Search for a Range">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="14.html" class="navigation navigation-next " aria-label="Next page: 14.  Longest Common Prefix">
+                <a href="36.html" class="navigation navigation-next " aria-label="Next page: 36.   Valid Sudoku">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -870,7 +872,7 @@ C: 100    D: 500    M: 1000
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"13.  Roman to Integer","level":"1.3.12","depth":2,"next":{"title":"14.  Longest Common Prefix","level":"1.3.13","depth":2,"path":"answer/14.md","ref":"./answer/14.md","articles":[]},"previous":{"title":"12.  Integer to Roman","level":"1.3.11","depth":2,"path":"answer/12.md","ref":"./answer/12.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/13.md","mtime":"2017-10-10T07:10:35.166Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-14T06:35:43.928Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"35.  Search Insert Position","level":"1.3.28","depth":2,"next":{"title":"36.   Valid Sudoku","level":"1.3.29","depth":2,"path":"answer/36.md","ref":"./answer/36.md","articles":[]},"previous":{"title":"34.  Search for a Range","level":"1.3.27","depth":2,"path":"answer/34.md","ref":"./answer/34.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/35.md","mtime":"2017-11-14T06:34:04.409Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-14T06:35:43.928Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
