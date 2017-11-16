@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>19.   Remove Nth Node From End of List · GitBook</title>
+        <title>34.  Search for a Range · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -47,10 +47,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="20.html" />
+    <link rel="next" href="35.html" />
     
     
-    <link rel="prev" href="18.html" />
+    <link rel="prev" href="33.html" />
     
 
     </head>
@@ -372,7 +372,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.17" data-path="19.html">
+        <li class="chapter " data-level="1.3.17" data-path="19.html">
             
                 <a href="19.html">
             
@@ -502,7 +502,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.27" data-path="34.html">
+        <li class="chapter active" data-level="1.3.27" data-path="34.html">
             
                 <a href="34.html">
             
@@ -758,7 +758,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >19.   Remove Nth Node From End of List</a>
+        <a href=".." >34.  Search for a Range</a>
     </h1>
 </div>
 
@@ -773,64 +773,68 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="19-remove-nth-node-from-end-of-list"><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/" target="_blank">19. Remove Nth Node From End of List</a></h1>
+                                <h1 id="2-add-two-numbers"><a href="https://leetcode.com/problems/search-for-a-range/description/" target="_blank">2 Add Two Numbers</a></h1>
 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</h2>
-<p>Given a linked list, remove the nth node from the end of list and return its head.</p>
+<p>Given an array of integers sorted in ascending order, find the starting and ending position of a given target value.</p>
+<p>Your algorithm&apos;s runtime complexity must be in the order of <em>O</em>(log <em>n</em>).</p>
+<p>If the target is not found in the array, return <code>[-1, -1]</code></p>
 <p><strong>Example 1:</strong></p>
-<pre><code>Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.
-After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.
-</code></pre><p><strong>Note:</strong></p>
-<ol>
-<li>Given n will always be valid.</li>
-<li>Try to do this in one pass.</li>
-</ol>
-<h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x94FE;&#x8868;&#xFF0C;&#x5220;&#x9664;&#x4ECE;&#x540E;&#x5F80;&#x524D;&#x6570;&#x7684;&#x7B2C;n&#x4E2A;&#x8282;&#x70B9;&#x5E76;&#x4E14;&#x8FD4;&#x56DE;&#x5220;&#x9664;&#x540E;&#x7684;&#x94FE;&#x8868;&#x5934;&#x6307;&#x9488;&#x3002;</p>
+<pre><code>Input: [5, 7, 7, 8, 8, 10]
+Output: [3,4]
+</code></pre><h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x975E;&#x9012;&#x51CF;&#x6570;&#x7EC4;&#xFF0C;&#x627E;&#x5230;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x7684;&#x51FA;&#x73B0;&#x7684;&#x9996;&#x672B;&#x4F4D;&#x7F6E;&#x3002;</p>
 <p><strong>&#x793A;&#x4F8B;1&#xFF1A;</strong></p>
-<pre><code>&#x7ED9;&#x5B9A;&#x7684;&#x94FE;&#x8868;&#xFF1A;1-&gt;2-&gt;3-&gt;4-&gt;5&#xFF0C;n = 2
-&#x5220;&#x9664;&#x5012;&#x6570;&#x7B2C;2&#x4E2A;&#x8282;&#x70B9;&#x540E;&#x7684;&#x94FE;&#x8868;&#xFF1A;1-&gt;2-&gt;3-&gt;5
+<pre><code>&#x8F93;&#x5165;&#xFF1A; [5, 7, 7, 8, 8, 10]
+&#x8F93;&#x51FA;&#xFF1A; [3,4]
 </code></pre><p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
 <ol>
-<li>&#x7ED9;&#x5B9A;&#x7684;&#x94FE;&#x8868;&#x603B;&#x662F;&#x6B63;&#x786E;&#x7684;</li>
-<li>&#x5728;&#x4E00;&#x6B21;&#x904D;&#x5386;&#x4E2D;&#x5B8C;&#x6210;&#x64CD;&#x4F5C;</li>
+<li>&#x6570;&#x7EC4;&#x4E3A;&#x975E;&#x9012;&#x51CF;&#x6570;&#x7EC4;&#xFF0C;&#x627E;&#x5230;&#x76EE;&#x6807;&#x5143;&#x7D20;&#x540E;&#xFF0C;&#x4E0E;&#x5176;&#x503C;&#x76F8;&#x7B49;&#x7684;&#x5143;&#x7D20;&#x80AF;&#x5B9A;&#x5728;&#x5176;&#x5468;&#x56F4;</li>
 </ol>
 <h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
-<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Linked List</p>
+<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Binary Search</p>
 <p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
 <ul>
-<li>&#x672C;&#x9898;&#x9700;&#x8981;&#x7EF4;&#x62A4;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#xFF0C;pre&#x548C;end&#x3002;&#x4E00;&#x5F00;&#x59CB;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4F7F;&#x5F97;pre&#x6307;&#x9488;&#x6307;&#x5411;&#x94FE;&#x8868;&#x5934;&#x8282;&#x70B9;&#xFF0C;end&#x6307;&#x9488;&#x6307;&#x5411;pre+n&#x7684;&#x8282;&#x70B9;&#x4F4D;&#x7F6E;&#x3002;&#x7136;&#x540E;&#x540C;&#x65F6;&#x5F80;&#x540E;&#x79FB;&#x52A8;pre&#x548C;end&#x6307;&#x9488;&#x4F4D;&#x7F6E;&#xFF0C;&#x4F7F;&#x5F97;end&#x6307;&#x9488;&#x6307;&#x5411;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x90A3;&#x4E48;pre&#x6307;&#x9488;&#x6307;&#x5411;&#x7684;&#x5219;&#x662F;end-n&#x7684;&#x8282;&#x70B9;&#x4F4D;&#x7F6E;&#xFF08;&#x5373;&#x5012;&#x6570;&#x7B2C;n&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x524D;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF09;&#xFF0C;&#x5219;&#x5C06;&#x5176;&#x5220;&#x9664;&#x3002;</li>
-<li>&#x94FE;&#x8868;&#x957F;&#x5EA6;&#x4E3A;n&#x65F6;&#xFF0C;&#x7B97;&#x6CD5;&#x590D;&#x6742;&#x5EA6;O(n)&#x3002;</li>
+<li>&#x4F7F;&#x7528;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x627E;&#x5230;&#x76EE;&#x6807;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x5206;&#x522B;&#x5411;&#x5DE6;&#x53F3;&#x67E5;&#x627E;&#x6709;&#x6CA1;&#x6709;&#x4E0E;&#x5176;&#x503C;&#x76F8;&#x7B49;&#x7684;&#x5143;&#x7D20;&#xFF0C;</li>
 </ul>
 <p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
-<pre><code># Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
-
-class Solution(object):
-    def removeNthFromEnd(self, head, n):
+<pre><code>class Solution:
+    def searchRange(self, nums, target):
         &quot;&quot;&quot;
-        :type head: ListNode
-        :type n: int
-        :rtype: ListNode
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
         &quot;&quot;&quot;
-        pre = head
-        end = head
-        for _ in range(n):
-            end = end.next
-        if end is None:  # &#x9700;&#x8981;&#x5220;&#x9664;&#x7684;&#x8282;&#x70B9;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x5373;&#x8FD4;&#x56DE;&#x7B2C;&#x4E8C;&#x4E2A;&#x8282;&#x70B9;&#x4E3A;&#x5934;&#x8282;&#x70B9;&#x7684;&#x94FE;&#x8868;
-            return head.next
-        while end.next is not None:
-            pre = pre.next
-            end = end.next
-        pre.next = pre.next.next 
-        return head
+        index = self.binary_search(0, len(nums) - 1, nums, target)    # &#x5143;&#x7D20;&#x9996;&#x6B21;&#x51FA;&#x73B0;&#x4F4D;&#x7F6E;
+        if index == -1:
+            return [-1, -1]
+
+        start, end = index, index    # &#x5F00;&#x59CB;&#x4F4D;&#x7F6E;&#x4E0E;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;
+        while end &lt;= len(nums) - 1:
+            if nums[end] == target:     # &#x5411;&#x53F3;&#x67E5;&#x627E;
+                end += 1
+            else:
+                break
+        while start &gt;= 0:
+            if nums[start] == target:    # &#x5411;&#x5DE6;&#x67E5;&#x627E;
+                start -= 1
+            else:
+                break
+
+        return [start + 1, end - 1]
+
+    def binary_search(self, low, high, nums, target):    # &#x4E8C;&#x5206;&#x67E5;&#x627E;&#x76EE;&#x6807;&#x5143;&#x7D20;
+        while low &lt;= high:
+            mid = (low + high) &gt;&gt; 1        # &#x4E8C;&#x8FDB;&#x5236;&#x5411;&#x53F3;&#x4F4D;&#x79FB;1&#x4F4D;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x9664;&#x4EE5;2
+            if target &lt; nums[mid]:        # &#x5C0F;&#x4E8E;&#x4E2D;&#x95F4;&#x503C;&#xFF0C;&#x5728;&#x6570;&#x7EC4;&#x5DE6;&#x534A;&#x90E8;&#x5206;
+                high = mid - 1
+            elif target &gt; nums[mid]:    #&#x5927;&#x4E8E;&#x4E2D;&#x95F4;&#x503C;&#xFF0C;&#x5728;&#x6570;&#x7EC4;&#x53F3;&#x534A;&#x90E8;&#x5206;
+                low = mid + 1
+            else:    # &#x627E;&#x5230;&#x76EE;&#x6807;&#x5143;&#x7D20;
+                return mid
+        return -1
 </code></pre><h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
 <ul>
-<li><a href="http://blog.csdn.net/dongrongyu/article/details/78346583" target="_blank">http://blog.csdn.net/dongrongyu/article/details/78346583</a></li>
-<li>&#x4F5C;&#x8005;&#xFF1A;&#x8463;&#x8363;&#x5809;</li>
+<li>LeetCode 56ms Solution</li>
 </ul>
 
                                 
@@ -859,12 +863,12 @@ class Solution(object):
 
             
                 
-                <a href="18.html" class="navigation navigation-prev " aria-label="Previous page: 18.  4Sum">
+                <a href="33.html" class="navigation navigation-prev " aria-label="Previous page: 33.  Search in Rotated Sorted Array">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="20.html" class="navigation navigation-next " aria-label="Next page: 20.  Valid Parentheses">
+                <a href="35.html" class="navigation navigation-next " aria-label="Next page: 35.  Search Insert Position">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -875,7 +879,7 @@ class Solution(object):
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"19.   Remove Nth Node From End of List","level":"1.3.17","depth":2,"next":{"title":"20.  Valid Parentheses","level":"1.3.18","depth":2,"path":"answer/20.md","ref":"./answer/20.md","articles":[]},"previous":{"title":"18.  4Sum","level":"1.3.16","depth":2,"path":"answer/18.md","ref":"./answer/18.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/19.md","mtime":"2017-10-26T04:21:43.078Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-16T05:16:39.633Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"34.  Search for a Range","level":"1.3.27","depth":2,"next":{"title":"35.  Search Insert Position","level":"1.3.28","depth":2,"path":"answer/35.md","ref":"./answer/35.md","articles":[]},"previous":{"title":"33.  Search in Rotated Sorted Array","level":"1.3.26","depth":2,"path":"answer/33.md","ref":"./answer/33.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/34.md","mtime":"2017-11-16T05:15:32.406Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-16T05:16:39.633Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
