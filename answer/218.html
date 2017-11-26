@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>128.  Longest Consecutive Sequence · GitBook</title>
+        <title>218.  The Skyline Problem · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -47,10 +47,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="136.html" />
+    <link rel="next" href="240.html" />
     
     
-    <link rel="prev" href="83.html" />
+    <link rel="prev" href="215.html" />
     
 
     </head>
@@ -710,7 +710,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.42" data-path="128.html">
+        <li class="chapter " data-level="1.3.42" data-path="128.html">
             
                 <a href="128.html">
             
@@ -788,7 +788,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.48" data-path="218.html">
+        <li class="chapter active" data-level="1.3.48" data-path="218.html">
             
                 <a href="218.html">
             
@@ -875,7 +875,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >128.  Longest Consecutive Sequence</a>
+        <a href=".." >218.  The Skyline Problem</a>
     </h1>
 </div>
 
@@ -890,60 +890,80 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="128-longest-consecutive-sequence"><a href="https://leetcode.com/problems/longest-consecutive-sequence/description/" target="_blank">128. Longest Consecutive Sequence</a></h1>
+                                <h1 id="218-the-skyline-problem"><a href="https://leetcode.com/problems/the-skyline-problem/description/" target="_blank">218. The Skyline Problem</a></h1>
 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</h2>
-<p>Given an unsorted array of integers, find the length of the longest consecutive elements sequence.</p>
-<p>For example,
-Given [100, 4, 200, 1, 3, 2],
-The longest consecutive elements sequence is [1, 2, 3, 4]. Return its length: 4.</p>
-<p>Your algorithm should run in O(n) complexity.</p>
+<p>A city&apos;s skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Now suppose you are <strong>given the locations and height of all the buildings</strong> as shown on a cityscape photo (Figure A), write a program to <strong>output the skyline</strong> formed by these buildings collectively (Figure B).</p>
+<p><img src="https://leetcode.com/static/images/problemset/skyline1.jpg" alt="Buildings"> </p>
+<p><img src="https://leetcode.com/static/images/problemset/skyline2.jpg" alt="Skyline Contour"></p>
+<p>The geometric information of each building is represented by a triplet of integers <code>[Li, Ri, Hi]</code>, where <code>Li</code> and <code>Ri</code> are the x coordinates of the left and right edge of the ith building, respectively, and <code>Hi</code> is its height. It is guaranteed that <code>0 &#x2264; Li, Ri &#x2264; INT_MAX</code>, <code>0 &lt; Hi &#x2264; INT_MAX</code>, and <code>Ri - Li &gt; 0</code>. You may assume all buildings are perfect rectangles grounded on an absolutely flat surface at height 0.</p>
+<p>For instance, the dimensions of all buildings in Figure A are recorded as: <code>[ [2 9 10], [3 7 15], [5 12 12], [15 20 10], [19 24 8] ]</code>.</p>
+<p>The output is a list of &quot;<strong>key points</strong>&quot; (red dots in Figure B) in the format of <code>[ [x1,y1], [x2, y2], [x3, y3], ... ]</code> that uniquely defines a skyline. <strong>A key point is the left endpoint of a horizontal line segment</strong>. Note that the last key point, where the rightmost building ends, is merely used to mark the termination of the skyline, and always has zero height. Also, the ground in between any two adjacent buildings should be considered part of the skyline contour.</p>
+<p>For instance, the skyline in Figure B should be represented as:<code>[ [2 10], [3 15], [7 12], [12 0], [15 10], [20 8], [24, 0] ]</code>.</p>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>The number of buildings in any input list is guaranteed to be in the range <code>[0, 10000]</code>.</li>
+<li>The input list is already sorted in ascending order by the left x position <code>Li</code>.</li>
+<li>The output list must be sorted by the x position.</li>
+<li>There must be no consecutive horizontal lines of equal height in the output skyline. For instance, <code>[...[2 3], [4 5], [7 5], [11 5], [12 7]...]</code> is not acceptable; the three lines of height 5 should be merged into one in the final output as such: <code>[...[2 3], [4 5], [12 7], ...]</code></li>
+</ul>
 <h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x672A;&#x6392;&#x5E8F;&#x7684;&#x6574;&#x6570;&#x6570;&#x7EC4;&#xFF0C;&#x627E;&#x5230;&#x6700;&#x957F;&#x8FDE;&#x7EED;&#x5143;&#x7D20;&#x5E8F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#x3002;</p>
-<p>&#x4F8B;&#x5982;&#xFF0C;
-&#x7ED9;&#x5B9A;[100, 4, 200, 1, 3, 2]&#xFF0C;
-&#x6700;&#x957F;&#x7684;&#x8FDE;&#x7EED;&#x5143;&#x7D20;&#x5E8F;&#x5217;&#x662F;[1, 2, 3, 4]&#x3002;&#x8FD4;&#x56DE;&#x957F;&#x5EA6;&#xFF1A;4&#x3002;</p>
-<p>&#x60A8;&#x7684;&#x7B97;&#x6CD5;&#x5E94;&#x8BE5;&#x4EE5;O&#xFF08;n&#xFF09;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x57CE;&#x5E02;&#x7684;&#x5929;&#x9645;&#x7EBF;&#x662F;&#x7531;&#x8FDC;&#x5904;&#x57CE;&#x5E02;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5EFA;&#x7B51;&#x7269;&#x5F62;&#x6210;&#x7684;&#x5916;&#x90E8;&#x8F6E;&#x5ED3;&#x3002; &#x73B0;&#x5047;&#x8BBE;&#x7ED9;&#x51FA;&#x57CE;&#x5E02;&#x666F;&#x89C2;&#x7167;&#x7247;&#xFF08;&#x56FE;A&#xFF09;&#x6240;&#x6709;&#x5EFA;&#x7B51;&#x7269;&#x7684;&#x4F4D;&#x7F6E;&#x548C;&#x9AD8;&#x5EA6;&#xFF0C;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x8F93;&#x51FA;&#x8FD9;&#x4E9B;&#x5EFA;&#x7B51;&#x7269;&#x5F62;&#x6210;&#x7684;&#x5929;&#x9645;&#x7EBF;&#xFF08;&#x56FE;B&#xFF09;&#x3002;</p>
+<p>&#x6BCF;&#x4E2A;&#x5EFA;&#x7B51;&#x7269;&#x7684;&#x51E0;&#x4F55;&#x4FE1;&#x606F;&#x7528;&#x4E09;&#x4E2A;&#x6574;&#x6570;<code>[Li, Ri, Hi]</code>&#x8868;&#x793A;&#xFF0C;&#x5176;&#x4E2D;<code>Li</code> &#x548C; <code>Ri</code> &#x5206;&#x522B;&#x662F;&#x7B2C;i&#x5EA7;&#x5EFA;&#x7B51;&#x7269;&#x7684;&#x5DE6;&#x53F3;&#x8FB9;&#x7F18;&#x7684;x&#x8F74;&#x5750;&#x6807;&#xFF0C;<code>Hi</code> &#x662F;&#x5B83;&#x7684;&#x9AD8;&#x5EA6;&#x3002; &#x4FDD;&#x8BC1;<code>0 &#x2264; Li, Ri &#x2264; INT_MAX</code>, <code>0 &lt; Hi &#x2264; INT_MAX</code>, &#x548C; <code>Ri - Li &gt; 0</code>&#x3002;&#x5047;&#x8BBE;&#x6240;&#x6709;&#x7684;&#x5EFA;&#x7B51;&#x7269;&#x90FD;&#x662F;&#x4F4D;&#x4E8E;&#x9AD8;&#x5EA6;&#x4E3A;0&#x7EAF;&#x5E73;&#x9762;&#x4E0A;&#x7684;&#x77E9;&#x5F62;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x56FE;A&#x4E2D;&#x6240;&#x6709;&#x5EFA;&#x7B51;&#x7269;&#x8868;&#x793A;&#x4E3A;&#xFF1A;<code>[ [2 9 10], [3 7 15], [5 12 12], [15 20 10], [19 24 8] ]</code></p>
+<p>&#x8F93;&#x51FA;&#x662F;&#x4EE5;<code>[ [x1,y1], [x2, y2], [x3, y3], ... ]</code> &#x4E3A;&#x683C;&#x5F0F;&#x7684;<strong>&#x5173;&#x952E;&#x70B9;</strong>&#xFF08;&#x56FE;B&#x4E2D;&#x7684;&#x7EA2;&#x70B9;&#xFF09;&#x7684;&#x552F;&#x4E00;&#x5217;&#x8868;&#x3002;<strong>&#x5173;&#x952E;&#x70B9;&#x662F;&#x6C34;&#x5E73;&#x7EBF;&#x6BB5;&#x7684;&#x5DE6;&#x7AEF;&#x70B9;</strong>&#x3002; &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6700;&#x53F3;&#x8FB9;&#x7684;&#x5EFA;&#x7B51;&#x7269;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x70B9;&#x4EC5;&#x7528;&#x4E8E;&#x6807;&#x8BB0;&#x5929;&#x9645;&#x7EBF;&#x7684;&#x7EC8;&#x70B9;&#xFF0C;&#x5E76;&#x59CB;&#x7EC8;&#x5177;&#x6709;&#x96F6;&#x9AD8;&#x5EA6;&#x3002; &#x6B64;&#x5916;&#xFF0C;&#x4EFB;&#x4F55;&#x4E24;&#x4E2A;&#x76F8;&#x90BB;&#x5EFA;&#x7B51;&#x7269;&#x4E4B;&#x95F4;&#x7684;&#x5730;&#x9762;&#x5E94;&#x88AB;&#x89C6;&#x4E3A;&#x5929;&#x9645;&#x7EBF;&#x8F6E;&#x5ED3;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x56FE;B&#x4E2D;&#x7684;&#x5929;&#x9645;&#x7EBF;&#x5E94;&#x8BE5;&#x88AB;&#x8868;&#x793A;&#x4E3A;&#xFF1A;<code>[ [2 10], [3 15], [7 12], [12 0], [15 10], [20 8], [24, 0] ]</code></p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
+<ul>
+<li>&#x4EFB;&#x4F55;&#x8F93;&#x5165;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x5EFA;&#x7B51;&#x7269;&#x6570;&#x91CF;&#x9700;&#x5728; <code>[0, 10000]</code>&#x8303;&#x56F4;&#x5185;</li>
+<li>&#x8F93;&#x5165;&#x5217;&#x8868;&#x5DF2;&#x7ECF;&#x6309;&#x7167;x&#x8F74;&#x5DE6;&#x7AEF;&#x70B9;<code>Li</code>&#x5347;&#x5E8F;&#x6392;&#x5217;</li>
+<li>&#x8F93;&#x51FA;&#x5217;&#x8868;&#x5FC5;&#x987B;&#x6309;x&#x8F74;&#x6392;&#x5E8F;</li>
+<li>&#x8F93;&#x51FA;&#x5929;&#x9645;&#x7EBF;&#x4E2D;&#x4E0D;&#x5F97;&#x6709;&#x8FDE;&#x7EED;&#x7684;&#x76F8;&#x540C;&#x9AD8;&#x5EA6;&#x7684;&#x6C34;&#x5E73;&#x7EBF;&#x3002; &#x4F8B;&#x5982;<code>[...[2 3], [4 5], [7 5], [11 5], [12 7]...]</code>&#x662F;&#x4E0D;&#x53EF;&#x63A5;&#x53D7;&#x7684;&#x3002; &#x4E09;&#x6761;&#x9AD8;&#x5EA6;&#x4E3A;5&#x7684;&#x7EBF;&#x5E94;&#x8BE5;&#x5728;&#x6700;&#x7EC8;&#x8F93;&#x51FA;&#x4E2D;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x6761;&#xFF1A; <code>[...[2 3], [4 5], [12 7], ...]</code></li>
+</ul>
 <h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
-<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Array</p>
-<p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong>&#x8FD9;&#x9053;&#x9898;&#x5229;&#x7528;HashSet&#x7684;&#x552F;&#x4E00;&#x6027;&#x89E3;&#x51B3;&#xFF0C;&#x80FD;&#x4F7F;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x8FBE;&#x5230;O(n)&#x3002;&#x9996;&#x5148;&#x5148;&#x628A;&#x6240;&#x6709;num&#x503C;&#x653E;&#x5165;HashSet&#xFF0C;&#x7136;&#x540E;&#x904D;&#x5386;&#x6574;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5982;&#x679C;HashSet&#x4E2D;&#x5B58;&#x5728;&#x8BE5;&#x503C;&#xFF0C;&#x5C31;&#x5148;&#x5411;&#x4E0B;&#x627E;&#x5230;&#x8FB9;&#x754C;&#xFF0C;&#x627E;&#x7684;&#x540C;&#x65F6;&#x628A;&#x627E;&#x5230;&#x7684;&#x503C;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x4ECE;set&#x4E2D;&#x5220;&#x53BB;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5411;&#x4E0A;&#x627E;&#x8FB9;&#x754C;&#xFF0C;&#x540C;&#x6837;&#x8981;&#x628A;&#x627E;&#x5230;&#x7684;&#x503C;&#x90FD;&#x4ECE;set&#x4E2D;&#x5220;&#x6389;&#x3002;&#x6240;&#x4EE5;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x6700;&#x591A;&#x4F1A;&#x88AB;&#x904D;&#x5386;&#x4E24;&#x8FB9;&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(n)&#x3002;</p>
-<p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
-<pre><code>class Solution {
-    public int longestConsecutive(int[] nums) {
-        if(nums == null||nums.length == 0)
-            return 0;
+<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Divide and Conquer</p>
+<p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
+<ul>
+<li>&#x6B65;&#x9AA4;1&#xFF1A;&#x4F7F;&#x7528;multimap&#x6392;&#x5E8F;&#x6240;&#x6709;&#x8FB9;&#x754C;&#x70B9;&#x3002;&#x5BF9;&#x4E8E;&#x95F4;&#x9694;&#x7684;&#x8D77;&#x59CB;&#x70B9;&#xFF0C;&#x8BA9;&#x9AD8;&#x5EA6;&#x4E3A;&#x6B63;&#xFF0C; &#x5426;&#x5219;&#x8BA9;&#x9AD8;&#x5EA6;&#x4E3A;&#x8D1F;</li>
+<li>&#x7B2C;2&#x6B65;&#xFF1A;&#x4F7F;&#x7528;multiset&#x6765;&#x7EF4;&#x62A4;&#x5F53;&#x524D;&#x7684;&#x9AD8;&#x5EA6;&#x96C6;&#x5408;&#x3002;&#x5982;&#x679C;&#x53EF;&#x6EE1;&#x8DB3;&#x65B0;&#x7684;&#x8F93;&#x51FA;&#x8D77;&#x70B9;&#xFF0C;&#x5219;&#x5C06;&#x9AD8;&#x5EA6;&#x63D2;&#x5165;&#x5230;&#x96C6;&#x5408;&#x4E2D;&#xFF0C;&#x5426;&#x5219;&#x5220;&#x9664;&#x9AD8;&#x5EA6;&#xFF1B;&#x5F53;&#x524D;&#x7684;&#x6700;&#x5927;&#x9AD8;&#x5EA6;&#x662F;multiset&#x7684;back()&#x5143;&#x7D20;</li>
+<li>&#x7B2C;3&#x6B65;&#xFF1A;&#x6839;&#x636E;&#x9898;&#x76EE;&#x7684;&#x6CE8;&#x610F;&#x70B9;&#xFF0C;&#x4ECE;&#x7ED3;&#x679C;&#x96C6;&#x5408;&#x4E2D;&#x5220;&#x9664;&#x7B49;&#x9AD8;&#x7684;&#x70B9;</li>
+</ul>
+<p><strong>&#x4EE3;&#x7801;&#xFF1A;(&#x4E8C;&#x8FDB;&#x5236;&#x641C;&#x7D22;)</strong></p>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> Solution {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt;&gt; getSkyline(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt;&amp; buildings) {
 
-        HashSet&lt;Integer&gt; hs = new HashSet&lt;Integer&gt;();  
-
-        for (int i = 0 ;i&lt;nums.length; i++)   
-            hs.add(nums[i]);  
-
-        int max = 0;  
-        for(int i=0; i&lt;nums.length; i++){  
-            if(hs.contains(nums[i])){
-                int count = 1;  
-                hs.remove(nums[i]);
-
-                int low = nums[i] - 1; 
-                while(hs.contains(low)){  
-                    hs.remove(low);  
-                    low--;  
-                    count++;  
-                }
-
-                int high = nums[i] + 1;  
-                while(hs.contains(high)){  
-                    hs.remove(high);  
-                    high++;  
-                    count++;  
-                }  
-                max = Math.max(max, count);  
-            }  
-        }  
-        return max;  
+        <span class="hljs-comment">// Step 1:</span>
+        <span class="hljs-built_in">multimap</span>&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; coords;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp; building : buildings) {
+            coords.emplace(building[<span class="hljs-number">0</span>], building[<span class="hljs-number">2</span>]);
+            coords.emplace(building[<span class="hljs-number">1</span>], -building[<span class="hljs-number">2</span>]);
+        }
+        <span class="hljs-comment">// Step 2:</span>
+        <span class="hljs-built_in">multiset</span>&lt;<span class="hljs-keyword">int</span>&gt; heights = { <span class="hljs-number">0</span> };
+        <span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; corners;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; &amp; p : coords) {
+            <span class="hljs-keyword">if</span> (p.second &gt; <span class="hljs-number">0</span>) {
+                heights.insert(p.second);
+            }
+            <span class="hljs-keyword">else</span> {
+                heights.erase(heights.find(-p.second));
+            }
+            <span class="hljs-keyword">int</span> cur_y = *heights.rbegin();
+            corners[p.first] = cur_y;
+        }
+        <span class="hljs-comment">// Step 3:</span>
+        function&lt;<span class="hljs-keyword">bool</span>(pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; l, pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; r)&gt; eq2nd = [](pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; l, pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; r){ <span class="hljs-keyword">return</span> l.second == r.second;  };
+        <span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt;&gt; results;
+        unique_copy(corners.begin(), corners.end(), back_insert_iterator&lt;<span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt;&gt;&gt;(results), eq2nd);
+        <span class="hljs-keyword">return</span> results;
     }
-}
-</code></pre><h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
-<p><a href="http://www.cnblogs.com/springfor/p/3869981.html" target="_blank">http://www.cnblogs.com/springfor/p/3869981.html</a></p>
+};
+</code></pre>
+<p><strong>&#x53C2;&#x8003;&#x8D44;&#x6599;</strong></p>
+<ul>
+<li><a href="https://discuss.leetcode.com/topic/25794/17-line-o-n-log-n-time-o-n-space-c-accepted-easy-solution-w-explanations" target="_blank">https://discuss.leetcode.com/topic/25794/17-line-o-n-log-n-time-o-n-space-c-accepted-easy-solution-w-explanations</a></li>
+<li>&#x4F5C;&#x8005;&#xFF1A;&#x4E03;&#x9119;</li>
+</ul>
 
                                 
                                 </section>
@@ -971,12 +991,12 @@ The longest consecutive elements sequence is [1, 2, 3, 4]. Return its length: 4.
 
             
                 
-                <a href="83.html" class="navigation navigation-prev " aria-label="Previous page: 83.   Remove Duplicates from Sorted List">
+                <a href="215.html" class="navigation navigation-prev " aria-label="Previous page: 215.   Kth Largest Element in an Array">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="136.html" class="navigation navigation-next " aria-label="Next page: 136.  Single Number">
+                <a href="240.html" class="navigation navigation-next " aria-label="Next page: 240.  Search a 2D Matrix II">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -987,7 +1007,7 @@ The longest consecutive elements sequence is [1, 2, 3, 4]. Return its length: 4.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"128.  Longest Consecutive Sequence","level":"1.3.42","depth":2,"next":{"title":"136.  Single Number","level":"1.3.43","depth":2,"path":"answer/136.md","ref":"./answer/136.md","articles":[]},"previous":{"title":"83.   Remove Duplicates from Sorted List","level":"1.3.41","depth":2,"path":"answer/83.md","ref":"./answer/83.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/128.md","mtime":"2017-10-09T07:34:03.866Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-26T15:09:30.801Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"218.  The Skyline Problem","level":"1.3.48","depth":2,"next":{"title":"240.  Search a 2D Matrix II","level":"1.3.49","depth":2,"path":"answer/240.md","ref":"./answer/240.md","articles":[]},"previous":{"title":"215.   Kth Largest Element in an Array","level":"1.3.47","depth":2,"path":"answer/215.md","ref":"./answer/215.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/218.md","mtime":"2017-11-26T15:04:10.219Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-26T15:09:30.801Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
