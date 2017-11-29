@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>83.   Remove Duplicates from Sorted List · GitBook</title>
+        <title>62.  62. Unique Paths · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -47,10 +47,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="128.html" />
+    <link rel="next" href="63.md" />
     
     
-    <link rel="prev" href="75.html" />
+    <link rel="prev" href="61.html" />
     
 
     </head>
@@ -619,7 +619,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.35" data-path="62.html">
+        <li class="chapter active" data-level="1.3.35" data-path="62.html">
             
                 <a href="62.html">
             
@@ -697,7 +697,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.41" data-path="83.html">
+        <li class="chapter " data-level="1.3.41" data-path="83.html">
             
                 <a href="83.html">
             
@@ -875,7 +875,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >83.   Remove Duplicates from Sorted List</a>
+        <a href=".." >62.  62. Unique Paths</a>
     </h1>
 </div>
 
@@ -890,57 +890,67 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="83-remove-duplicates-from-sorted-list-"><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/" target="_blank">83. Remove Duplicates from Sorted List </a></h1>
+                                <h1 id="62-unique-paths"><a href="https://leetcode.com/problems/unique-paths/description/" target="_blank">62. Unique Paths</a></h1>
 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</h2>
-<p>Given a sorted linked list, delete all duplicates such that each element appear only once. </p>
-<p><strong>For example</strong></p>
-<pre><code>Given 1-&gt;1-&gt;2, return 1-&gt;2.
-Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3.
-</code></pre><h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x94FE;&#x8868;&#xFF0C;&#x5220;&#x9664;&#x6240;&#x6709;&#x91CD;&#x590D;&#x7684;&#x5143;&#x7D20;&#x4F7F;&#x5F97;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x3002;</p>
-<p><strong>&#x4F8B;&#x5982;&#xFF1A;</strong></p>
-<pre><code>&#x7ED9;&#x51FA; 1-&gt;1-&gt;2&#xFF0C;&#x8FD4;&#x56DE; 1-&gt;2&#x3002;
-&#x7ED9;&#x51FA; 1-&gt;1-&gt;2-&gt;3-&gt;3&#xFF0C;&#x8FD4;&#x56DE; 1-&gt;2-&gt;3&#x3002;
-</code></pre><h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
-<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> linked list</p>
+<p>A robot is located at the top-left corner of a m x n grid (marked &apos;Start&apos; in the diagram below).</p>
+<p>The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked &apos;Finish&apos; in the diagram below).</p>
+<p>How many possible unique paths are there?</p>
+<p><img src="https://leetcode.com/static/images/problemset/robot_maze.png" alt="image"></p>
+<p>Above is a 3 x 7 grid. How many possible unique paths are there?</p>
+<p><strong>Note:</strong></p>
+<p>m and n will be at most 100.</p>
+<h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
+<p>&#x673A;&#x5668;&#x4EBA;&#x4F4D;&#x4E8E;m x n&#x7F51;&#x683C;&#x7684;&#x5DE6;&#x4E0A;&#x89D2;&#xFF08;&#x6807;&#x6709;&apos;Start&apos;&#xFF09;&#x3002;</p>
+<p>&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x95F4;&#xFF0C;&#x673A;&#x5668;&#x4EBA;&#x53EA;&#x80FD;&#x5411;&#x4E0B;&#x6216;&#x5411;&#x53F3;&#x79FB;&#x52A8;&#x3002;&#x673A;&#x5668;&#x4EBA;&#x8BD5;&#x56FE;&#x5230;&#x8FBE;&#x7F51;&#x683C;&#x7684;&#x53F3;&#x4E0B;&#x89D2;&#xFF08;&#x6807;&#x6709;&apos;Finish&apos;&#xFF09;&#x3002;</p>
+<p>&#x6709;&#x591A;&#x5C11;&#x79CD;&#x53EF;&#x80FD;&#x7684;&#x4E0D;&#x540C;&#x8DEF;&#x5F84;&#xFF1F;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
+<p>m&#x548C;n&#x6700;&#x5927;&#x4E3A;&#x200B;&#x200B;100&#x3002;</p>
+<h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
+<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Dynamic Programming</p>
 <p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
 <ul>
-<li>&#x65B9;&#x6CD5;&#x6BD4;&#x8F83;&#x6E05;&#x6670;&#xFF0C;&#x7EF4;&#x62A4;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x5F53;&#x524D;&#x4E0D;&#x91CD;&#x590D;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x4E00;&#x4E2A;&#x8FDB;&#x884C;&#x4F9D;&#x6B21;&#x626B;&#x63CF;&#xFF0C;&#x9047;&#x5230;&#x4E0D;&#x91CD;&#x590D;&#x7684;&#x5219;&#x66F4;&#x65B0;&#x7B2C;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x7EE7;&#x7EED;&#x626B;&#x63CF;&#xFF0C;&#x5426;&#x5219;&#x5C31;&#x628A;&#x524D;&#x9762;&#x6307;&#x9488;&#x6307;&#x5411;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#xFF08;&#x5373;&#x628A;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x4ECE;&#x94FE;&#x8868;&#x4E2D;&#x5220;&#x9664;&#xFF09;&#x3002;</li>
-<li>&#x65F6;&#x95F4;&#x4E0A;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x6B21;&#x626B;&#x63CF;&#xFF0C;&#x6240;&#x4EE5;&#x662F;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x4E0A;&#x4E24;&#x4E2A;&#x989D;&#x5916;&#x6307;&#x9488;&#xFF0C;&#x662F;O(1)&#x3002;</li>
+<li><p>&#x4F7F;&#x7528;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x89C4;&#x5F8B;&#x4E3A;&#x9664;&#x4E86;&#x7B2C;&#x4E00;&#x884C;&#x548C;&#x7B2C;&#x4E00;&#x5217;&#x5168;&#x4E3A;1&#x5916;&#xFF0C;&#x5176;&#x4ED6;&#x683C;&#x7684;&#x8DEF;&#x5F84;&#x6570;&#x4E3A;&#x5176;&#x4E0A;&#x4E00;&#x683C;&#x548C;&#x5DE6;&#x4E00;&#x683C;&#x7684;&#x548C;&#x3002;</p>
+</li>
+<li><p>&#x7B97;&#x6CD5;&#x590D;&#x6742;&#x5EA6;O(m*n)&#x3002;</p>
+</li>
 </ul>
-<p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
-<pre><code>/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
-class Solution {
-public:
-    ListNode* deleteDuplicates(ListNode* head) {
-        if(head == NULL)
-            return head;
-        ListNode* pre = head;
-        ListNode* cur = head-&gt;next;
-        while(cur!=NULL)
-        {
-            if(cur-&gt;val == pre-&gt;val){
-                pre-&gt;next = cur-&gt;next;
-            }else{
-                pre = cur;
-            }
-            cur = cur-&gt;next;
-        }
-        return head;
-    }
-};
+<p><strong>Python&#x4EE3;&#x7801;&#xFF1A;</strong></p>
+<pre><code>class Solution:  
+    def uniquePaths(self, m, n):  
+        paths = [[1] for i in range(m)]  # initialize the 1st column to be 1   
+
+        for i in range(n - 1):           # initialize the 1st row to be 1   
+            paths[0].append(1)   
+
+        for i in range(m - 1):  
+            for j in range(n - 1):  
+                paths[i + 1].append(paths[i][j + 1] + paths[i + 1][j])  
+        return paths[m - 1][n - 1]
+</code></pre><p><strong>Java&#x4EE3;&#x7801;&#xFF1A;</strong></p>
+<pre><code>public class Solution {  
+    public int uniquePaths(int m, int n) {  
+        int[][] A = new int[m][n];  
+
+        for (int i = 0; i &lt; m; ++i) {  
+            A[i][0] = 1;  
+        }  
+
+        for (int i = 1; i &lt; n; ++i) {  
+            A[0][i] = 1;  
+        } 
+
+        for (int i = 1; i &lt; m; ++i)  
+            for (int j = 1; j &lt; n; ++j) {  
+                A[i][j] = A[i][j - 1] + A[i - 1][j];  
+            }  
+
+        return A[m - 1][n - 1];  
+    }  
+}
 </code></pre><h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
 <ul>
-<li><a href="http://blog.csdn.net/linhuanmars/article/details/24354291" target="_blank">http://blog.csdn.net/linhuanmars/article/details/24354291</a></li>
-<li><a href="http://blog.csdn.net/feliciafay/article/details/18072359" target="_blank">http://blog.csdn.net/feliciafay/article/details/18072359</a></li>
-<li>&#x4F5C;&#x8005;&#xFF1A;&#x8FDE;&#x660E;</li>
+<li><a href="http://blog.csdn.net/lilong_dream/article/details/19771225" target="_blank">http://blog.csdn.net/lilong_dream/article/details/19771225</a></li>
+<li>&#x4F5C;&#x8005;&#xFF1A;lilong_dream</li>
 </ul>
 
                                 
@@ -969,12 +979,12 @@ public:
 
             
                 
-                <a href="75.html" class="navigation navigation-prev " aria-label="Previous page: 75.   Sort Colors">
+                <a href="61.html" class="navigation navigation-prev " aria-label="Previous page: 61.   Rotate List">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="128.html" class="navigation navigation-next " aria-label="Next page: 128.  Longest Consecutive Sequence">
+                <a href="63.md" class="navigation navigation-next " aria-label="Next page: 63.  63. Unique Paths II">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -985,7 +995,7 @@ public:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"83.   Remove Duplicates from Sorted List","level":"1.3.41","depth":2,"next":{"title":"128.  Longest Consecutive Sequence","level":"1.3.42","depth":2,"path":"answer/128.md","ref":"./answer/128.md","articles":[]},"previous":{"title":"75.   Sort Colors","level":"1.3.40","depth":2,"path":"answer/75.md","ref":"./answer/75.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/83.md","mtime":"2017-10-24T11:01:24.741Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-29T14:47:14.509Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"62.  62. Unique Paths","level":"1.3.35","depth":2,"next":{"title":"63.  63. Unique Paths II","level":"1.3.36","depth":2,"path":"answer/63.md","ref":"./answer/63.md","articles":[]},"previous":{"title":"61.   Rotate List","level":"1.3.34","depth":2,"path":"answer/61.md","ref":"./answer/61.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/62.md","mtime":"2017-11-29T14:46:16.154Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-29T14:47:14.509Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
