@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>83.   Remove Duplicates from Sorted List · GitBook</title>
+        <title>94.  Binary Tree Inorder Traversal · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -47,10 +47,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="94.html" />
+    <link rel="next" href="95.html" />
     
     
-    <link rel="prev" href="75.html" />
+    <link rel="prev" href="83.html" />
     
 
     </head>
@@ -697,7 +697,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.41" data-path="83.html">
+        <li class="chapter " data-level="1.3.41" data-path="83.html">
             
                 <a href="83.html">
             
@@ -710,7 +710,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.42" data-path="94.html">
+        <li class="chapter active" data-level="1.3.42" data-path="94.html">
             
                 <a href="94.html">
             
@@ -1005,7 +1005,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >83.   Remove Duplicates from Sorted List</a>
+        <a href=".." >94.  Binary Tree Inorder Traversal</a>
     </h1>
 </div>
 
@@ -1020,57 +1020,88 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="83-remove-duplicates-from-sorted-list-"><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/" target="_blank">83. Remove Duplicates from Sorted List </a></h1>
+                                <h1 id="94-binary-tree-inorder-traversal"><a href="https://leetcode.com/problems/binary-tree-inorder-traversal/description/" target="_blank">94. Binary Tree Inorder Traversal</a></h1>
 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</h2>
-<p>Given a sorted linked list, delete all duplicates such that each element appear only once. </p>
-<p><strong>For example</strong></p>
-<pre><code>Given 1-&gt;1-&gt;2, return 1-&gt;2.
-Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3.
-</code></pre><h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x94FE;&#x8868;&#xFF0C;&#x5220;&#x9664;&#x6240;&#x6709;&#x91CD;&#x590D;&#x7684;&#x5143;&#x7D20;&#x4F7F;&#x5F97;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x3002;</p>
-<p><strong>&#x4F8B;&#x5982;&#xFF1A;</strong></p>
-<pre><code>&#x7ED9;&#x51FA; 1-&gt;1-&gt;2&#xFF0C;&#x8FD4;&#x56DE; 1-&gt;2&#x3002;
-&#x7ED9;&#x51FA; 1-&gt;1-&gt;2-&gt;3-&gt;3&#xFF0C;&#x8FD4;&#x56DE; 1-&gt;2-&gt;3&#x3002;
-</code></pre><h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
-<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> linked list</p>
+<p>Given a binary tree, return the <em>inorder</em> traversal of its nodes&apos; values.</p>
+<p>For example:</p>
+<p>Given binary tree <code>[1,null,2,3]</code></p>
+<pre><code>   1
+    \
+     2
+    /
+   3
+</code></pre><p>return <code>[1,3,2]</code></p>
+<p><strong>Note:</strong> Recursive solution is trivial, could you do it iteratively?</p>
+<h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x8FD4;&#x56DE;&#x5176;&#x8282;&#x70B9;&#x503C;&#x7684;&#x4E2D;&#x5E8F;&#x904D;&#x5386;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;&#x7ED9;&#x5B9A;&#x4E8C;&#x53C9;&#x6811; <code>[1,null,2,3]</code></p>
+<pre><code>   1
+    \
+     2
+    /
+   3
+</code></pre><p>&#x8FD4;&#x56DE; <code>[1,3,2]</code></p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x9012;&#x5F52;&#x4F1A;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#xFF0C;&#x6216;&#x8BB8;&#x53EF;&#x4EE5;&#x8BD5;&#x8BD5;&#x8FED;&#x4EE3;</p>
+<h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
+<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Tree</p>
 <p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
-<ul>
-<li>&#x65B9;&#x6CD5;&#x6BD4;&#x8F83;&#x6E05;&#x6670;&#xFF0C;&#x7EF4;&#x62A4;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x5F53;&#x524D;&#x4E0D;&#x91CD;&#x590D;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x4E00;&#x4E2A;&#x8FDB;&#x884C;&#x4F9D;&#x6B21;&#x626B;&#x63CF;&#xFF0C;&#x9047;&#x5230;&#x4E0D;&#x91CD;&#x590D;&#x7684;&#x5219;&#x66F4;&#x65B0;&#x7B2C;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x7EE7;&#x7EED;&#x626B;&#x63CF;&#xFF0C;&#x5426;&#x5219;&#x5C31;&#x628A;&#x524D;&#x9762;&#x6307;&#x9488;&#x6307;&#x5411;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#xFF08;&#x5373;&#x628A;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x4ECE;&#x94FE;&#x8868;&#x4E2D;&#x5220;&#x9664;&#xFF09;&#x3002;</li>
-<li>&#x65F6;&#x95F4;&#x4E0A;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x6B21;&#x626B;&#x63CF;&#xFF0C;&#x6240;&#x4EE5;&#x662F;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x4E0A;&#x4E24;&#x4E2A;&#x989D;&#x5916;&#x6307;&#x9488;&#xFF0C;&#x662F;O(1)&#x3002;</li>
-</ul>
+<p>emmm&#x9274;&#x4E8E;Note&#x91CC;&#x5DF2;&#x7ECF;&#x63D0;&#x9192;&#x4E86;&#x7528;&#x8FED;&#x4EE3;&#xFF0C;&#x90A3;&#x5C31;&#x7528;&#x8FED;&#x4EE3;&#x597D;&#x4E86;&#x3002;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x57FA;&#x4E8E;&#x7EBF;&#x7D22;&#x4E8C;&#x53C9;&#x6811;(threaded binary tree)&#x6982;&#x5FF5;&#x7684;&#x4F7F;&#x7528;<strong>Morris Traversal</strong> &#xFF0C;&#x53EA;&#x9700;&#x8981;&#x9700;&#x8981;O(1)&#x7A7A;&#x95F4;&#x548C;O(n)&#x65F6;&#x95F4;&#x5373;&#x53EF;&#x8F93;&#x51FA;&#x4E2D;&#x5E8F;&#x904D;&#x5386;&#x3002;</p>
+<p><strong>&#x6B65;&#x9AA4;&#xFF1A;</strong></p>
+<ol>
+<li><p>&#x5982;&#x679C;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x5B69;&#x5B50;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x8F93;&#x51FA;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x5E76;&#x5C06;&#x5176;&#x53F3;&#x5B69;&#x5B50;&#x4F5C;&#x4E3A;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x5B69;&#x5B50;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x5728;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x5B50;&#x6811;&#x4E2D;&#x627E;&#x5230;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x5728;&#x4E2D;&#x5E8F;&#x904D;&#x5386;&#x4E0B;&#x7684;&#x524D;&#x9A71;&#x8282;&#x70B9;&#x3002;</p>
+<p>a) &#x5982;&#x679C;&#x524D;&#x9A71;&#x8282;&#x70B9;&#x7684;&#x53F3;&#x5B69;&#x5B50;&#x4E3A;&#x7A7A;&#xFF0C;&#x5C06;&#x5B83;&#x7684;&#x53F3;&#x5B69;&#x5B50;&#x8BBE;&#x7F6E;&#x4E3A;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x3002;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x66F4;&#x65B0;&#x4E3A;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x5B69;&#x5B50;&#x3002;</p>
+<p>b) &#x5982;&#x679C;&#x524D;&#x9A71;&#x8282;&#x70B9;&#x7684;&#x53F3;&#x5B69;&#x5B50;&#x4E3A;&#x5F53;&#x524D;&#x8282;&#x70B9;&#xFF0C;&#x5C06;&#x5B83;&#x7684;&#x53F3;&#x5B69;&#x5B50;&#x91CD;&#x65B0;&#x8BBE;&#x4E3A;&#x7A7A;&#xFF08;&#x6062;&#x590D;&#x6811;&#x7684;&#x5F62;&#x72B6;&#xFF09;&#x3002;&#x8F93;&#x51FA;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x3002;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x66F4;&#x65B0;&#x4E3A;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x53F3;&#x5B69;&#x5B50;&#x3002;</p>
+</li>
+<li><p>&#x91CD;&#x590D;&#x4EE5;&#x4E0A;1&amp;2&#x76F4;&#x5230;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x4E3A;&#x7A7A;&#x3002;</p>
+</li>
+</ol>
+<p><strong>&#x56FE;&#x793A;&#xFF1A;</strong></p>
+<p><img src="http://images.cnitblog.com/blog/300640/201306/14214057-7cc645706e7741e3b5ed62b320000354.jpg" alt="img"></p>
 <p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
-<pre><code>/**
- * Definition for singly-linked list.
- * struct ListNode {
+<pre><code class="lang-c++"><span class="hljs-comment">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
  *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
- */
-class Solution {
-public:
-    ListNode* deleteDuplicates(ListNode* head) {
-        if(head == NULL)
-            return head;
-        ListNode* pre = head;
-        ListNode* cur = head-&gt;next;
-        while(cur!=NULL)
-        {
-            if(cur-&gt;val == pre-&gt;val){
-                pre-&gt;next = cur-&gt;next;
-            }else{
-                pre = cur;
+ */</span>
+<span class="hljs-keyword">class</span> Solution {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; inorderTraversal(TreeNode* root) {
+    TreeNode* curNode = root;
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; nodes;
+    <span class="hljs-keyword">while</span> (curNode) {
+        <span class="hljs-keyword">if</span> (curNode -&gt; left) {
+            TreeNode* predecessor = curNode -&gt; left;
+            <span class="hljs-keyword">while</span> (predecessor -&gt; right &amp;&amp; predecessor -&gt; right != curNode)
+                predecessor = predecessor -&gt; right;
+            <span class="hljs-keyword">if</span> (!(predecessor -&gt; right)) {
+                predecessor -&gt; right = curNode;
+                curNode = curNode -&gt; left;
             }
-            cur = cur-&gt;next;
+            <span class="hljs-keyword">else</span> {
+                predecessor -&gt; right = <span class="hljs-literal">NULL</span>;
+                nodes.push_back(curNode -&gt; val);
+                curNode = curNode -&gt; right;
+            }
         }
-        return head;
+        <span class="hljs-keyword">else</span> {
+            nodes.push_back(curNode -&gt; val);
+            curNode = curNode -&gt; right;
+        }
+    }
+    <span class="hljs-keyword">return</span> nodes;
     }
 };
-</code></pre><h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
+</code></pre>
+<h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
 <ul>
-<li><a href="http://blog.csdn.net/linhuanmars/article/details/24354291" target="_blank">http://blog.csdn.net/linhuanmars/article/details/24354291</a></li>
-<li><a href="http://blog.csdn.net/feliciafay/article/details/18072359" target="_blank">http://blog.csdn.net/feliciafay/article/details/18072359</a></li>
-<li>&#x4F5C;&#x8005;&#xFF1A;&#x8FDE;&#x660E;</li>
+<li><a href="http://www.cnblogs.com/AnnieKim/archive/2013/06/15/MorrisTraversal.html" target="_blank">http://www.cnblogs.com/AnnieKim/archive/2013/06/15/MorrisTraversal.html</a></li>
+<li>&#x4F5C;&#x8005;&#xFF1A;&#x4E03;&#x9119;</li>
 </ul>
 
                                 
@@ -1099,12 +1130,12 @@ public:
 
             
                 
-                <a href="75.html" class="navigation navigation-prev " aria-label="Previous page: 75.   Sort Colors">
+                <a href="83.html" class="navigation navigation-prev " aria-label="Previous page: 83.   Remove Duplicates from Sorted List">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="94.html" class="navigation navigation-next " aria-label="Next page: 94.  Binary Tree Inorder Traversal">
+                <a href="95.html" class="navigation navigation-next " aria-label="Next page: 95.   Unique Binary Search Trees II">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1115,7 +1146,7 @@ public:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"83.   Remove Duplicates from Sorted List","level":"1.3.41","depth":2,"next":{"title":"94.  Binary Tree Inorder Traversal","level":"1.3.42","depth":2,"path":"answer/94.md","ref":"./answer/94.md","articles":[]},"previous":{"title":"75.   Sort Colors","level":"1.3.40","depth":2,"path":"answer/75.md","ref":"./answer/75.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/83.md","mtime":"2017-10-24T11:01:24.741Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-10T09:04:36.218Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"94.  Binary Tree Inorder Traversal","level":"1.3.42","depth":2,"next":{"title":"95.   Unique Binary Search Trees II","level":"1.3.43","depth":2,"path":"answer/95.md","ref":"./answer/95.md","articles":[]},"previous":{"title":"83.   Remove Duplicates from Sorted List","level":"1.3.41","depth":2,"path":"answer/83.md","ref":"./answer/83.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/94.md","mtime":"2017-12-10T08:56:49.246Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-10T09:04:36.218Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

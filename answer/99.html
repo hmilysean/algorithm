@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>83.   Remove Duplicates from Sorted List · GitBook</title>
+        <title>99.  Recover Binary Search Tree · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -47,10 +47,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="94.html" />
+    <link rel="next" href="100.html" />
     
     
-    <link rel="prev" href="75.html" />
+    <link rel="prev" href="98.md" />
     
 
     </head>
@@ -697,7 +697,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.41" data-path="83.html">
+        <li class="chapter " data-level="1.3.41" data-path="83.html">
             
                 <a href="83.html">
             
@@ -749,7 +749,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.45" data-path="99.html">
+        <li class="chapter active" data-level="1.3.45" data-path="99.html">
             
                 <a href="99.html">
             
@@ -1005,7 +1005,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >83.   Remove Duplicates from Sorted List</a>
+        <a href=".." >99.  Recover Binary Search Tree</a>
     </h1>
 </div>
 
@@ -1020,57 +1020,73 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="83-remove-duplicates-from-sorted-list-"><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/" target="_blank">83. Remove Duplicates from Sorted List </a></h1>
+                                <h1 id="99-recover-binary-search-tree"><a href="https://leetcode.com/problems/recover-binary-search-tree/description/" target="_blank">99 Recover Binary Search Tree</a></h1>
 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</h2>
-<p>Given a sorted linked list, delete all duplicates such that each element appear only once. </p>
-<p><strong>For example</strong></p>
-<pre><code>Given 1-&gt;1-&gt;2, return 1-&gt;2.
-Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3.
-</code></pre><h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x94FE;&#x8868;&#xFF0C;&#x5220;&#x9664;&#x6240;&#x6709;&#x91CD;&#x590D;&#x7684;&#x5143;&#x7D20;&#x4F7F;&#x5F97;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x3002;</p>
-<p><strong>&#x4F8B;&#x5982;&#xFF1A;</strong></p>
-<pre><code>&#x7ED9;&#x51FA; 1-&gt;1-&gt;2&#xFF0C;&#x8FD4;&#x56DE; 1-&gt;2&#x3002;
-&#x7ED9;&#x51FA; 1-&gt;1-&gt;2-&gt;3-&gt;3&#xFF0C;&#x8FD4;&#x56DE; 1-&gt;2-&gt;3&#x3002;
-</code></pre><h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
-<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> linked list</p>
+<p>Two elements of a binary search tree (BST) are swapped by mistake.</p>
+<p>Recover the tree without changing its structure.</p>
+<p><strong>Note:</strong>
+A solution using O(<em>n</em>) space is pretty straight forward. Could you devise a constant space solution?</p>
+<h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
+<p>&#x4E00;&#x4E2A;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x4E2D;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x4F4D;&#x7F6E;&#x88AB;&#x4EA4;&#x6362;&#x4E86;&#xFF0C;&#x5728;&#x4E0D;&#x6539;&#x53D8;&#x7ED3;&#x6784;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x6062;&#x590D;&#x4E8C;&#x53C9;&#x6811;&#x641C;&#x7D22;&#x6811;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
+<ol>
+<li>&#x7B97;&#x6CD5;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(<em>n</em>)</li>
+</ol>
+<h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
+<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Tree</p>
 <p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
 <ul>
-<li>&#x65B9;&#x6CD5;&#x6BD4;&#x8F83;&#x6E05;&#x6670;&#xFF0C;&#x7EF4;&#x62A4;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x5F53;&#x524D;&#x4E0D;&#x91CD;&#x590D;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x4E00;&#x4E2A;&#x8FDB;&#x884C;&#x4F9D;&#x6B21;&#x626B;&#x63CF;&#xFF0C;&#x9047;&#x5230;&#x4E0D;&#x91CD;&#x590D;&#x7684;&#x5219;&#x66F4;&#x65B0;&#x7B2C;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x7EE7;&#x7EED;&#x626B;&#x63CF;&#xFF0C;&#x5426;&#x5219;&#x5C31;&#x628A;&#x524D;&#x9762;&#x6307;&#x9488;&#x6307;&#x5411;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#xFF08;&#x5373;&#x628A;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x4ECE;&#x94FE;&#x8868;&#x4E2D;&#x5220;&#x9664;&#xFF09;&#x3002;</li>
-<li>&#x65F6;&#x95F4;&#x4E0A;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x6B21;&#x626B;&#x63CF;&#xFF0C;&#x6240;&#x4EE5;&#x662F;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x4E0A;&#x4E24;&#x4E2A;&#x989D;&#x5916;&#x6307;&#x9488;&#xFF0C;&#x662F;O(1)&#x3002;</li>
+<li>&#x6B63;&#x786E;&#x6784;&#x9020;&#x7684;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x7684;&#x4E2D;&#x5E8F;&#x904D;&#x5386;&#x662F;&#x5347;&#x5E8F;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#x9519;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x904D;&#x5386;&#x7ED3;&#x679C;&#x4F1A;&#x51FA;&#x73B0;&#x964D;&#x5E8F;&#xFF0C;&#x90A3;&#x4E48;&#x51FA;&#x73B0;&#x964D;&#x5E8F;&#x7684;&#x5730;&#x65B9;&#x5C31;&#x662F;&#x88AB;&#x4EA4;&#x6362;&#x7684;&#x7ED3;&#x70B9;&#xFF0C;&#x53EA;&#x9700;&#x5C06;&#x5176;&#x4EA4;&#x6362;&#x8FC7;&#x6765;&#x5C31;&#x53EF;&#x6062;&#x590D;&#x81F3;&#x6B63;&#x786E;&#x7684;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x3002;</li>
+<li>&#x6B64;&#x65F6;&#x4F1A;&#x6709;&#x4E24;&#x79CD;&#x60C5;&#x51B5;<ol>
+<li>&#x76F8;&#x90BB;&#x5143;&#x7D20;&#x51FA;&#x73B0;&#x964D;&#x5E8F;&#xFF0C;&#x5373;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x4E0E;&#x5176;&#x540E;&#x7EE7;(&#x5F53;&#x524D;&#x5143;&#x7D20;&#x4ECE;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5F00;&#x59CB;&#x6807;&#x8BB0;)&#x51FA;&#x73B0;&#x5F62;&#x6210;&#x9006;&#x5E8F;&#x5BF9;,&#x5BF9;&#x5E94;&#x5F53;&#x524D;&#x7ED3;&#x70B9;&#x4E0E;&#x5176;&#x53F3;&#x5B50;&#x6811;&#x6700;&#x5DE6;&#x4E0B;&#x7ED3;&#x70B9;&#x6216;&#x5176;&#x7236;&#x7ED3;&#x70B9;&#x4EA4;&#x6362;&#x4E86;&#x4F4D;&#x7F6E;&#x3002;&#x6B64;&#x65F6;&#x6709;&#x4E14;&#x4EC5;&#x6709;&#x4E00;&#x4E2A;&#x9006;&#x5E8F;&#x5BF9;&#x3002;&#x6BD4;&#x5982;[1-2-3-4-5]-&gt;[1-2-4-3-5]&#x3002;</li>
+<li>&#x975E;&#x76F8;&#x90BB;&#x5143;&#x7D20;&#x51FA;&#x73B0;&#x964D;&#x5E8F;&#xFF0C;&#x6B64;&#x65F6;&#x4F1A;&#x51FA;&#x73B0;&#x4E24;&#x4E2A;&#x9006;&#x5E8F;&#x5BF9;&#xFF0C;&#x6BD4;&#x5982;[1-2-3-4-5]-&gt;[1-4-3-2-5]&#x3002;</li>
+</ol>
+</li>
+<li>&#x8003;&#x8651;&#x4EE5;&#x4E0A;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E24;&#x4E2A;&#x6307;&#x9488;(<em>mistake1,mistake2</em>)&#x8BB0;&#x5F55;&#x51FA;&#x73B0;&#x9006;&#x5E8F;&#x7684;&#x4F4D;&#x7F6E;(<em>mistake1</em>&#x6307;&#x5411;&#x7B2C;&#x4E00;&#x4E2A;&#x9006;&#x5E8F;&#x5BF9;&#x4E2D;&#x7684;&#x8F83;&#x5927;&#x5143;&#x7D20;,<em>mistake2</em>&#x6307;&#x5411;&#x5176;&#x540E;&#x7EE7;&#x7ED3;&#x70B9;&#x2014;&#x2014;&#x5BF9;&#x5E94;&#x76F8;&#x90BB;&#x5143;&#x7D20;&#x51FA;&#x73B0;&#x9006;&#x5E8F;&#xFF0C;&#x5728;&#x4EE5;&#x540E;&#x7684;&#x904D;&#x5386;&#x4E2D;&#x66F4;&#x65B0;&#x4E3A;&#x7B2C;&#x4E8C;&#x4E2A;&#x9006;&#x5E8F;&#x5BF9;&#x4E2D;&#x8F83;&#x5C0F;&#x5143;&#x7D20;&#x2014;&#x2014;&#x5BF9;&#x5E94;&#x975E;&#x76F8;&#x90BB;&#x5143;&#x7D20;&#x51FA;&#x73B0;&#x9006;&#x5E8F;) </li>
 </ul>
 <p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
-<pre><code>/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
-class Solution {
-public:
-    ListNode* deleteDuplicates(ListNode* head) {
-        if(head == NULL)
-            return head;
-        ListNode* pre = head;
-        ListNode* cur = head-&gt;next;
-        while(cur!=NULL)
-        {
-            if(cur-&gt;val == pre-&gt;val){
-                pre-&gt;next = cur-&gt;next;
-            }else{
-                pre = cur;
-            }
-            cur = cur-&gt;next;
-        }
-        return head;
-    }
-};
+<pre><code># Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def recoverTree(self, root):  # &#x4EA4;&#x6362;&#x9519;&#x4F4D;&#x7ED3;&#x70B9;
+
+        &quot;&quot;&quot;
+        :type root: TreeNode
+        :rtype: void Do not return anything, modify root in-place instead.
+        &quot;&quot;&quot;
+
+        self.precursor = None  # &#x4E3A;Solution&#x7C7B;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#x6210;&#x5458;precursor&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x4E2D;&#x5E8F;&#x904D;&#x5386;&#x6811;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6307;&#x5411;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x524D;&#x9A71;&#x8282;&#x70B9;&#x3002;
+
+        # &#x4E3A;Solution&#x7C7B;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#x6210;&#x5458;mistake1&#x548C;mistake2&#xFF0C;&#x6307;&#x5411;&#x9519;&#x8BEF;&#x7684;&#x4E24;&#x4E2A;&#x8282;&#x70B9;
+        self.mistake1 = None
+        self.mistake2 = None
+        self.recursive_left_root_right(root)  # &#x8C03;&#x7528;&#x4E2D;&#x5E8F;&#x904D;&#x5386;&#x51FD;&#x6570;&#xFF0C;&#x627E;&#x5230;&#x9519;&#x8BEF;&#x7684;&#x8282;&#x70B9;
+        if self.mistake1 is not None:  # &#x6709;&#x9519;&#x4F4D;&#x7ED3;&#x70B9;
+            self.mistake1.val, self.mistake2.val = self.mistake2.val, self.mistake1.val  # &#x4EA4;&#x6362;2&#x4E2A;&#x9519;&#x8BEF;&#x8282;&#x70B9;&#x7684;&#x503C;&#xFF0C;&#x4F7F;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x6062;&#x590D;&#x6B63;&#x5E38;
+
+
+    def recursive_left_root_right(self, root):  # &#x4E2D;&#x5E8F;&#x904D;&#x5386;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;
+        if root == None:  # &#x4E8C;&#x53C9;&#x6811;&#x4E3A;&#x7A7A;
+            return
+        self.recursive_left_root_right(root.left)  # &#x9012;&#x5F52;&#x5730;&#x4E2D;&#x5E8F;&#x904D;&#x5386;&#x5DE6;&#x5B50;&#x6811;
+
+        if self.precursor != None and self.precursor.val &gt; root.val:  # &#x51FA;&#x73B0;&#x9006;&#x5E8F;&#x5BF9;
+            if self.mistake1 is None:  # &#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x9006;&#x5E8F;&#x5BF9;
+                self.mistake1, self.mistake2 = self.precursor, root
+            else:  # &#x7B2C;&#x4E8C;&#x6B21;&#x51FA;&#x73B0;&#x9006;&#x5E8F;&#x5BF9;
+                self.mistake2 = root
+        self.precursor = root
+
+        self.recursive_left_root_right(root.right)  # &#x9012;&#x5F52;&#x5730;&#x4E2D;&#x5E8F;&#x904D;&#x5386;&#x53F3;&#x5B50;&#x6811;
 </code></pre><h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
 <ul>
-<li><a href="http://blog.csdn.net/linhuanmars/article/details/24354291" target="_blank">http://blog.csdn.net/linhuanmars/article/details/24354291</a></li>
-<li><a href="http://blog.csdn.net/feliciafay/article/details/18072359" target="_blank">http://blog.csdn.net/feliciafay/article/details/18072359</a></li>
-<li>&#x4F5C;&#x8005;&#xFF1A;&#x8FDE;&#x660E;</li>
+<li><a href="http://blog.csdn.net/sxingming/article/details/51598153" target="_blank">http://blog.csdn.net/sxingming/article/details/51598153</a></li>
+<li>&#x4F5C;&#x8005;&#xFF1A;&#x5FEB;&#x9012;&#x5C0F;&#x53EF;</li>
 </ul>
 
                                 
@@ -1099,12 +1115,12 @@ public:
 
             
                 
-                <a href="75.html" class="navigation navigation-prev " aria-label="Previous page: 75.   Sort Colors">
+                <a href="98.md" class="navigation navigation-prev " aria-label="Previous page: 98.   Validate Binary Search Tree">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="94.html" class="navigation navigation-next " aria-label="Next page: 94.  Binary Tree Inorder Traversal">
+                <a href="100.html" class="navigation navigation-next " aria-label="Next page: 100.  Same Tree">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1115,7 +1131,7 @@ public:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"83.   Remove Duplicates from Sorted List","level":"1.3.41","depth":2,"next":{"title":"94.  Binary Tree Inorder Traversal","level":"1.3.42","depth":2,"path":"answer/94.md","ref":"./answer/94.md","articles":[]},"previous":{"title":"75.   Sort Colors","level":"1.3.40","depth":2,"path":"answer/75.md","ref":"./answer/75.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/83.md","mtime":"2017-10-24T11:01:24.741Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-10T09:04:36.218Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"99.  Recover Binary Search Tree","level":"1.3.45","depth":2,"next":{"title":"100.  Same Tree","level":"1.3.46","depth":2,"path":"answer/100.md","ref":"./answer/100.md","articles":[]},"previous":{"title":"98.   Validate Binary Search Tree","level":"1.3.44","depth":2,"path":"answer/98.md","ref":"./answer/98.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/99.md","mtime":"2017-12-10T08:56:30.409Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-10T09:04:36.218Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
