@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>12.  Integer to Roman · GitBook</title>
+        <title>104.  Maximum Depth of Binary Tree · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -47,10 +47,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="13.html" />
+    <link rel="next" href="105.html" />
     
     
-    <link rel="prev" href="11.html" />
+    <link rel="prev" href="101.html" />
     
 
     </head>
@@ -307,7 +307,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.11" data-path="12.html">
+        <li class="chapter " data-level="1.3.11" data-path="12.html">
             
                 <a href="12.html">
             
@@ -788,7 +788,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.48" data-path="104.html">
+        <li class="chapter active" data-level="1.3.48" data-path="104.html">
             
                 <a href="104.html">
             
@@ -1005,7 +1005,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >12.  Integer to Roman</a>
+        <a href=".." >104.  Maximum Depth of Binary Tree</a>
     </h1>
 </div>
 
@@ -1020,86 +1020,64 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="12-integer-to-roman"><a href="https://leetcode.com/problems/integer-to-roman/description/" target="_blank">12. Integer to Roman</a></h1>
+                                <h1 id="104-maximum-depth-of-binary-tree"><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/description/" target="_blank">104. Maximum Depth of Binary Tree</a></h1>
 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</h2>
-<p>Given an integer, convert it to a roman numeral.</p>
-<p>Input is guaranteed to be within the range from 1 to 3999.</p>
+<p>Given a binary tree, find its maximum depth.</p>
+<p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
 <h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
-<p>&#x5C06;&#x6574;&#x6570;&#x8F6C;&#x5316;&#x6210;&#x7F57;&#x9A6C;&#x6570;&#x5B57;&#xFF0C;&#x5176;&#x4E2D;&#x8F93;&#x5165;&#x6570;&#x636E;&#x8303;&#x56F4;&#x662F;1&#x5230;3999</p>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x627E;&#x5230;&#x5B83;&#x7684;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x3002;</p>
+<p>&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x662F;&#x6CBF;&#x7740;&#x4ECE;&#x6839;&#x8282;&#x70B9;&#x5230;&#x6700;&#x8FDC;&#x53F6;&#x8282;&#x70B9;&#x7684;&#x6700;&#x957F;&#x8DEF;&#x5F84;&#x7684;&#x8282;&#x70B9;&#x7684;&#x6570;&#x91CF;&#x3002;</p>
 <h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
-<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> &#x6570;&#x5B66;, &#x5B57;&#x7B26;&#x4E32;</p>
+<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Depth-first Search</p>
 <p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
 <ul>
-<li>&#x7F57;&#x9A6C;&#x6570;&#x5B57;&#x7684;&#x8BA1;&#x6570;&#x65B9;&#x6CD5;:</li>
+<li><p>&#x8FD9;&#x662F;&#x4E00;&#x9053;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x7684;&#x6811;&#x7684;&#x9898;&#x76EE;&#xFF0C;&#x53EF;&#x4EE5;&#x6709;&#x9012;&#x5F52;&#x548C;&#x975E;&#x9012;&#x5F52;&#x7684;&#x89E3;&#x6CD5;&#xFF0C;&#x9012;&#x5F52;&#x601D;&#x8DEF;&#x7B80;&#x5355;&#xFF0C;&#x8FD4;&#x56DE;&#x5DE6;&#x5B50;&#x6811;&#x6216;&#x8005;&#x53F3;&#x5B50;&#x6811;&#x4E2D;&#x5927;&#x7684;&#x6DF1;&#x5EA6;&#x52A0;1&#xFF0C;&#x4F5C;&#x4E3A;&#x81EA;&#x5DF1;&#x7684;&#x6DF1;&#x5EA6;&#x5373;&#x53EF;&#x3002;</p>
+</li>
+<li><p>&#x975E;&#x9012;&#x5F52;&#x89E3;&#x6CD5;&#x4E00;&#x822C;&#x91C7;&#x7528;&#x5C42;&#x5E8F;&#x904D;&#x5386;(&#x76F8;&#x5F53;&#x4E8E;&#x56FE;&#x7684;BFS&#xFF09;&#xFF0C;&#x56E0;&#x4E3A;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x904D;&#x5386;&#x65B9;&#x5F0F;&#x4E5F;&#x9700;&#x8981;&#x540C;&#x6837;&#x7684;&#x590D;&#x6742;&#x5EA6;O(n). &#x5C42;&#x5E8F;&#x904D;&#x5386;&#x7406;&#x89E3;&#x4E0A;&#x76F4;&#x89C2;&#x4E00;&#x4E9B;&#xFF0C;&#x7EF4;&#x62A4;&#x5230;&#x6700;&#x540E;&#x7684;level&#x4FBF;&#x662F;&#x6811;&#x7684;&#x6DF1;&#x5EA6;&#x3002;</p>
+</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>&#x7F57;&#x9A6C;&#x5B57;&#x7B26;</th>
-<th style="text-align:center">I</th>
-<th style="text-align:right">V</th>
-<th style="text-align:right">X</th>
-<th style="text-align:right">L</th>
-<th style="text-align:right">C</th>
-<th style="text-align:right">D</th>
-<th style="text-align:right">M</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&#x6574;&#x6570;&#x6570;&#x5B57;</td>
-<td style="text-align:center">1</td>
-<td style="text-align:right">5</td>
-<td style="text-align:right">10</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">100</td>
-<td style="text-align:right">500</td>
-<td style="text-align:right">1000</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>&#x76F8;&#x540C;&#x7684;&#x6570;&#x5B57;&#x8FDE;&#x5199;&#xFF0C;&#x6240;&#x8868;&#x793A;&#x7684;&#x6570;&#x7B49;&#x4E8E;&#x8FD9;&#x4E9B;&#x6570;&#x5B57;&#x76F8;&#x52A0;&#x5F97;&#x5230;&#x7684;&#x6570;&#xFF0C;&#x5982;&#xFF1A;III = 3&#xFF1B;
-&#x5C0F;&#x7684;&#x6570;&#x5B57;&#x5728;&#x5927;&#x7684;&#x6570;&#x5B57;&#x7684;&#x53F3;&#x8FB9;&#xFF0C;&#x6240;&#x8868;&#x793A;&#x7684;&#x6570;&#x7B49;&#x4E8E;&#x8FD9;&#x4E9B;&#x6570;&#x5B57;&#x76F8;&#x52A0;&#x5F97;&#x5230;&#x7684;&#x6570;&#xFF0C; &#x5982;&#xFF1A;VIII = 8&#xFF1B;XII = 12&#xFF1B;</li>
-<li>&#x5C0F;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#xFF08;&#x9650;&#x4E8E;I&#x3001;X &#x548C;C&#xFF09;&#x5728;&#x5927;&#x7684;&#x6570;&#x5B57;&#x7684;&#x5DE6;&#x8FB9;&#xFF0C;&#x6240;&#x8868;&#x793A;&#x7684;&#x6570;&#x7B49;&#x4E8E;&#x5927;&#x6570;&#x51CF;&#x5C0F;&#x6570;&#x5F97;&#x5230;&#x7684;&#x6570;&#xFF0C;&#x5982;&#xFF1A;IV= 4&#xFF1B;IX= 9&#xFF1B;</li>
-<li>&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x8FDE;&#x5199;&#x7684;&#x6570;&#x5B57;&#x91CD;&#x590D;&#x4E0D;&#x5F97;&#x8D85;&#x8FC7;&#x4E09;&#x6B21;&#x3002;&#xFF08;&#x8868;&#x76D8;&#x4E0A;&#x7684;&#x56DB;&#x70B9;&#x949F;&#x201C;IIII&#x201D;&#x4F8B;&#x5916;&#xFF09;
-&#x5728;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x4E0A;&#x9762;&#x753B;&#x4E00;&#x6761;&#x6A2A;&#x7EBF;&#xFF0C;&#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x6570;&#x6269;&#x5927;1000&#x500D;&#x3002;&#xFF08;&#x672C;&#x9898;&#x7528;&#x4E0D;&#x5230;&#x8FD9;&#x70B9;&#xFF09;</li>
-</ul>
-<p>&#x6709;&#x51E0;&#x6761;&#x987B;&#x6CE8;&#x610F;&#x638C;&#x63E1;&#xFF1A;</p>
-<ul>
-<li>&#x57FA;&#x672C;&#x6570;&#x5B57;I&#x3001;X&#x3001;C&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#xFF0C;&#x81EA;&#x8EAB;&#x8FDE;&#x7528;&#x6784;&#x6210;&#x6570;&#x76EE;&#xFF0C;&#x6216;&#x8005;&#x653E;&#x5728;&#x5927;&#x6570;&#x7684;&#x53F3;&#x8FB9;&#x8FDE;&#x7528;&#x6784;&#x6210;&#x6570;&#x76EE;&#xFF0C;&#x90FD;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7;&#x4E09;&#x4E2A;&#xFF1B;&#x653E;&#x5728;&#x5927;&#x6570;&#x7684;&#x5DE6;&#x8FB9;&#x53EA;&#x80FD;&#x7528;&#x4E00;&#x4E2A;&#x3002;</li>
-<li>&#x4E0D;&#x80FD;&#x628A;&#x57FA;&#x672C;&#x6570;&#x5B57;V&#x3001;L&#x3001;D&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x4F5C;&#x4E3A;&#x5C0F;&#x6570;&#x653E;&#x5728;&#x5927;&#x6570;&#x7684;&#x5DE6;&#x8FB9;&#x91C7;&#x7528;&#x76F8;&#x51CF;&#x7684;&#x65B9;&#x6CD5;&#x6784;&#x6210;&#x6570;&#x76EE;&#xFF1B;&#x653E;&#x5728;&#x5927;&#x6570;&#x7684;&#x53F3;&#x8FB9;&#x91C7;&#x7528;&#x76F8;&#x52A0;&#x7684;&#x65B9;&#x5F0F;&#x6784;&#x6210;&#x6570;&#x76EE;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x3002;</li>
-<li>V&#x548C;X&#x5DE6;&#x8FB9;&#x7684;&#x5C0F;&#x6570;&#x5B57;&#x53EA;&#x80FD;&#x7528;I&#xFF0C;&#x4E14;&#x53EA;&#x80FD;&#x6709;1&#x4E2A;&#x3002;</li>
-<li>L&#x548C;C&#x5DE6;&#x8FB9;&#x7684;&#x5C0F;&#x6570;&#x5B57;&#x53EA;&#x80FD;&#x7528;X&#xFF0C;&#x4E14;&#x53EA;&#x80FD;&#x6709;1&#x4E2A;&#x3002;</li>
-<li>D&#x548C;M&#x5DE6;&#x8FB9;&#x7684;&#x5C0F;&#x6570;&#x5B57;&#x53EA;&#x80FD;&#x7528;C&#xFF0C;&#x4E14;&#x53EA;&#x80FD;&#x6709;1&#x4E2A;&#x3002;
-&#x770B;&#x61C2;&#x4E86;&#x4E0A;&#x9762;&#x7684;&#x89C4;&#x5219;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5BF9;&#x6570;&#x5B57;&#x7684;&#x6BCF;&#x4F4D;&#x9010;&#x4E2A;&#x5224;&#x65AD;&#x5373;&#x53EF;&#x3002;&#x53EF;&#x4EE5;&#x5F52;&#x7EB3;&#x51FA;&#x5982;&#x4E0B;4&#x79CD;&#x60C5;&#x5F62;&#xFF1A;</li>
-</ul>
-<p>&#x5982;&#x679C;&#x8BE5;&#x4F4D;&#x6570;&#x5B57;&#x662F;9&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x662F;&#x4E0A;&#x9762;3&#x3001;4&#x3001;5&#x8FD9;&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#x4E2D;&#x7684;&#x4E00;&#x79CD;&#xFF0C;&#x5373;&#x628A;I&#x3001;X&#x3001;C&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x653E;&#x5230;&#x4E86;&#x5927;&#x6570;&#x5B57;&#x7684;&#x5DE6;&#x4FA7;&#xFF1B;
-&#x5982;&#x679C;&#x8BE5;&#x4F4D;&#x6570;&#x5B57;&#x662F;5~8&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x662F;&#x4E0A;&#x9762;1&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x5373;I&#x3001;X&#x3001;C&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#xFF0C;&#x81EA;&#x8EAB;&#x8FDE;&#x7528;&#x6216;&#x8005;&#x653E;&#x5728;&#x5927;&#x6570;&#x7684;&#x53F3;&#x8FB9;&#x8FDE;&#x7528;&#xFF1B;
-&#x5982;&#x679C;&#x8BE5;&#x4F4D;&#x6570;&#x5B57;&#x662F;4&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x540C;&#x6837;&#x662F;&#x4E0A;&#x9762;3&#x3001;4&#x3001;5&#x8FD9;&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#x4E2D;&#x7684;&#x4E00;&#x79CD;&#xFF0C;&#x5373;&#x628A;I&#x3001;X&#x3001;C&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x653E;&#x5230;&#x4E86;&#x5927;&#x6570;&#x5B57;&#x7684;&#x5DE6;&#x4FA7;&#xFF1B;
-&#x5982;&#x679C;&#x8BE5;&#x4F4D;&#x6570;&#x5B57;&#x662F;0~3&#xFF0C;&#x5219;&#x540C;&#x6837;&#x8BF4;&#x660E;&#x662F;&#x4E0A;&#x9762;1&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x5373;I&#x3001;X&#x3001;C&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#xFF0C;&#x81EA;&#x8EAB;&#x8FDE;&#x7528;&#x6216;&#x8005;&#x653E;&#x5728;&#x5927;&#x6570;&#x7684;&#x53F3;&#x8FB9;&#x8FDE;&#x7528;&#x3002;
-&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;O(n)</p>
-<p>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;O(1)</p>
-<p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
-<pre><code>class Solution
-{
-  public:
-      string intToRoman(int num)
-      {
-          int n[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
-          string r[] = {&quot;M&quot;, &quot;CM&quot;, &quot;D&quot;, &quot;CD&quot;, &quot;C&quot;, &quot;XC&quot;, &quot;L&quot;, &quot;XL&quot;, &quot;X&quot;, &quot;IX&quot;, &quot;V&quot;, &quot;IV&quot;, &quot;I&quot;};
-
-          string s = &quot;&quot;;
-         for(int i = 0; num &gt; 0; num %= n[i], ++ i)
-             for(int j = 0, k = num / n[i]; j &lt; k; ++ j)
-                 s += r[i];
-         return s;
-     }
-};
+<p><strong>Java&#x4EE3;&#x7801;&#xFF1A;</strong></p>
+<pre><code>public int maxDepth(TreeNode root) {  
+    if(root == null)  
+        return 0;  
+    return Math.max(maxDepth(root.left),maxDepth(root.right))+1;  
+}
+</code></pre><p><strong>Java&#x4EE3;&#x7801;&#xFF1A;</strong></p>
+<pre><code>public int maxDepth(TreeNode root) {  
+    if(root == null)  
+        return 0;  
+    int level = 0;  
+    LinkedList&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;();  
+    queue.add(root);  
+    int curNum = 1; //num of nodes left in current level  
+    int nextNum = 0; //num of nodes in next level  
+    while(!queue.isEmpty())  
+    {  
+        TreeNode n = queue.poll();  
+        curNum--;  
+        if(n.left!=null)  
+        {  
+            queue.add(n.left);  
+            nextNum++;  
+        }  
+        if(n.right!=null)  
+        {  
+            queue.add(n.right);  
+            nextNum++;  
+        }  
+        if(curNum == 0)  
+        {  
+            curNum = nextNum;  
+            nextNum = 0;  
+            level++;  
+        }  
+    }  
+    return level;  
+}
 </code></pre><h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
 <ul>
-<li><a href="http://blog.csdn.net/makuiyu/article/details/43267973?readlog" target="_blank">http://blog.csdn.net/makuiyu/article/details/43267973?readlog</a></li>
-<li>&#x4F5C;&#x8005;&#xFF1A;makuiyu</li>
+<li><a href="http://blog.csdn.net/linhuanmars/article/details/19659525" target="_blank">http://blog.csdn.net/linhuanmars/article/details/19659525</a></li>
+<li>&#x4F5C;&#x8005;&#xFF1A;Code_Ganker</li>
 </ul>
 
                                 
@@ -1128,12 +1106,12 @@
 
             
                 
-                <a href="11.html" class="navigation navigation-prev " aria-label="Previous page: 11.  Container With Most Water">
+                <a href="101.html" class="navigation navigation-prev " aria-label="Previous page: 101.  Symmetric Tree">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="13.html" class="navigation navigation-next " aria-label="Next page: 13.  Roman to Integer">
+                <a href="105.html" class="navigation navigation-next " aria-label="Next page: 105.  Construct Binary Tree from Preorder and Inorder Traversal">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1144,7 +1122,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"12.  Integer to Roman","level":"1.3.11","depth":2,"next":{"title":"13.  Roman to Integer","level":"1.3.12","depth":2,"path":"answer/13.md","ref":"./answer/13.md","articles":[]},"previous":{"title":"11.  Container With Most Water","level":"1.3.10","depth":2,"path":"answer/11.md","ref":"./answer/11.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/12.md","mtime":"2017-12-15T06:44:12.810Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-15T06:54:39.513Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"104.  Maximum Depth of Binary Tree","level":"1.3.48","depth":2,"next":{"title":"105.  Construct Binary Tree from Preorder and Inorder Traversal","level":"1.3.49","depth":2,"path":"answer/105.md","ref":"./answer/105.md","articles":[]},"previous":{"title":"101.  Symmetric Tree","level":"1.3.47","depth":2,"path":"answer/101.md","ref":"./answer/101.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/104.md","mtime":"2017-12-15T06:54:24.077Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-15T06:54:39.513Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
