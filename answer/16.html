@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>6.  ZigZag Conversion · GitBook</title>
+        <title>16.   3Sum Closest · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -47,10 +47,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="7.html" />
+    <link rel="next" href="17.md" />
     
     
-    <link rel="prev" href="5.md" />
+    <link rel="prev" href="15.html" />
     
 
     </head>
@@ -242,7 +242,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.6" data-path="6.html">
+        <li class="chapter " data-level="1.3.6" data-path="6.html">
             
                 <a href="6.html">
             
@@ -359,7 +359,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.15" data-path="16.html">
+        <li class="chapter active" data-level="1.3.15" data-path="16.html">
             
                 <a href="16.html">
             
@@ -1122,7 +1122,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >6.  ZigZag Conversion</a>
+        <a href=".." >16.   3Sum Closest</a>
     </h1>
 </div>
 
@@ -1137,62 +1137,54 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="6-zigzag-conversion"><a href="https://leetcode.com/problems/zigzag-conversion/description/" target="_blank">6. ZigZag Conversion</a></h1>
+                                <h1 id="2-add-two-numbers"><a href="https://leetcode.com/problems/add-two-numbers/description/" target="_blank">2 Add Two Numbers</a></h1>
 <h2 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#xFF1A;</h2>
-<p>The string &quot;PAYPALISHIRING&quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
-<pre><code>P   A   H   N
-A P L S I I G
-Y   I   R
-</code></pre><p>And then read line by line: &quot;PAHNAPLSIIGYIR&quot;
-Write the code that will take a string and make this conversion given a number of rows:</p>
-<pre><code>string convert(string text, int nRows);
-</code></pre><p>convert(&quot;PAYPALISHIRING&quot;, 3) should return &quot;PAHNAPLSIIGYIR&quot;.</p>
-<h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
-<p>&#x5B57;&#x7B26;&#x4E32;&quot;PAYPALISHIRING&quot;&#x6839;&#x636E;&#x7ED9;&#x5B9A;&#x884C;&#x6570;&#xFF0C;&#x4EE5;&#x4E00;&#x4E2A;Z&#x5B57;&#x5F62;&#x663E;&#x793A;&#x51FA;&#x6765;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;&#xFF08;&#x60A8;&#x53EF;&#x80FD;&#x5E0C;&#x671B;&#x4EE5;&#x56FA;&#x5B9A;&#x5B57;&#x4F53;&#x663E;&#x793A;&#x6B64;&#x6A21;&#x5F0F;&#x4EE5;&#x83B7;&#x5F97;&#x66F4;&#x597D;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#xFF09;</p>
-<pre><code>P   A   H   N
-A P L S I I G
-Y   I   R
-</code></pre><p>&#x7136;&#x540E;&#x9010;&#x884C;&#x9605;&#x8BFB;&#xFF1A; &quot;PAHNAPLSIIGYIR&quot;
-&#x7F16;&#x5199;&#x83B7;&#x53D6;&#x9010;&#x884C;&#x9605;&#x8BFB;Z&#x5B57;&#x5F62;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x5C06;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x8FD4;&#x56DE;</p>
-<pre><code class="lang-java">string convert&#xFF08;string text&#xFF0C;<span class="hljs-keyword">int</span> nRows&#xFF09;;
-</code></pre>
-<p>convert(&quot;PAYPALISHIRING&quot;, 3)&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&quot;PAHNAPLSIIGYIR&quot;&#x3002;</p>
-<h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
-<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> String</p>
+<p>Given an array <em>S</em> of <em>n</em> integers, find three integers in <em>S</em> such that the sum is closest to a given number, target. Return the sum of the three integers. You may assume that each input would have exactly one solution</p>
+<p><strong>Example 1:</strong></p>
+<pre><code> given array S = {-1 2 1 -4}, and target = 1.
+The sum that is closest to the target is 2\. (-1 + 2 + 1 = 2).
+</code></pre><h2 id="&#x9898;&#x76EE;&#x7FFB;&#x8BD1;">&#x9898;&#x76EE;&#x7FFB;&#x8BD1;</h2>
+<p>&#x7ED9;&#x5B9A;&#x5305;&#x542B; <em>n</em> &#x4E2A;&#x6B63;&#x6570;&#x7684;&#x6570;&#x7EC4; <em>S</em> &#xFF0C;&#x627E;&#x51FA; <em>S</em> &#x4E2D;3&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x548C;&#xFF0C;&#x4F7F;&#x5176;&#x6700;&#x63A5;&#x8FD1;&#x7ED9;&#x5B9A;&#x6570;&#x503C;&#xFF0C;&#x5047;&#x8BBE;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6700;&#x4F18;&#x89E3;</p>
+<p><strong>&#x793A;&#x4F8B;1&#xFF1A;</strong></p>
+<pre><code>Input : S={-1 2 1 -4}, target = 1.
+Output : 2
+</code></pre><h2 id="&#x89E3;&#x9898;&#x65B9;&#x6848;">&#x89E3;&#x9898;&#x65B9;&#x6848;</h2>
+<p><strong>&#x6807;&#x7B7E;&#xFF1A;</strong> Array</p>
 <p><strong>&#x601D;&#x8DEF;&#xFF1A;</strong></p>
 <ul>
-<li>&#x6574;&#x4F53;&#x601D;&#x8DEF;&#x662F;&#xFF0C;&#x6309;&#x7167;&#x884C;&#x6765;&#x8FDB;&#x884C;&#x904D;&#x5386;&#xFF0C;&#x7B2C;&#x4E00;&#x884C;&#x548C;&#x6700;&#x540E;&#x4E00;&#x884C;&#x4E0D;&#x9700;&#x8981;&#x8003;&#x8651;&#x659C;&#x5411;&#x4E0A;&#x5143;&#x7D20;&#xFF0C;&#x5176;&#x4ED6;&#x884C;&#x9700;&#x8981;&#x5C06;&#x659C;&#x5411;&#x4E0A;&#x5143;&#x7D20;&#x6839;&#x636E;&#x6570;&#x5B66;&#x89C4;&#x5F8B;&#x8FDB;&#x884C;&#x6DFB;&#x52A0;</li>
-</ul>
-<p><img src="../images/6-1.png" alt=""></p>
-<ul>
-<li>&#x4EE5;&#x4E0A;&#x56FE;&#x4E3A;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x53D8;&#x5F62;&#x540E;&#x7684;&#x6570;&#x636E;&#x6839;&#x636E;&#x659C;&#x7740;&#x7684; V &#x5F62;&#x6765;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#xFF0C;&#x6BCF;&#x4E00;&#x7EC4; V &#x5B57;&#x5F62;&#x7684;&#x957F;&#x5EA6;&#x4E3A; size = 2 * line - 2&#xFF0C;line &#x662F;&#x884C;&#x6570;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E0A;&#x56FE; size = 8 </li>
-<li>&#x5BF9;&#x4E8E;&#x5782;&#x76F4;&#x5411;&#x4E0B;&#x7684;&#x4E00;&#x5217;&#x5143;&#x7D20;&#x6765;&#x8BF4;&#xFF0C;&#x6BCF;&#x4E00;&#x7EC4;&#x5411;&#x4E0B;&#x7684;&#x5217;&#x4E4B;&#x95F4;&#x95F4;&#x9694; size &#x5927;&#x5C0F;&#xFF0C;&#x5373;&#x4E00;&#x7EC4;&#x5143;&#x7D20;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x6BD4;&#x5982;0&#x548C;8&#x3001;2&#x548C;10&#x4E4B;&#x95F4;&#x90FD;&#x76F8;&#x5DEE;&#x4E86; size &#x5927;&#x5C0F;&#x3002; </li>
-<li>&#x5BF9;&#x4E8E;&#x659C;&#x5411;&#x4E0A;&#x7684;&#x5143;&#x7D20;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x4F4D;&#x7F6E;&#x4F4D;&#x4E8E;&#x5F53;&#x524D;&#x7EC4; size - i&#xFF08;i &#x4E3A;&#x8BE5;&#x5143;&#x7D20;&#x6240;&#x5728;&#x7684;&#x884C;&#x6570;&#xFF0C;&#x4E00;&#x7EC4;&#x6709; size &#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x7B2C; i &#x884C;&#x5C31;&#x4EE3;&#x8868;&#x7740;&#x5012;&#x6570;&#x7B2C; i &#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x6240;&#x4EE5;&#x4F4D;&#x7F6E;&#x4E3A; size - 1&#xFF09;&#x3002;&#x5F53;&#x524D;&#x7EC4;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x4E3A; j - i &#xFF08;j &#x4E3A;&#x4E0E;&#x659C;&#x5411;&#x4E0A;&#x7684;&#x5143;&#x7D20;&#x540C;&#x5728;&#x4E00;&#x884C;&#x7684;&#xFF0C;&#x5782;&#x76F4;&#x5411;&#x4E0B;&#x7684;&#x5217;&#x7684;&#x5143;&#x7D20;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x5E8F;&#x53F7;&#xFF0C;i &#x4E3A;&#x5B83;&#x4EEC;&#x5171;&#x540C;&#x7684;&#x884C;&#x53F7;&#xFF09;&#x3002;</li>
-<li>&#x5373;&#xFF1A;j-i &#x5C31;&#x662F; zigzag &#x7684;&#x8D77;&#x59CB;&#x5B57;&#x7B26;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x662F;&#x8981;&#x5012;&#x6570;&#x7B2C;i&#x4E2A;&#xFF0C;&#x56E0;&#x4E3A;&#x4E00;&#x4E2A; zigzag &#x6709; size &#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x6240;&#x4EE5;&#x5012;&#x6570;&#x7B2C; i &#x4E2A;&#x5C31;&#x662F; size-i &#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x8D4B;&#x503C;&#x7684;&#x5B57;&#x7B26;&#x5C31;&#x662F; (j-i)+(size-i)</li>
+<li>&#x9996;&#x5148;&#x5BF9;&#x7ED9;&#x5B9A;&#x7684;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x7136;&#x540E;&#x4ECE;0&#x5230;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x957F;&#x5EA6;len-2&#x5F00;&#x59CB;&#x5FAA;&#x73AF;&#xFF0C;&#x5BF9;&#x4E8E;&#x6BCF;&#x5C42;&#x5FAA;&#x73AF;&#xFF0C;&#x5B9A;&#x4E49;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#x4E00;&#x4E2A;left&#x6307;&#x5411;i+1,right&#x6307;&#x5411;&#x6570;&#x7EC4;&#x7684;&#x5C3E;&#x90E8;&#xFF0C;&#x7136;&#x540E;&#x5F00;&#x59CB;&#x5224;&#x65AD;i,left&#x548C;start&#x6307;&#x5411;&#x7684;&#x5143;&#x7D20;&#x4E4B;&#x548C;&#x662F;&#x5426;&#x66F4;&#x63A5;&#x8FD1;&#x7ED9;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5982;&#x679C;&#x63A5;&#x8FD1;&#x5219;&#x66F4;&#x65B0;&#xFF0C;&#x7136;&#x540E;&#x5224;&#x65AD;3&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x548C;&#x662F;&#x5927;&#x4E8E;&#x7ED9;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#x8FD8;&#x662F;&#x5C0F;&#x4E8E;&#x7ED9;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5927;&#x4E8E;&#x7684;&#x8BDD;left&#x6307;&#x9488;&#x52A0;1&#xFF0C;&#x5C0F;&#x4E8E;&#x7684;&#x8BDD;right&#x6307;&#x9488;&#x51CF;1&#xFF1B;</li>
 </ul>
 <p><strong>&#x4EE3;&#x7801;&#xFF1A;</strong></p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">convert</span><span class="hljs-params">(String s, <span class="hljs-keyword">int</span> nRows)</span> </span>{  
-        <span class="hljs-keyword">if</span>(s == <span class="hljs-keyword">null</span> || s.length()==<span class="hljs-number">0</span> || nRows &lt;=<span class="hljs-number">0</span>)  
-            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>;  
-        <span class="hljs-keyword">if</span>(nRows == <span class="hljs-number">1</span>)  
-            <span class="hljs-keyword">return</span> s;  
-        StringBuilder res = <span class="hljs-keyword">new</span> StringBuilder();  
-        <span class="hljs-keyword">int</span> size = <span class="hljs-number">2</span>*nRows-<span class="hljs-number">2</span>;  
-        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;nRows;i++) {  
-            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=i;j&lt;s.length();j+=size) {  
-                res.append(s.charAt(j));  
-                <span class="hljs-keyword">if</span>(i!=<span class="hljs-number">0</span> &amp;&amp; i!=nRows-<span class="hljs-number">1</span> &amp;&amp; (j-i)+(size-i)&lt;s.length())  
-                    res.append(s.charAt((j-i)+(size-i)));  
-            }                  
-        }  
-        <span class="hljs-keyword">return</span> res.toString();  
-    }
-}
-</code></pre>
-<h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
-<p><a href="http://blog.csdn.net/chilseasai/article/details/47209565" target="_blank">http://blog.csdn.net/chilseasai/article/details/47209565</a>
-<a href="http://blog.csdn.net/pistolove/article/details/41408021" target="_blank">http://blog.csdn.net/pistolove/article/details/41408021</a></p>
+<pre><code>class Solution(object):
+    def threeSumClosest(self, nums, target):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        &quot;&quot;&quot;
+        if not nums:
+            return []
+
+        sortNum = sorted(nums)
+        closest = sys.maxint
+        for i in range(len(sortNum)):
+            left, right = i + 1, len(sortNum) - 1
+            while left &lt; right:
+                Sum = sortNum[i] + sortNum[left] + sortNum[right]
+                if Sum == target:
+                    return Sum
+                elif Sum &gt; target:
+                    right -= 1
+                else:
+                    left += 1
+                closest = Sum if abs(Sum - target) &lt; abs(closest - target) else closest 
+
+        return closest
+</code></pre><h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
+<ul>
+<li><a href="http://www.jianshu.com/p/0399dbefd67e" target="_blank">http://www.jianshu.com/p/0399dbefd67e</a></li>
+<li>&#x4F5C;&#x8005;&#xFF1A;Jason_Yuan</li>
+</ul>
 
                                 
                                 </section>
@@ -1220,12 +1212,12 @@ Y   I   R
 
             
                 
-                <a href="5.md" class="navigation navigation-prev " aria-label="Previous page: 5.  Longest Palindromic Substring">
+                <a href="15.html" class="navigation navigation-prev " aria-label="Previous page: 15.  3Sum">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="7.html" class="navigation navigation-next " aria-label="Next page: 7.  Reverse Integer">
+                <a href="17.md" class="navigation navigation-next " aria-label="Next page: 17.  Letter Combinations of a Phone Number">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1236,7 +1228,7 @@ Y   I   R
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6.  ZigZag Conversion","level":"1.3.6","depth":2,"next":{"title":"7.  Reverse Integer","level":"1.3.7","depth":2,"path":"answer/7.md","ref":"./answer/7.md","articles":[]},"previous":{"title":"5.  Longest Palindromic Substring","level":"1.3.5","depth":2,"path":"answer/5.md","ref":"./answer/5.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/6.md","mtime":"2017-12-15T06:44:12.836Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-24T16:29:45.097Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"16.   3Sum Closest","level":"1.3.15","depth":2,"next":{"title":"17.  Letter Combinations of a Phone Number","level":"1.3.16","depth":2,"path":"answer/17.md","ref":"./answer/17.md","articles":[]},"previous":{"title":"15.  3Sum","level":"1.3.14","depth":2,"path":"answer/15.md","ref":"./answer/15.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"index.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"answer/16.md","mtime":"2017-12-24T16:23:11.880Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-24T16:29:45.097Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
